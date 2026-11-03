@@ -471,9 +471,33 @@ $('date').value=todayISO();$('weekStart').value=weekStart(todayISO());$('schedul
   $('editorPanel').scrollIntoView({behavior:'smooth',block:'start'});
   toast('Session loaded for editing');
  };
- // Render saved sessions and absence records; duplicate is already present in the card template.
+ // Render saved sessions and absence records. Guard against legacy/enhancement scripts
+ // appending duplicate History action buttons after a render (especially after edit/save).
+ function dedupeHistoryActions(){
+   const root=$('sessionList'); if(!root)return;
+   root.querySelectorAll('.session-card').forEach(card=>{
+     const actions=card.querySelector('.card-actions'); if(!actions)return;
+     const seen=new Set();
+     [...actions.querySelectorAll('button')].forEach(btn=>{
+       const label=(btn.textContent||'').trim().toLowerCase().replace(/\s+/g,' ');
+       if(['view','edit','duplicate','print','delete'].includes(label)){
+         if(seen.has(label))btn.remove(); else seen.add(label);
+       }
+     });
+   });
+ }
  const baseRender=window.render;
- window.render=function(){baseRender();renderAbsenceRecords();};
+ window.render=function(){baseRender();renderAbsenceRecords();dedupeHistoryActions();};
+ // Some older app layers add action buttons asynchronously; normalize after those changes too.
+ const historyRoot=$('sessionList');
+ if(historyRoot&&window.MutationObserver){
+   let dedupeQueued=false;
+   const historyObserver=new MutationObserver(()=>{
+     if(dedupeQueued)return; dedupeQueued=true;
+     requestAnimationFrame(()=>{dedupeQueued=false;dedupeHistoryActions();});
+   });
+   historyObserver.observe(historyRoot,{childList:true,subtree:true});
+ }
  // Absences, leave, holidays and school closures — upgraded workspace
  const checks=$('absenceClasses');checks.innerHTML=classes.map((c,i)=>`<label><input type="checkbox" value="${c}" id="absenceClass${i}"> ${c}</label>`).join('');
  const kindSel=$('absenceRecordKind'), typeSel=$('absenceType');
