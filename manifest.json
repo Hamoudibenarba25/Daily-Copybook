@@ -1,9 +1,21 @@
 {
-  "name": "Teaching Journal Pro V5",
-  "short_name": "Teaching Journal",
+  "name": "Daily Teaching Journal",
+  "short_name": "Daily Journal",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#f4f7fa",
-  "theme_color": "#10283d",
-  "description": "Offline teaching journal and reports"
+  "theme_color": "#12243a",
+  "description": "Daily teaching journal, session history, timetable and reports",
+  "icons": [
+    {
+      "src": "icon-192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "icon-512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ]
 }
