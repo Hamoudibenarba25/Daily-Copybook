@@ -227,6 +227,14 @@
     <div class="field" style="margin-bottom:12px"><label>Teacher</label><input value="Dr. Hamoudi Benarba" id="teacherName"></div>
     <div class="field"><label>School year</label><input value="2026-2027" id="schoolYear"></div>
     <p class="small">These details are included in reports and saved with the backup file.</p>
+    <div class="section-title">Class Manager</div>
+    <p class="small">Add, rename or remove classes. Renaming updates saved sessions, timetable slots and linked absence/holiday records.</p>
+    <form id="classManagerForm" class="form-grid" style="margin-bottom:14px">
+      <input type="hidden" id="classEditOriginal">
+      <div class="field"><label for="classNameManager">Class name</label><input id="classNameManager" placeholder="e.g. 2 S3" required maxlength="80"></div>
+      <div class="field" style="justify-content:end"><label>&nbsp;</label><div class="form-actions" style="margin:0"><button class="primary" type="submit" id="classManagerSave">Add class</button><button class="light" type="button" id="classManagerCancel" style="display:none">Cancel edit</button></div></div>
+    </form>
+    <div id="classManagerList" class="session-list"></div>
    </div>
    <div class="panel page-view" id="absencePanel">
     <div class="panel-head"><div><h2>Absences &amp; Holidays</h2><div class="sub">Manage leave, holidays, school closures and affected timetable sessions.</div></div><span class="pill">CALENDAR &amp; LEAVE</span></div>
@@ -262,7 +270,7 @@
 <div class="footer">Teaching Journal Pro · Designed for Dr. Hamoudi Benarba · Academic year 2026–2027<br><span id="pwaStatus">Automatic local snapshots enabled</span></div>
 <div class="toast" id="toast"></div>
 <script>
-const CLASSES=['1 S1','1 S2','3 LPh 1','3 LPh 2'];
+let CLASSES=['1 S1','1 S2','3 LPh 1','3 LPh 2'];
 const STORE='teachingJournalPro_v1';
 let sessions=[], timetable=[], editingSlotId='';
 const $=id=>document.getElementById(id);
@@ -273,8 +281,8 @@ const mins=t=>{if(!t)return 0;let [h,m]=t.split(':').map(Number);return h*60+m};
 function duration(s){let n=mins(s.endTime)-mins(s.startTime);if(n<0)n+=1440;return `${Math.floor(n/60)}h ${String(n%60).padStart(2,'0')}m`}
 function toast(msg){$('toast').textContent=msg;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),2400)}
 const AUTO_BACKUP_KEY=STORE+'_automatic_backups_v1';
-function currentData(){let calendarRecords=[];try{const prev=JSON.parse(localStorage.getItem(STORE)||'{}');calendarRecords=Array.isArray(prev.calendarRecords)?prev.calendarRecords:[]}catch(e){}return {app:'Teaching Journal Pro',version:5,sessions,timetable,calendarRecords,details:{school:$('schoolName').value,teacher:$('teacherName').value,year:$('schoolYear').value},savedAt:new Date().toISOString()}}
-function restoreData(d){sessions=Array.isArray(d.sessions)?d.sessions:[];timetable=Array.isArray(d.timetable)?d.timetable:[];if(Array.isArray(d.calendarRecords)){try{const prev=JSON.parse(localStorage.getItem(STORE)||'{}');prev.calendarRecords=d.calendarRecords;localStorage.setItem(STORE,JSON.stringify(prev))}catch(e){}}if(d.details){$('schoolName').value=d.details.school||$('schoolName').value;$('teacherName').value=d.details.teacher||$('teacherName').value;$('schoolYear').value=d.details.year||$('schoolYear').value}}
+function currentData(){let calendarRecords=[];try{const prev=JSON.parse(localStorage.getItem(STORE)||'{}');calendarRecords=Array.isArray(prev.calendarRecords)?prev.calendarRecords:[]}catch(e){}return {app:'Teaching Journal Pro',version:5,classes:CLASSES,sessions,timetable,calendarRecords,details:{school:$('schoolName').value,teacher:$('teacherName').value,year:$('schoolYear').value},savedAt:new Date().toISOString()}}
+function restoreData(d){if(Array.isArray(d.classes)&&d.classes.length)CLASSES=[...new Set(d.classes.map(x=>String(x).trim()).filter(Boolean))];sessions=Array.isArray(d.sessions)?d.sessions:[];timetable=Array.isArray(d.timetable)?d.timetable:[];if(Array.isArray(d.calendarRecords)){try{const prev=JSON.parse(localStorage.getItem(STORE)||'{}');prev.calendarRecords=d.calendarRecords;localStorage.setItem(STORE,JSON.stringify(prev))}catch(e){}}if(d.details){$('schoolName').value=d.details.school||$('schoolName').value;$('teacherName').value=d.details.teacher||$('teacherName').value;$('schoolYear').value=d.details.year||$('schoolYear').value}}
 function load(){let loaded=false;try{const raw=localStorage.getItem(STORE);if(raw){restoreData(JSON.parse(raw));loaded=true}}catch(e){}if(!loaded){try{const backups=JSON.parse(localStorage.getItem(AUTO_BACKUP_KEY)||'[]');if(backups.length){restoreData(backups[0].data);localStorage.setItem(STORE,JSON.stringify(currentData()));console.warn('Recovered journal from automatic local backup.')}}catch(e){sessions=[];timetable=[]}}}
 function persist(){const data=currentData();localStorage.setItem(STORE,JSON.stringify(data));try{let backups=JSON.parse(localStorage.getItem(AUTO_BACKUP_KEY)||'[]');if(!Array.isArray(backups))backups=[];const fingerprint=JSON.stringify({sessions,timetable,details:data.details});if(!backups.length||backups[0].fingerprint!==fingerprint){backups.unshift({savedAt:data.savedAt,fingerprint,data});backups=backups.slice(0,10);localStorage.setItem(AUTO_BACKUP_KEY,JSON.stringify(backups));}}catch(e){console.warn('Automatic backup snapshot could not be written',e)}render();renderTimetable();if(typeof window.updateTeachingInsights==='function')window.updateTeachingInsights()}
 function addTaskRow(task={phase:'',activity:'',aim:''}){const row=document.createElement('div');row.className='task-row';row.innerHTML=`<input class="task-phase" aria-label="Phase or task" placeholder="e.g. Warm-up" value="${esc(task.phase)}"><textarea aria-label="Activity details" placeholder="What did learners do?">${esc(task.activity)}</textarea><textarea aria-label="Aim of task" placeholder="What was the aim?">${esc(task.aim)}</textarea><button type="button" class="remove-task" title="Remove activity">×</button>`;row.querySelector('button').onclick=()=>{row.remove();if(!$('taskRows').children.length)addTaskRow()};$('taskRows').appendChild(row)}
@@ -435,7 +443,7 @@ $('date').value=todayISO();$('weekStart').value=weekStart(todayISO());$('schedul
 /* V5 enhancements: keep STORE and all pre-existing records compatible. */
 (function(){
  const $=id=>document.getElementById(id);
- const classes=['1 S1','1 S2','3 LPh 1','3 LPh 2'];
+ const classes=CLASSES;
  const oldPersist=window.persist;
  const oldFormData=window.formData;
  window.formData=function(){
@@ -534,7 +542,7 @@ $('date').value=todayISO();$('weekStart').value=weekStart(todayISO());$('schedul
   const body=$('teachingInsightsBody');if(!body)return;
   let data={sessions:[],calendarRecords:[]};try{data=JSON.parse(localStorage.getItem('teachingJournalPro_v1')||'{}')}catch{}
   const arr=Array.isArray(data.sessions)?data.sessions:[],events=Array.isArray(data.calendarRecords)?data.calendarRecords:[];
-  const classes=['1 S1','1 S2','3 LPh 1','3 LPh 2'];
+  const classes=CLASSES;
   const counts=classes.map(c=>({name:c,count:arr.filter(s=>s.className===c).length})),covered=counts.filter(x=>x.count>0),missing=counts.filter(x=>!x.count).map(x=>x.name);
   const sorted=[...arr].sort((a,b)=>(b.date||'').localeCompare(a.date||'')||(b.startTime||'').localeCompare(a.startTime||'')),latest=sorted[0];
   const monday=new Date();monday.setHours(0,0,0,0);monday.setDate(monday.getDate()-((monday.getDay()+6)%7));const nextMonday=new Date(monday);nextMonday.setDate(nextMonday.getDate()+7);
@@ -626,6 +634,44 @@ $('date').value=todayISO();$('weekStart').value=weekStart(todayISO());$('schedul
  .dash-card strong{font-size:14px!important}
 }
 </style>
+
+
+<script>
+/* V5.4 Class Manager: keeps class names synchronized across the app and backups. */
+(function(){
+ const $=id=>document.getElementById(id);
+ function syncClassDropdowns(){
+  const ids=['className','ttClass','scheduleClass','ttFilterClass','filterClass','reportClass'];
+  ids.forEach(id=>{const el=$(id);if(!el)return;const old=el.value;const isFilter=['scheduleClass','ttFilterClass','filterClass'].includes(id);const isReport=id==='reportClass';el.innerHTML=(isFilter?'<option value="">All classes</option>':isReport?'<option value="">Select a class…</option>':'')+CLASSES.map(c=>`<option value="${esc(c)}">${esc(c)}</option>`).join('');if(CLASSES.includes(old))el.value=old;else if(!isFilter&&!isReport&&CLASSES.length)el.value=CLASSES[0];});
+ }
+ function renderClassManager(){
+  const root=$('classManagerList');if(!root)return;
+  root.innerHTML=CLASSES.length?CLASSES.map(c=>`<article class="session-card"><div class="session-card-top"><span class="pill">${esc(c)}</span><span class="small">${sessions.filter(s=>s.className===c).length} journal entries · ${timetable.filter(s=>s.className===c).length} timetable slots</span></div><div class="card-actions"><button type="button" class="light" onclick="editManagedClass(${JSON.stringify(c).replace(/"/g,'&quot;')})">Rename / Edit</button><button type="button" class="danger" onclick="deleteManagedClass(${JSON.stringify(c).replace(/"/g,'&quot;')})">Remove</button></div></article>`).join(''):'<div class="empty">No classes defined. Add a class above to get started.</div>';
+ }
+ function resetClassForm(){ $('classEditOriginal').value='';$('classNameManager').value='';$('classManagerSave').textContent='Add class';$('classManagerCancel').style.display='none';}
+ window.editManagedClass=function(old){$('classEditOriginal').value=old;$('classNameManager').value=old;$('classManagerSave').textContent='Save class name';$('classManagerCancel').style.display='';$('classNameManager').focus()};
+ window.deleteManagedClass=function(name){
+  const linkedSessions=sessions.filter(s=>s.className===name).length, linkedSlots=timetable.filter(s=>s.className===name).length, linkedCalendar=(JSON.parse(localStorage.getItem(STORE)||'{}').calendarRecords||[]).filter(r=>(r.classes||[]).includes(name)).length;
+  if(!confirm(`Remove "${name}" from the class list?\\n\\n${linkedSessions} journal entries, ${linkedSlots} timetable slots and ${linkedCalendar} calendar records are linked to it. These linked records will be removed/updated. This cannot be undone. Export a backup first if needed.`))return;
+  CLASSES=CLASSES.filter(c=>c!==name);sessions=sessions.filter(s=>s.className!==name);timetable=timetable.filter(s=>s.className!==name);
+  try{const data=JSON.parse(localStorage.getItem(STORE)||'{}');data.calendarRecords=(data.calendarRecords||[]).map(r=>({...r,classes:(r.classes||[]).filter(c=>c!==name)})).filter(r=>(r.classes||[]).length);localStorage.setItem(STORE,JSON.stringify(data))}catch{}
+  persist();syncClassDropdowns();renderClassManager();toast('Class removed');
+ };
+ $('classManagerForm').addEventListener('submit',e=>{
+  e.preventDefault();const name=$('classNameManager').value.trim(),old=$('classEditOriginal').value;
+  if(!name){alert('Enter a class name.');return}
+  if(CLASSES.some(c=>c.toLowerCase()===name.toLowerCase()&&c!==old)){alert('A class with this name already exists.');return}
+  if(old){const i=CLASSES.indexOf(old);if(i<0)return;CLASSES[i]=name;sessions.forEach(s=>{if(s.className===old)s.className=name});timetable.forEach(s=>{if(s.className===old)s.className=name});try{const data=JSON.parse(localStorage.getItem(STORE)||'{}');data.calendarRecords=(data.calendarRecords||[]).map(r=>({...r,classes:(r.classes||[]).map(c=>c===old?name:c)}));localStorage.setItem(STORE,JSON.stringify(data))}catch{}}
+  else CLASSES.push(name);
+  resetClassForm();syncClassDropdowns();persist();renderClassManager();toast(old?'Class renamed and linked records updated':'Class added');
+ });
+ $('classManagerCancel').addEventListener('click',resetClassForm);
+ // After app startup, hydrate the manager from the saved class list.
+ syncClassDropdowns();renderClassManager();
+ const insights=document.getElementById('teachingInsightsBody');
+ if(insights&&typeof window.updateTeachingInsights==='function')window.updateTeachingInsights();
+})();
+</script>
 
 </body>
 </html>
