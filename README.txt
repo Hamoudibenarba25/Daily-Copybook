@@ -1,15 +1,24 @@
-Teaching Journal Pro V5.3 — GitHub replacement package
+Teaching Journal Pro V5.3 — Absences & Holidays upgrade
 
-This package uses the latest V5.3 preview HTML as its index.html. It includes the dashboard/insights, reporting changes, and Absences & Holidays feature requested.
+This package is based on V5.2 Teaching Insights and preserves the existing localStorage key (teachingJournalPro_v1).
 
-IMPORTANT BEFORE UPDATING
-1. Open your current app and export a JSON backup.
+Upgrade steps:
+1. Open the current app and export a JSON backup first.
 2. Extract this ZIP.
-3. Upload all files in this ZIP to the ROOT of your GitHub Pages repository (Daily-Copybook), replacing index.html, sw.js, manifest.json and icons when prompted. Do not upload the ZIP itself.
-4. Commit changes to main.
-5. Wait for GitHub Pages to publish.
-6. Reload the website. For an installed PWA, close it fully and reopen; if needed, open the website in Chrome and refresh.
+3. Upload/replace the package files in the GitHub Pages repository root.
+4. Commit the changes and wait for GitHub Pages to publish.
+5. Refresh the app. If an installed PWA still shows the previous version, close it and reopen after service-worker refresh.
 
-Keep the existing localStorage/site data. Do NOT clear browser storage; journal entries are stored there.
+Important: Do not delete browser site data/local storage; this is where your journal records are stored.
 
-The older Teaching_Journal_Pro_V4.html file is not used by GitHub Pages when index.html is present.
+V5.3 features:
+- Absence/leave categories and holiday/closure/event categories
+- Optional reason, holiday/event name, notes, status
+- Single-date and multi-day date ranges
+- Class selection and matching flexible timetable slot preview
+- Choose all-day records or specific timetable sessions
+- Records automatically create class journal entries
+- Search, month filter, class filter and record-kind filter
+- Edit and delete with confirmation
+- Summary cards deduplicate overlapping date ranges within absence/holiday totals
+- Absences & Holidays available from dashboard, workspace navigation and reports workspace
