@@ -132,7 +132,59 @@
 .teaching-insights{margin:18px 0;background:#fff;border:1px solid #dbe3e9;border-radius:15px;overflow:hidden;box-shadow:0 5px 18px #10283d12}.teaching-insights-head{background:linear-gradient(110deg,#10283d,#173b53 78%,#236b4b);color:white;padding:13px 18px;font-size:18px;font-weight:800;display:flex;gap:10px;align-items:center}.teaching-insights-body{padding:12px 18px}.teaching-insight-row{display:flex;gap:10px;align-items:flex-start;padding:9px 2px;border-bottom:1px solid #e2e8ed;font-size:13px;line-height:1.5}.teaching-insight-row:last-child{border-bottom:0}.teaching-insight-check{color:#236b4b;font-weight:900;background:#e8f3eb;border-radius:50%;width:22px;height:22px;display:inline-grid;place-items:center;flex:none}
 @media(max-width:900px){.dashboard-menu{grid-template-columns:repeat(2,minmax(0,1fr))!important}}@media(max-width:560px){.dashboard-menu{grid-template-columns:1fr!important}.dashboard-menu .dash-card{min-height:120px!important}}
 @media print{@page{size:auto;margin:10mm}body{background:#fff!important}body *{visibility:hidden!important}#printArea,#printArea *{visibility:visible!important}#printArea{display:block!important;position:absolute!important;left:0!important;top:0!important;width:100%!important;margin:0!important;padding:0!important;background:#fff!important}#printArea .print-report{max-width:none!important;margin:0!important;padding:0!important;font-family:Arial,Helvetica,sans-serif!important;color:#14283d!important;font-size:9pt!important}#printArea .report-session{border:0!important;border-left:3px solid #236b4b!important;border-radius:0!important;padding:3px 0 4px 7px!important;margin:0 0 7px!important;break-inside:avoid!important;page-break-inside:avoid!important}#printArea .report-session h2{font-size:10pt!important;margin:0 0 4px!important;padding:4px 6px!important;background:#edf2f5!important;border-left:3px solid #d5a326!important;color:#10283d!important;print-color-adjust:exact!important;-webkit-print-color-adjust:exact!important}#printArea .report-session p{margin:3px 0!important}#printArea table{width:100%!important;border-collapse:collapse!important;font-size:8pt!important;margin:3px 0 4px!important}#printArea th,#printArea td{border:1px solid #c6d0d8!important;padding:3px 4px!important;vertical-align:top!important}#printArea th{background:#f0f4f6!important;print-color-adjust:exact!important;-webkit-print-color-adjust:exact!important}#printArea h3{font-size:8.5pt!important;margin:4px 0 3px!important}}
-</style></head>
+</style>
+<style id="v55-report-layout">
+/* V5.5 inspection report template: only affects report preview and print output */
+.report-preview .report-item{border-left-color:#1d684b;background:#f7faf9;border-radius:8px;padding:10px 12px}
+.report-preview .report-item strong{color:#10283d}
+#printArea .print-report{font-family:"Segoe UI",Arial,Helvetica,sans-serif;color:#17283a;max-width:100%;margin:auto}
+#printArea .jr-header{display:grid;grid-template-columns:1.15fr 1fr;gap:12px;align-items:stretch;border:1px solid #cbd5df;border-radius:10px;overflow:hidden;margin-bottom:12px}
+#printArea .jr-school{background:#fff;padding:14px 16px;border-left:5px solid #c99b25}
+#printArea .jr-school .school-name{font-size:15pt;font-weight:800;color:#10283d;line-height:1.15}
+#printArea .jr-school .school-sub{font-size:8.5pt;color:#526579;margin-top:5px}
+#printArea .jr-title{background:#10283d;color:white;padding:14px 16px;border-bottom:5px solid #d2a42c}
+#printArea .jr-title h1{margin:0;font-size:20pt;color:#fff;line-height:1.15}
+#printArea .jr-title .subtitle{font-size:10pt;color:#e8eef3;margin-top:5px}
+#printArea .jr-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:8px 0 14px}
+#printArea .jr-meta>div{background:#f1f5f7;border:1px solid #d8e0e6;border-left:3px solid #236b4b;padding:7px 9px;border-radius:5px}
+#printArea .jr-meta label{display:block;font-size:7.5pt;text-transform:uppercase;letter-spacing:.04em;color:#68798a;font-weight:700}
+#printArea .jr-meta strong{font-size:9pt;color:#10283d}
+#printArea .jr-period{display:flex;justify-content:space-between;align-items:center;gap:10px;background:#e9f2ef;border-left:5px solid #236b4b;padding:8px 11px;margin:0 0 12px;border-radius:5px;color:#143e31}
+#printArea .jr-period .period-title{font-size:12pt;font-weight:800}
+#printArea .jr-period .period-range{font-size:9pt;font-weight:700}
+#printArea .report-session{border:1px solid #d2dce4!important;border-radius:8px!important;padding:10px 11px!important;margin:0 0 12px!important;border-left:4px solid #236b4b!important;background:#fff;break-inside:auto!important;page-break-inside:auto!important}
+#printArea .report-session.special-session{border-left-color:#c99b25!important;background:#fffdf8}
+#printArea .jr-session-head{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;background:#edf2f6;padding:7px 9px;border-radius:5px;margin:0 0 8px}
+#printArea .jr-session-head .session-number{background:#10283d;color:#fff;padding:5px 9px;border-radius:4px;font-weight:800;font-size:10pt}
+#printArea .jr-session-head .session-type{font-weight:800;color:#10283d;font-size:10pt}
+#printArea .jr-session-head .session-meta{margin-left:auto;font-size:8pt;color:#465b6f}
+#printArea .jr-tags{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin:6px 0 9px}
+#printArea .jr-tag{background:#eaf4ef;border-radius:4px;padding:6px 7px;min-width:0}
+#printArea .jr-tag label{display:block;font-size:7.5pt;color:#236b4b;font-weight:800;margin-bottom:2px}
+#printArea .jr-tag span{font-size:8.5pt;overflow-wrap:anywhere}
+#printArea .jr-section-title{font-size:10pt;font-weight:800;color:#10283d;border-bottom:2px solid #d2a42c;padding:3px 0;margin:8px 0 5px}
+#printArea .jr-activities{width:100%;border-collapse:collapse;font-size:8.5pt;margin:4px 0 7px}
+#printArea .jr-activities th{background:#10283d!important;color:white!important;font-weight:700}
+#printArea .jr-activities td,#printArea .jr-activities th{border:1px solid #cbd5de;padding:6px 7px;text-align:left;vertical-align:top;overflow-wrap:anywhere}
+#printArea .jr-activities td.phase{background:#eaf4ef;font-weight:700;color:#1c5d44;width:20%}
+#printArea .jr-activities td.aim{background:#fff8e8;width:27%}
+#printArea .jr-observations{background:#f4f6f8;border-left:3px solid #8b9aaa;padding:7px 9px;margin-top:7px;font-size:8.5pt;white-space:pre-wrap;overflow-wrap:anywhere}
+#printArea .jr-special-box{padding:11px 13px;background:#fff3dc;border:1px solid #ead4a2;border-radius:5px;font-size:11pt;font-weight:750;color:#684d12}
+#printArea .jr-footer{display:none}
+@media print{
+ @page{size:A4 portrait;margin:12mm 11mm 16mm}
+ #printArea .jr-header{break-inside:avoid;page-break-inside:avoid}
+ #printArea .jr-footer{display:flex;position:fixed;bottom:-10mm;left:0;right:0;border-top:1px solid #c9d3dc;padding-top:4px;font-size:7.5pt;color:#536578;justify-content:space-between;background:white}
+ #printArea .jr-footer .page-number:after{content:counter(page)}
+ #printArea .jr-footer .page-total:after{content:counter(pages)}
+ #printArea .report-session{orphans:3;widows:3}
+ #printArea .jr-activities tr{break-inside:avoid;page-break-inside:avoid}
+ #printArea .jr-session-head,#printArea .jr-tags,#printArea .jr-section-title{break-after:avoid;page-break-after:avoid}
+ #printArea .jr-title,#printArea .jr-session-head .session-number,#printArea .jr-activities th{print-color-adjust:exact;-webkit-print-color-adjust:exact}
+}
+@media screen{#printArea .jr-footer{display:none}}
+</style>
+</head>
 <body>
 <header class="topbar">
  <div class="brand"><div class="logo">TJ</div><div><h1>Teaching Journal Pro V5</h1><p>Daily Copybook · 2026–2027 · Abane Ramdane Secondary School</p></div></div>
@@ -673,5 +725,45 @@ $('date').value=todayISO();$('weekStart').value=weekStart(todayISO());$('schedul
 })();
 </script>
 
+
+<script id="v55-report-template">
+(function(){
+ const escv=v=>typeof esc==='function'?esc(String(v??'')):String(v??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+ const val=(x)=>escv(x||'—');
+ function buildPrintHTMLV55(arr,title,range=''){
+   const school=val($('schoolName')?.value||'School'),teacher=val($('teacherName')?.value||'Teacher'),year=val($('schoolYear')?.value||'—');
+   const cls=val(arr?.[0]?.className||$('reportClass')?.value||'Class');
+   const sessionsHtml=(arr||[]).map((s,i)=>{
+     const type=s.sessionType||s.recordType||'Regular lesson';
+     const isSpecial=/absence|holiday|closure|exam|test|correction|remediation|consolidation|project|event|day.?off/i.test(type);
+     const time=[s.startTime||'',s.endTime||''].filter(Boolean).join(' → ')||'Time not specified';
+     const room=s.room||s.classroom||'Not specified';
+     const tags=[['Theme',s.theme],['Unit',s.unit],['Sequence',s.sequence],['Rubric',s.rubric]];
+     const tagHtml=tags.filter(([k,v])=>v!==undefined&&v!==null&&String(v).trim()!=='').map(([k,v])=>`<div class="jr-tag"><label>${k}</label><span>${escv(v)}</span></div>`).join('');
+     const tasks=Array.isArray(s.tasks)?s.tasks:[];
+     const taskRows=tasks.map(t=>`<tr><td class="phase">${val(t.phase||t.stage||'Teaching phase')}</td><td>${val(t.activity||t.details||t.description)}</td><td class="aim">${val(t.aim||t.objective)}</td></tr>`).join('');
+     let specialDetails=[s.calendarReason,s.reason,s.details,s.calendarNotes,s.notes].filter(x=>x&&String(x).trim()).map(x=>escv(x)).join('<br>');
+     if(!specialDetails)specialDetails=[s.theme,s.unit,s.sequence,s.rubric].filter(x=>x&&String(x).trim()).map(x=>escv(x)).join(' · ');
+     return `<article class="report-session ${isSpecial?'special-session':''}">
+       <div class="jr-session-head"><span class="session-number">Session ${i+1}</span><span class="session-type">${escv(type)}</span><span class="session-meta">${escv(s.date?fmtDate(s.date):'Date not specified')} · ${escv(time)} · Room: ${escv(room)}</span></div>
+       ${tagHtml?`<div class="jr-tags">${tagHtml}</div>`:''}
+       ${isSpecial?`<div class="jr-special-box">${specialDetails||'Special session / event recorded.'}</div>`:''}
+       ${tasks.length?`<div class="jr-section-title">Pedagogical Activities &amp; Teaching Phases</div><table class="jr-activities"><thead><tr><th>Phase</th><th>Activity / Details</th><th>Aim / Objective</th></tr></thead><tbody>${taskRows}</tbody></table>`:''}
+       ${s.observations?`<div class="jr-observations"><b>Observations:</b><br>${escv(s.observations)}</div>`:''}
+       ${!tagHtml&&!tasks.length&&!specialDetails&&!s.observations?'<div class="jr-special-box">No additional details were recorded for this entry.</div>':''}
+     </article>`;
+   }).join('');
+   const dateRange=range||((arr?.length)?`${fmtDate(arr[0].date)} – ${fmtDate(arr[arr.length-1].date)}`:'');
+   return `<div class="print-report">
+    <header class="jr-header"><div class="jr-school"><div class="school-name">${school}</div><div class="school-sub">Official Teaching Journal · Class Record</div></div><div class="jr-title"><h1>Teaching Journal</h1><div class="subtitle">Chronological Record of Sessions</div></div></header>
+    <div class="jr-meta"><div><label>Teacher</label><strong>${teacher}</strong></div><div><label>Class / Stream</label><strong>${cls}</strong></div><div><label>Academic Year</label><strong>${year}</strong></div></div>
+    <div class="jr-period"><span class="period-title">Chronological Record of Sessions</span><span class="period-range">Period: ${escv(dateRange||'Selected reporting period')}</span></div>
+    ${sessionsHtml}
+    <footer class="jr-footer"><span>Teaching Journal Pro V5.5</span><span>Class Record: ${cls}</span><span>Academic Year: ${year}</span><span>Page <b class="page-number"></b> / <b class="page-total"></b></span></footer>
+   </div>`;
+ }
+ window.buildPrintHTML=buildPrintHTMLV55;
+})();
+</script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-Teaching Journal Pro V5.4 Class Manager — Absences & Holidays upgrade
+Teaching Journal Pro V5.5 Class Manager — Absences & Holidays upgrade
 
 This package is based on V5.2 Teaching Insights and preserves the existing localStorage key (teachingJournalPro_v1).
 
@@ -11,7 +11,7 @@ Upgrade steps:
 
 Important: Do not delete browser site data/local storage; this is where your journal records are stored.
 
-V5.4 Class Manager features:
+V5.5 Class Manager features:
 - Absence/leave categories and holiday/closure/event categories
 - Optional reason, holiday/event name, notes, status
 - Single-date and multi-day date ranges
@@ -22,3 +22,5 @@ V5.4 Class Manager features:
 - Edit and delete with confirmation
 - Summary cards deduplicate overlapping date ranges within absence/holiday totals
 - Absences & Holidays available from dashboard, workspace navigation and reports workspace
+
+V5.5: Redesigned inspection-ready A4 teaching journal print layout. All existing journal data and other features are retained.
