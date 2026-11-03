@@ -365,10 +365,7 @@ $('date').value=todayISO();$('weekStart').value=weekStart(todayISO());$('schedul
  // Wrap session submit to save extra metadata after legacy save handler
  const form=$('sessionForm');
  if(form)form.addEventListener('submit',()=>{setTimeout(()=>{let id=$('sessionId').value;let latest=(sessions||[]).find(s=>s.id===id)|| (sessions||[]).slice(-1)[0];if(latest){latest.sessionType=$('sessionType').value;latest.room=$('room').value;try{localStorage.setItem('teachingJournalPro_v1',JSON.stringify({app:'Teaching Journal Pro',version:4,sessions:sessions,timetable:timetable,details:{school:$('schoolName').value,teacher:$('teacherName').value,year:$('schoolYear').value}}))}catch(e){}}},50)});
- // Duplicate an existing record as a new draft; class/date/time can be adjusted.
- const oldRender=window.render;
- if(typeof oldRender==='function')window.render=function(){oldRender();document.querySelectorAll('#sessionList .session-card').forEach(card=>{let buttons=card.querySelector('.card-actions');if(!buttons||buttons.querySelector('.duplicate-btn'))return;let edit=buttons.querySelector('button[onclick^="editSession"]');if(!edit)return;let id=(edit.getAttribute('onclick').match(/'([^']+)'/)||[])[1];let b=document.createElement('button');b.className='light duplicate-btn';b.textContent='Duplicate';b.onclick=()=>duplicate(id);buttons.insertBefore(b,edit)});};
- window.duplicate=function(id){const s=(sessions||[]).find(x=>String(x.id)===String(id));if(!s){toast('Session not found');return;} $('sessionForm').reset();$('sessionId').value='';$('date').value=s.date||todayISO();$('className').value=s.className||CLASSES[0];$('startTime').value=s.startTime||'';$('endTime').value=s.endTime||'';$('sessionType').value=s.sessionType||'Regular lesson';$('room').value=s.room||'';['theme','unit','sequence','rubric','observations'].forEach(k=>$(k).value=s[k]||'');$('taskRows').innerHTML='';(s.tasks||[]).forEach(t=>window.addTaskRow({...t}));if(!(s.tasks||[]).length){window.addTaskRow();window.addTaskRow();}if(typeof categoryFields==='function')categoryFields();$('formTitle').textContent='Duplicate session — edit before saving';$('saveBtn').textContent='Save duplicated session';$('editorPanel').scrollIntoView({behavior:'smooth',block:'start'});toast('Copied session into a new draft. The original remains unchanged.');};;
+  window.duplicate=function(id){const s=(sessions||[]).find(x=>String(x.id)===String(id));if(!s){toast('Session not found');return;} $('sessionForm').reset();$('sessionId').value='';$('date').value=s.date||todayISO();$('className').value=s.className||CLASSES[0];$('startTime').value=s.startTime||'';$('endTime').value=s.endTime||'';$('sessionType').value=s.sessionType||'Regular lesson';$('room').value=s.room||'';['theme','unit','sequence','rubric','observations'].forEach(k=>$(k).value=s[k]||'');$('taskRows').innerHTML='';(s.tasks||[]).forEach(t=>window.addTaskRow({...t}));if(!(s.tasks||[]).length){window.addTaskRow();window.addTaskRow();}if(typeof categoryFields==='function')categoryFields();$('formTitle').textContent='Duplicate session — edit before saving';$('saveBtn').textContent='Save duplicated session';$('editorPanel').scrollIntoView({behavior:'smooth',block:'start'});toast('Copied session into a new draft. The original remains unchanged.');};;
  // Add category/room information to cards when present
  const priorView=window.viewSession;
  if(typeof priorView==='function')window.viewSession=function(id){let s=(sessions||[]).find(x=>x.id===id);if(s){alert('Category: '+(s.sessionType||'Regular lesson')+'\nRoom: '+(s.room||'—'));}priorView(id)};
@@ -474,13 +471,9 @@ $('date').value=todayISO();$('weekStart').value=weekStart(todayISO());$('schedul
   $('editorPanel').scrollIntoView({behavior:'smooth',block:'start'});
   toast('Session loaded for editing');
  };
- // Edit/duplicate buttons stay tied to their actual saved record.
+ // Render saved sessions and absence records; duplicate is already present in the card template.
  const baseRender=window.render;
- window.render=function(){baseRender();document.querySelectorAll('#sessionList .session-card').forEach(card=>{
-   const actions=card.querySelector('.card-actions');if(!actions)return;
-   const edit=actions.querySelector('button[onclick^="editSession"]');
-   if(edit&&!actions.querySelector('.duplicate-v5')){const id=(edit.getAttribute('onclick').match(/'([^']+)'/)||[])[1];const b=document.createElement('button');b.className='light duplicate-v5';b.textContent='Duplicate';b.onclick=()=>window.duplicate(id);actions.insertBefore(b,edit)}
- });renderAbsenceRecords();};
+ window.render=function(){baseRender();renderAbsenceRecords();};
  // Absences, leave, holidays and school closures — upgraded workspace
  const checks=$('absenceClasses');checks.innerHTML=classes.map((c,i)=>`<label><input type="checkbox" value="${c}" id="absenceClass${i}"> ${c}</label>`).join('');
  const kindSel=$('absenceRecordKind'), typeSel=$('absenceType');
