@@ -1,13 +1,23 @@
-Teaching Journal Pro V4 - GitHub Pages replacement files
+Teaching Journal Pro V5.1 — verification fixes
 
-Extract this ZIP. It contains the replacement index.html and sw.js plus the app manifest and icons.
+IMPORTANT: Export a JSON backup from the current app before replacing repository files.
 
-To deploy:
-1. Make a JSON backup of your current journal records in the app.
-2. In the GitHub repository Daily-Copybook, upload these extracted files from the ZIP to the repository root.
-3. Choose to replace existing files when prompted. Make sure index.html and sw.js are replaced.
-4. Commit changes to main.
-5. Open the GitHub Pages site in a regular Chrome tab and hard refresh (Ctrl+F5).
-6. If the installed app still displays old files, open Chrome DevTools > Application > Service Workers and unregister the old service worker, then clear only the site's Cache Storage. Do not clear Local Storage or site data if you need existing journal entries.
+GitHub Pages deployment:
+1. Extract this ZIP.
+2. Replace the files in the repository root with these package files.
+3. Commit and push the changes.
+4. Wait for GitHub Pages to deploy, then hard-refresh the app (Ctrl+F5 on desktop).
+5. If the old UI remains, close/reopen the PWA or clear the site's cached data only after exporting a backup.
 
-Do not upload the ZIP itself; upload the extracted files.
+Data compatibility:
+- Keeps the existing localStorage key: teachingJournalPro_v1.
+- Session and timetable data remain in the same JSON structure.
+- Absence/holiday data is stored as additional top-level arrays (absences, holidays).
+- Existing JSON backups remain importable; restore replaces the current data, so back up first.
+
+Verification performed:
+- ZIP integrity check.
+- JavaScript syntax check for all inline scripts.
+- Static checks for data persistence and report affected-session handling.
+
+Note: This is a local-first browser app. Local records are not automatically shared between devices or browsers.

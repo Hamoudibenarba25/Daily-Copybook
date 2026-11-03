@@ -7,35 +7,217 @@
 <meta name="description" content="Offline teaching journal, flexible timetable, and weekly reports for Dr. Hamoudi Benarba.">
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon-192.png">
-<title>Teaching Journal Pro V4 | Abane Ramdane Secondary School</title>
+<title>Teaching Journal Pro V5 | Abane Ramdane Secondary School</title>
 <style>
 :root{--navy:#12243a;--navy2:#1b3654;--teal:#0f9f91;--gold:#e8b44d;--ink:#233246;--muted:#66768a;--line:#dce5ed;--paper:#fff;--bg:#f2f6fa;--pale:#eaf8f6;--shadow:0 10px 28px rgba(18,36,58,.08)}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--ink)}button,input,select,textarea{font:inherit}button{cursor:pointer;border:0;border-radius:10px;padding:10px 14px;font-weight:650;transition:.15s}button:hover{transform:translateY(-1px)}.primary{background:var(--teal);color:white}.dark{background:var(--navy);color:white}.light{background:#edf2f7;color:var(--navy)}.gold{background:var(--gold);color:#31240c}.danger{background:#fff0ef;color:#b42318}.topbar{background:linear-gradient(120deg,var(--navy),var(--navy2));color:white;padding:24px max(20px,calc((100% - 1280px)/2));display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}.brand{display:flex;gap:14px;align-items:center}.logo{width:48px;height:48px;border-radius:14px;background:var(--gold);color:var(--navy);display:grid;place-items:center;font-size:23px;font-weight:900}.brand h1{font-size:22px;margin:0 0 5px}.brand p{margin:0;color:#c5d4e4;font-size:13px}.top-actions{display:flex;gap:8px;flex-wrap:wrap}.top-actions button{font-size:13px}.container{max-width:1280px;margin:24px auto;padding:0 18px}.notice{background:#fff8e6;border:1px solid #f2d48a;color:#6b4d0a;border-radius:12px;padding:12px 15px;font-size:13px;margin-bottom:18px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:20px}.stat,.panel{background:var(--paper);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}.stat{padding:18px}.stat .label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-weight:700}.stat .value{font-size:28px;font-weight:800;color:var(--navy);margin-top:7px}.layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(320px,.85fr);gap:18px;align-items:start}.panel{padding:20px;margin-bottom:18px}.panel-head{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:17px;flex-wrap:wrap}.panel h2{font-size:17px;margin:0;color:var(--navy)}.sub{font-size:12px;color:var(--muted);margin-top:5px}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}.field label{font-size:12px;font-weight:750;color:#526276}.field input,.field select,.field textarea{width:100%;border:1px solid #d4dee8;background:#fbfdff;border-radius:9px;padding:10px 11px;color:var(--ink);outline:none}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--teal);box-shadow:0 0 0 3px #0f9f911c}.field textarea{min-height:76px;resize:vertical}.section-title{font-size:12px;text-transform:uppercase;letter-spacing:.08em;font-weight:800;color:var(--teal);margin:20px 0 10px;padding-bottom:7px;border-bottom:1px solid var(--line)}.task-head,.task-row{display:grid;grid-template-columns:minmax(110px,.7fr) minmax(140px,1.2fr) minmax(140px,1.2fr) 36px;gap:8px;align-items:start}.task-head{font-size:11px;color:var(--muted);font-weight:750;margin-bottom:7px}.task-row{margin-bottom:8px}.task-row input,.task-row textarea{min-width:0;width:100%;border:1px solid #d4dee8;border-radius:8px;padding:9px;background:#fbfdff;font:inherit;font-size:13px}.task-row textarea{resize:vertical;min-height:42px}.remove-task{background:#fff0ef;color:#b42318;padding:8px 0}.form-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}.filter-row{display:flex;gap:8px;flex-wrap:wrap}.filter-row select,.filter-row input{border:1px solid var(--line);background:#fbfdff;border-radius:9px;padding:9px;min-width:120px}.session-list{display:flex;flex-direction:column;gap:10px}.session-card{border:1px solid var(--line);border-radius:12px;padding:13px;background:#fff}.session-card-top{display:flex;justify-content:space-between;gap:10px;align-items:start}.pill{display:inline-block;padding:4px 8px;border-radius:20px;background:var(--pale);color:#087b70;font-size:11px;font-weight:800}.session-card h3{margin:8px 0 5px;font-size:15px;color:var(--navy)}.meta{font-size:12px;color:var(--muted);line-height:1.7}.card-actions{display:flex;gap:5px;flex-wrap:wrap;margin-top:10px}.card-actions button{padding:7px 9px;font-size:11px}.empty{padding:28px 12px;text-align:center;color:var(--muted);border:1px dashed #cbd7e2;border-radius:12px;font-size:13px}.report-controls{display:grid;grid-template-columns:1fr 1fr;gap:10px}.report-controls .field{min-width:0}.report-preview{margin-top:14px;padding:14px;border:1px solid var(--line);border-radius:12px;background:#fbfdff}.report-preview h3{margin:0 0 8px;color:var(--navy)}.report-preview p{font-size:12px;color:var(--muted);margin:4px 0}.report-list{margin-top:12px;display:flex;flex-direction:column;gap:8px}.report-item{border-left:3px solid var(--teal);padding:8px 10px;background:white;border-radius:0 8px 8px 0}.report-item strong{font-size:13px}.report-item div{font-size:12px;line-height:1.55;margin-top:4px}.small{font-size:11px;color:var(--muted)}.footer{text-align:center;color:#8090a2;font-size:11px;padding:8px 20px 28px}.hidden{display:none!important}.toast{position:fixed;right:18px;bottom:18px;background:var(--navy);color:white;padding:12px 16px;border-radius:10px;box-shadow:var(--shadow);z-index:20;opacity:0;transform:translateY(10px);transition:.2s;pointer-events:none}.toast.show{opacity:1;transform:translateY(0)}@media(max-width:900px){.layout{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.topbar{padding:18px}.brand h1{font-size:18px}.container{padding:0 10px;margin-top:14px}.panel{padding:14px}.form-grid,.report-controls{grid-template-columns:1fr}.field.full{grid-column:auto}.task-head{display:none}.task-row{grid-template-columns:1fr 1fr 36px}.task-row .task-phase{grid-column:1/-1}.task-row textarea{min-height:48px}.stats{gap:8px}.stat{padding:13px}.stat .value{font-size:23px}.top-actions button{padding:9px;font-size:12px}}@media print{body{background:white}.topbar,.notice,.stats,.layout,.footer,.no-print{display:none!important}#printArea{display:block!important}.print-report{font-family:Arial,sans-serif;color:#111}.print-report h1{font-size:20px;margin-bottom:4px}.print-report h2{font-size:16px;margin:18px 0 7px}.print-report .schoolline{font-size:12px;color:#444}.print-report .report-session{border:1px solid #aaa;padding:10px;margin:10px 0;break-inside:avoid}.print-report table{width:100%;border-collapse:collapse;font-size:11px}.print-report th,.print-report td{border:1px solid #bbb;padding:6px;text-align:left;vertical-align:top}.print-report .field-label{font-weight:bold}.print-report .signoff{margin-top:28px;display:flex;justify-content:space-between;font-size:12px}}
+
+/* V5 absence and holiday workspace */
+.absence-summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:12px 0 18px}
+.absence-stat{padding:14px;border:1px solid var(--line);background:linear-gradient(145deg,#fff,#f7fbfc);border-radius:12px;display:flex;flex-direction:column;gap:5px}
+.absence-stat strong{font-size:24px;color:var(--navy)}.absence-stat span{font-size:12px;color:var(--muted)}
+.absence-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
+.absence-calendar-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px;margin-top:12px}
+.calendar-head{text-align:center;font-weight:800;font-size:12px;color:var(--navy);padding:8px}
+.calendar-day{min-height:80px;border:1px solid var(--line);border-radius:8px;background:#fff;padding:6px;display:flex;flex-direction:column;gap:4px;font-size:11px}
+.calendar-day.muted{background:#f7f9fb}.calendar-day strong{font-size:13px}
+.calendar-tag{display:block;padding:3px 4px;border-radius:5px;font-size:9px;line-height:1.2}
+.absence-tag{background:#fde8e8;color:#9f2727}.holiday-tag{background:#fff1cf;color:#7b5500}.affected-tag{background:#e4ecff;color:#274d99}
+.lunch-break-cell{background:#f5f7fa!important;color:#8996a4;font-style:italic;text-align:center;display:grid;place-items:center}
+@media(max-width:650px){.absence-summary{grid-template-columns:repeat(2,1fr)}.calendar-day{min-height:55px;padding:4px}.calendar-tag{font-size:8px}.absence-calendar-grid{gap:2px}}
 </style>
 <style>
 .weekly-grid{display:grid;grid-template-columns:90px repeat(5,minmax(100px,1fr));border:1px solid #d9e2ec;border-radius:12px;overflow:auto;margin:12px 0;background:#fff}
 .weekly-grid .grid-cell{padding:9px 7px;border-right:1px solid #e4ebf2;border-bottom:1px solid #e4ebf2;min-height:62px;font-size:11px}
 .weekly-grid .grid-head{background:#12243a;color:#fff;font-weight:800;text-align:center;position:sticky;top:0}
-.weekly-grid .grid-time{background:#eef4f8;font-weight:800;color:#526276}
+.weekly-grid .grid-time{background:#eef4f8;font-weight:800;color:#526276}.weekly-grid .lunch-break-cell{background:#f7f8fa;color:#8996a5;text-align:center;display:flex;align-items:center;justify-content:center;font-style:italic}
 .weekly-grid .grid-slot{border-radius:7px;padding:6px;margin:2px;font-weight:700;cursor:pointer;line-height:1.4}
 .session-type-badge{display:inline-block;background:#fff3d5;color:#805900;border-radius:5px;padding:3px 6px;font-size:10px;font-weight:800}
 @media(max-width:700px){.weekly-grid{grid-template-columns:70px repeat(5,120px)}}
+
+.dashboard-menu{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;margin:22px 0 24px}
+.dash-card{background:linear-gradient(145deg,#fff,#f4f8fb);border:1px solid #dce5ee;border-radius:16px;padding:20px 16px;min-height:125px;text-align:left;box-shadow:var(--shadow);color:var(--navy);transition:.18s}
+.dash-card:hover{transform:translateY(-3px);border-color:#0f9f91;box-shadow:0 10px 24px #102a4315}
+.dash-card .num{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:#e4f5f2;color:#087b70;font-weight:900;margin-bottom:12px}
+.dash-card strong{display:block;font-size:15px;margin-bottom:5px}.dash-card span{font-size:12px;color:var(--muted);line-height:1.4}
+.page-view{display:none}.page-view.active{display:block}.page-heading{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:0 0 16px}.page-heading h2{margin:0;color:var(--navy)}
+@media(max-width:900px){.dashboard-menu{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.dashboard-menu{grid-template-columns:1fr}.dash-card{min-height:90px}}
+
+/* Dashboard refinement: clean, focused single-workspace navigation */
+#dashboardHome{display:block}
+#workspace{display:none!important}
+#workspace.active{display:block!important}
+#workspace .layout{display:block!important;max-width:1100px;margin:0 auto}
+#workspace .layout>section,#workspace .layout>aside{display:contents}
+#workspace .layout .panel{display:none;margin-top:0}
+#workspace .layout .panel.workspace-active{display:block}
+#workspace .page-heading{padding:16px 18px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);margin-bottom:14px}
+.workspace-nav{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 16px;padding:10px;background:#e8eef4;border-radius:13px}
+.workspace-nav button{background:transparent;color:#42566c;padding:9px 12px;font-size:12px}
+.workspace-nav button.active{background:var(--navy);color:#fff;box-shadow:0 4px 12px #12243a22}
+.dashboard-menu{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:16px}
+.dash-card{position:relative;min-height:145px;padding:22px}
+.dash-card .num{width:40px;height:40px;font-size:16px}
+.dashboard-welcome{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;background:linear-gradient(120deg,#eaf8f6,#f6f9fc);border:1px solid #cfe9e4;border-radius:16px;padding:20px;margin:18px 0}
+.dashboard-welcome h2{margin:0 0 6px;color:var(--navy);font-size:22px}
+.dashboard-welcome p{margin:0;color:var(--muted);font-size:13px}
+.recent-dashboard{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;margin:18px 0;box-shadow:var(--shadow)}
+.recent-dashboard h3{margin:0 0 12px;color:var(--navy);font-size:16px}
+.recent-items{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.recent-item{padding:12px;border:1px solid var(--line);border-radius:11px;background:#fbfdff;cursor:pointer}
+.recent-item strong{display:block;color:var(--navy);font-size:13px;margin-bottom:5px}
+.recent-item span{font-size:11px;color:var(--muted);line-height:1.5}
+@media(max-width:800px){.dashboard-menu{grid-template-columns:repeat(2,minmax(0,1fr))}.recent-items{grid-template-columns:1fr}.workspace-nav{display:grid;grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.dashboard-menu{grid-template-columns:1fr}.dashboard-welcome{padding:15px}.workspace-nav{grid-template-columns:1fr 1fr}.workspace-nav button{padding:9px 6px}}
+</style>
+<style>
+/* Dashboard finishing touches */
+.dashboard-menu{grid-template-columns:repeat(6,minmax(0,1fr))!important;gap:16px}
+.dashboard-menu .dash-card{grid-column:span 2;display:flex;flex-direction:column;align-items:flex-start;text-align:left;position:relative;min-height:170px;border:1px solid #dbe5ee;border-radius:16px;background:linear-gradient(145deg,#fff,#f6fafc);padding:20px;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;cursor:pointer}
+.dashboard-menu .dash-card:nth-child(4){grid-column:2/span 2}
+.dashboard-menu .dash-card:nth-child(5){grid-column:4/span 2}
+.dashboard-menu .dash-card:hover,.dashboard-menu .dash-card:focus-visible{transform:translateY(-4px);border-color:#56b9ad;box-shadow:0 12px 28px #12243a18;outline:none}
+.dash-icon{display:grid;place-items:center;width:48px;height:48px;border-radius:13px;background:#e5f6f3;font-size:25px;margin-bottom:15px}
+.dash-card:nth-child(2) .dash-icon{background:#e9efff}.dash-card:nth-child(3) .dash-icon{background:#fff1db}.dash-card:nth-child(4) .dash-icon{background:#f3eaff}.dash-card:nth-child(5) .dash-icon{background:#e9f2f8}
+.dash-arrow{position:absolute;right:17px;top:17px;color:#15988c;font-size:20px;font-weight:800;transition:transform .18s}
+.dash-card:hover .dash-arrow{transform:translate(3px,-3px)}
+.dash-card strong{font-size:15px;color:#12243a;margin-bottom:7px}
+.dash-card>span:last-child{font-size:12px;color:#637489;line-height:1.5}
+.dashboard-date{display:inline-block;font-size:12px;font-weight:600;color:#64778b;background:#edf3f7;border-radius:8px;padding:6px 9px;margin-left:8px;vertical-align:middle}
+.backup-notice,.backup-warning,.notice,.warning{padding:8px 12px!important;margin:8px 0!important;border-radius:9px!important;font-size:12px!important;line-height:1.45}
+.recent-items{grid-template-columns:repeat(3,minmax(0,1fr))}
+.recent-item{display:flex;flex-direction:column;gap:5px;cursor:default}
+.recent-item .recent-actions{display:flex;justify-content:flex-end;margin-top:auto;padding-top:8px}
+.recent-item .recent-actions button{padding:6px 10px;font-size:11px}
+@media(max-width:900px){.dashboard-menu{grid-template-columns:repeat(2,minmax(0,1fr))!important}.dashboard-menu .dash-card,.dashboard-menu .dash-card:nth-child(4),.dashboard-menu .dash-card:nth-child(5){grid-column:auto}}
+@media(max-width:560px){.dashboard-menu{grid-template-columns:1fr!important}.dashboard-menu .dash-card{grid-column:auto!important;min-height:125px}.dashboard-date{display:block;margin:7px 0 0;width:max-content}.recent-items{grid-template-columns:1fr}}
+</style>
+<style>
+
+/* V5 dashboard visual alignment to supplied reference image */
+body{background:#eef3fb}
+.topbar{padding:14px max(20px,calc((100% - 1480px)/2));min-height:76px}
+.brand h1{font-size:27px;font-weight:800;color:#f7fbff}.brand p{font-size:15px;color:#dce7f4}
+.logo{width:60px;height:60px;border-radius:15px;font-size:25px}
+.container{max-width:1520px;margin:14px auto;padding:0 22px}
+.notice{padding:9px 14px;font-size:12px;margin-bottom:12px}
+.v5-stat-cards{gap:14px;margin:12px 0 20px}
+.v5-stat-cards .stat{display:flex;align-items:flex-start;gap:14px;position:relative;text-align:left;min-height:138px;padding:18px;border-radius:18px;cursor:pointer;overflow:hidden}
+.v5-stat-cards .stat:hover{transform:translateY(-2px);box-shadow:0 12px 25px #142d4b1b}
+.stat-blue{background:linear-gradient(135deg,#f7fbff,#eaf3ff);border-color:#c5d9f4}
+.stat-green{background:linear-gradient(135deg,#f8fffc,#e9f8f3);border-color:#c8e8dc}
+.stat-purple{background:linear-gradient(135deg,#fcfaff,#f0ebff);border-color:#ddd0f6}
+.stat-pink{background:linear-gradient(135deg,#fffafd,#f9eaf4);border-color:#efd2e3}
+.stat-icon{width:58px;height:58px;flex:0 0 58px;display:grid;place-items:center;border-radius:14px;background:#3998ee;color:white;font-size:30px;box-shadow:0 6px 12px #1680d222}
+.stat-green .stat-icon{background:#40bd91}.stat-purple .stat-icon{background:#9270dc}.stat-pink .stat-icon{background:#d66ca9}
+.stat-body{min-width:0}.v5-stat-cards .label{text-transform:none;letter-spacing:0;font-size:14px;color:#102d5a;font-weight:800}
+.v5-stat-cards .value{font-size:27px;margin:6px 0 3px;color:#10264a;line-height:1.2}
+.v5-stat-cards .value small{font-size:14px;font-weight:500}
+.stat-foot{font-size:11px;color:#536a83;margin-top:8px}
+.stat-mini{float:right;background:#e0f4ec;border-radius:20px;padding:3px 7px;color:#08785b}
+.stat-chevron{position:absolute;right:15px;top:13px;font-size:27px;color:#123d6a}
+#dashboardHome .panel-head{margin:14px 4px 18px!important}
+#dashboardHome .panel-head h2{font-size:28px;color:#12243a}
+#dashboardHome .sub{font-size:14px}
+.dashboard-welcome{margin:18px 0 14px;padding:17px 24px;border-radius:14px;background:linear-gradient(100deg,#e9f8f5,#eef7fc);border-color:#cde7e3}
+.dashboard-welcome h2{font-size:23px}
+.dashboard-menu{grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:14px;margin:14px 0 20px}
+.dashboard-menu .dash-card,.dashboard-menu .dash-card:nth-child(4),.dashboard-menu .dash-card:nth-child(5){grid-column:auto!important;min-height:205px;padding:18px 20px;border-radius:16px;border-bottom:6px solid #2587df}
+.dashboard-menu .dash-card:nth-child(2){border-bottom-color:#11a47b}.dashboard-menu .dash-card:nth-child(3){border-bottom-color:#8051d8}.dashboard-menu .dash-card:nth-child(4){border-bottom-color:#d88a19}.dashboard-menu .dash-card:nth-child(5){border-bottom-color:#2779d8}
+.dashboard-menu .dash-icon{width:64px;height:64px;font-size:31px;margin-bottom:12px}
+.dashboard-menu .dash-card strong{font-size:17px;line-height:1.2}
+.dashboard-menu .dash-card>span:last-child{font-size:13px}
+.dashboard-lower{display:grid;grid-template-columns:minmax(280px,.9fr) minmax(0,1.5fr);gap:14px;margin:12px 0 22px}
+.dashboard-insights,.recent-dashboard{background:#fff;border:1px solid #d9e3ef;border-radius:17px;padding:16px;box-shadow:0 8px 22px #152f4c12;margin:0}
+.dashboard-insights h3,.recent-dashboard h3{margin:0 0 12px;font-size:18px;color:#10264a}
+.insight-line{padding:8px 5px;border-bottom:1px solid #e8edf3;font-size:13px;color:#1b2f4a;display:flex;gap:9px;align-items:center}
+.insight-line:last-child{border-bottom:0}
+.insight-check{display:inline-grid;place-items:center;width:23px;height:23px;border-radius:50%;background:#e2edff;color:#236bd0;font-weight:900;flex:0 0 23px}
+.absence-shortcut{margin-top:12px;width:100%;text-align:left;background:#f3f7ff;color:#194b8e;border:1px solid #d8e4f5}
+.recent-dashboard{overflow:hidden}
+.recent-dashboard .recent-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+.activity-table{width:100%;border-collapse:collapse;font-size:12px}
+.activity-table th{background:#eaf0fb;color:#142b50;text-align:left;padding:9px}
+.activity-table td{padding:8px;border-bottom:1px solid #e5ebf2}
+.activity-table tr:hover td{background:#f8fbff}
+.activity-actions{display:flex;gap:5px}
+.activity-actions button{padding:5px 8px;font-size:11px}
+.recent-items{display:block!important}
+@media(max-width:1100px){.dashboard-menu{grid-template-columns:repeat(3,minmax(0,1fr))!important}.dashboard-lower{grid-template-columns:1fr}}
+@media(max-width:750px){.v5-stat-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.dashboard-menu{grid-template-columns:repeat(2,minmax(0,1fr))!important}.dashboard-menu .dash-card{min-height:160px}.topbar{padding:14px}}
+@media(max-width:520px){.v5-stat-cards{grid-template-columns:1fr}.dashboard-menu{grid-template-columns:1fr!important}.dashboard-menu .dash-card{min-height:130px}.activity-table{min-width:640px}.recent-dashboard{overflow-x:auto}}
+</style><style>
+.report-v5-controls{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.report-options{display:flex;flex-wrap:wrap;gap:10px 18px;background:#f4f7fb;border:1px solid #dce5ef;border-radius:10px;padding:12px;margin:12px 0}
+.report-options label{display:flex;gap:5px;align-items:center;font-size:12px}
+.report-paper{font-family:Arial,Helvetica,sans-serif;color:#172638;background:#fff;padding:20px;line-height:1.45}
+.r-header{text-align:center;border-bottom:2px solid #203b5c;padding:0 0 14px;margin-bottom:18px}
+.r-school{font-size:20px;font-weight:800;letter-spacing:.3px;color:#183653}
+.r-header h2{font-size:20px;margin:10px 0 5px;color:#183653}
+.r-period{font-weight:700}.r-generated{font-size:11px;color:#526477;margin-top:4px}
+.r-summary,.r-nonteaching{margin:14px 0;padding:12px;border:1px solid #d5dee8;border-radius:6px}
+.r-summary h3,.r-nonteaching h3,.r-detail>h3{font-size:15px;color:#183653;border-bottom:1px solid #cbd6e2;padding-bottom:6px;margin:0 0 10px}
+.r-stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.r-stat-grid div{padding:8px;background:#f4f7fa;border:1px solid #e0e6ec;text-align:center}
+.r-stat-grid b{display:block;font-size:20px;color:#183653}.r-stat-grid span{font-size:10px}
+.r-class{margin:16px 0 20px}.r-class>h3{font-size:16px;color:#fff;background:#203b5c;padding:8px 10px;margin:0 0 12px}
+.r-session{border:1px solid #d7dfe8;padding:11px;margin:0 0 13px;break-inside:avoid;page-break-inside:avoid}
+.r-session h4{font-size:13px;color:#203b5c;margin:0 0 6px}
+.rmeta{font-size:10.5px;margin-bottom:8px}
+.r-fields,.r-activities,.r-table{width:100%;border-collapse:collapse;font-size:10.5px;margin:6px 0}
+.r-fields th,.r-activities th,.r-table th{background:#e9eef4;color:#1d344c;text-align:left}
+.r-fields th,.r-fields td,.r-activities th,.r-activities td,.r-table th,.r-table td{border:1px solid #cbd4de;padding:6px;vertical-align:top}
+.r-fields th{width:15%}.r-session h5{font-size:11px;margin:8px 0 4px;color:#203b5c}
+.r-observations{margin:8px 0 0;font-size:10.5px;white-space:pre-wrap}
+.r-signatures{margin:28px 0 10px;display:flex;flex-wrap:wrap;gap:18px;font-size:12px;break-inside:avoid}
+.r-remarks{width:100%;margin-top:20px}
+@media(max-width:800px){.report-v5-controls{grid-template-columns:repeat(2,minmax(0,1fr))}.r-stat-grid{grid-template-columns:repeat(2,1fr)}}
+@media print{
+ @page{size:A4 portrait;margin:14mm 13mm 16mm}
+ body{background:#fff!important;color:#111!important}
+ body *{visibility:hidden!important}
+ #printArea,#printArea *{visibility:visible!important}
+ #printArea{position:absolute!important;left:0!important;top:0!important;width:100%!important;background:white!important;padding:0!important;margin:0!important}
+ .report-paper{padding:0!important;font-size:10pt!important}
+ .r-header{break-after:avoid}
+ .r-class>h3{break-after:avoid}
+ .r-session{break-inside:avoid!important;page-break-inside:avoid!important}
+ .r-activities thead{display:table-header-group}
+ .r-table thead{display:table-header-group}
+ table{break-inside:auto}
+ tr{break-inside:avoid;page-break-inside:avoid}
+ .r-summary,.r-nonteaching{break-inside:avoid}
+ .r-signatures{break-inside:avoid}
+}
 </style></head>
 <body>
 <header class="topbar">
- <div class="brand"><div class="logo">TJ</div><div><h1>Teaching Journal Pro V4</h1><p>Daily Copybook · 2026–2027 · Abane Ramdane Secondary School</p></div></div>
+ <div class="brand"><div class="logo">TJ</div><div><h1>Teaching Journal Pro V5</h1><p>Daily Copybook · 2026–2027 · Abane Ramdane Secondary School</p></div></div>
  <div class="top-actions"><button class="gold" id="exportJsonBtn">Backup data</button><button class="light" id="importBtn">Restore backup</button><button class="light" id="exportCsvBtn">Export CSV</button><input type="file" id="importFile" accept=".json,application/json" class="hidden"></div>
 </header>
 <main class="container">
  <div class="notice"><strong>Your journal is stored on this device.</strong> Entries remain in this browser. Use <em>Backup data</em> regularly to keep a copy, especially before clearing browser data or changing devices.</div>
- <section class="stats">
-  <div class="stat"><div class="label">Sessions recorded</div><div class="value" id="totalSessions">0</div></div>
-  <div class="stat"><div class="label">This week</div><div class="value" id="weekSessions">0</div></div>
-  <div class="stat"><div class="label">Classes covered</div><div class="value" id="classesCovered">0 / 4</div></div>
-  <div class="stat"><div class="label">Latest entry</div><div class="value" id="latestEntry" style="font-size:18px">—</div></div>
+ <section class="stats v5-stat-cards">
+  <button class="stat stat-blue" type="button" data-stat-page="historyPanel"><span class="stat-icon">▣</span><div class="stat-body"><div class="label">Sessions Recorded</div><div class="value"><span id="totalSessions">0</span> <small>Sessions</small></div><div class="stat-foot">This academic year <span class="stat-mini">↗ Activity</span></div></div><span class="stat-chevron">›</span></button>
+  <button class="stat stat-green" type="button" data-stat-page="reportsPanel"><span class="stat-icon">▦</span><div class="stat-body"><div class="label">This Week</div><div class="value"><span id="weekSessions">0</span> <small>Sessions</small></div><div class="stat-foot">Weekly teaching activity</div></div><span class="stat-chevron">›</span></button>
+  <button class="stat stat-purple" type="button" data-stat-page="reportsPanel"><span class="stat-icon">▱</span><div class="stat-body"><div class="label">Classes Covered</div><div class="value" id="classesCovered">0 / 4</div><div class="stat-foot">Classes with recorded lessons</div></div><span class="stat-chevron">›</span></button>
+  <button class="stat stat-pink" type="button" data-stat-page="historyPanel"><span class="stat-icon">▤</span><div class="stat-body"><div class="label">Latest Entry</div><div class="value" id="latestEntry" style="font-size:18px">—</div><div class="stat-foot">Most recent teaching record</div></div><span class="stat-chevron">›</span></button>
  </section>
- <div class="layout">
-  <section>
+ <section id="dashboardHome">
+  <div class="panel-head" style="margin:8px 0 0"><div><h2>Dashboard <span id="dashboardDate" class="dashboard-date"></span></h2><div class="sub">Choose a workspace to continue. Your overview stays here.</div></div><span class="pill">HOME</span></div>
+  <nav class="dashboard-menu" aria-label="Main dashboard">
+   <button type="button" class="dash-card" data-page="editorPanel"><span class="dash-icon">📝</span><span class="dash-arrow">↗</span><strong>Record a Teaching Session</strong><span>Enter lesson details, activities and observations.</span></button>
+   <button type="button" class="dash-card" data-page="timetablePanel"><span class="dash-icon">📅</span><span class="dash-arrow">↗</span><strong>My Flexible Teaching Timetable</strong><span>View and manage your weekly schedule.</span></button>
+   <button type="button" class="dash-card" data-page="reportsPanel"><span class="dash-icon">📊</span><span class="dash-arrow">↗</span><strong>My Reports</strong><span>Generate and print reports.</span></button>
+   <button type="button" class="dash-card" data-page="historyPanel"><span class="dash-icon">📚</span><span class="dash-arrow">↗</span><strong>History of Recorded Sessions</strong><span>Search, review, edit and delete entries.</span></button>
+   <button type="button" class="dash-card" data-page="settingsPanel"><span class="dash-icon">⚙️</span><span class="dash-arrow">↗</span><strong>Settings and Details</strong><span>Update school, teacher and academic year.</span></button>
+   <button type="button" class="dash-card" data-page="absencePanel"><span class="dash-icon">🗓️</span><span class="dash-arrow">↗</span><strong>Absences & Holidays</strong><span>Record leave, holidays, closures and affected timetable sessions.</span></button>
+  </nav>
+ </section>
+ <div id="workspace" class="page-view">
+  <div class="page-heading"><h2 id="workspaceTitle">Workspace</h2><button class="light" id="backDashboard">← Back to Dashboard</button></div>
+  <div class="layout"><section>
    <div class="panel" id="editorPanel">
     <div class="panel-head"><div><h2 id="formTitle">Record a teaching session</h2><div class="sub">Capture the lesson, timing, classroom tasks, aims and observations.</div></div><span class="pill">SESSION EDITOR</span></div>
     <form id="sessionForm">
@@ -81,31 +263,75 @@
     <div id="timetableList" class="session-list"></div>
     <p class="small" style="margin-top:12px">Each slot can have an effective date range. When a timetable changes, end the old slot and add the new one. Past lesson records are not changed.</p>
    </div>
-   <div class="panel">
+   <div class="panel page-view" id="historyPanel">
     <div class="panel-head"><div><h2>Session history</h2><div class="sub">Search, review, edit, or delete saved entries.</div></div><span class="pill" id="historyCount">0 ENTRIES</span></div>
     <div class="filter-row" style="margin-bottom:13px"><select id="filterClass"><option value="">All classes</option><option>1 S1</option><option>1 S2</option><option>3 LPh 1</option><option>3 LPh 2</option></select><input id="searchText" placeholder="Search theme, unit, task…" style="flex:1"><input id="filterDate" type="date" aria-label="Filter by date"></div>
     <div id="sessionList" class="session-list"></div>
    </div>
   </section>
   <aside>
-   <div class="panel">
-    <div class="panel-head"><div><h2>Weekly report</h2><div class="sub">Generate a detailed report for any week and class.</div></div><span class="pill">REPORTS</span></div>
-    <div class="report-controls">
-     <div class="field"><label for="weekStart">Week starting (Monday)</label><input type="date" id="weekStart"></div>
-     <div class="field"><label for="reportClass">Class</label><select id="reportClass"><option value="">All classes</option><option>1 S1</option><option>1 S2</option><option>3 LPh 1</option><option>3 LPh 2</option></select></div>
+   <div class="panel page-view" id="reportsPanel">
+<div class="panel-head"><div><h2>Professional Reports</h2><div class="sub">Generate complete, class-organised teaching records for printing and inspection.</div></div><span class="pill">REPORTS</span></div>
+    <div class="report-controls report-v5-controls">
+     <div class="field"><label for="reportType">Report type</label><select id="reportType"><option value="daily">Daily Teaching Report</option><option value="weekly" selected>Weekly Teaching Report</option><option value="monthly">Monthly Teaching Report</option><option value="term">Term Teaching Report</option><option value="custom">Custom Date Range</option><option value="class">Individual Class Report</option><option value="year">Academic Year Report</option></select></div>
+     <div class="field"><label for="reportStart">Start date</label><input type="date" id="reportStart"></div>
+     <div class="field"><label for="reportEnd">End date</label><input type="date" id="reportEnd"></div>
+     <div class="field"><label for="reportClass">Class(es)</label><select id="reportClass"><option value="">All classes</option><option>1 S1</option><option>1 S2</option><option>3 LPh 1</option><option>3 LPh 2</option></select></div>
     </div>
-    <div class="form-actions"><button class="primary" id="generateReportBtn">Generate report</button><button class="dark" id="printReportBtn">Print / Save PDF</button></div>
-    <div class="report-preview" id="reportPreview"><h3>Report preview</h3><p>Choose a week and class, then select Generate report.</p></div>
-    <p class="small" style="margin-top:12px">Tip: In the print dialog, choose <strong>Save as PDF</strong> to create a printable weekly copybook report.</p>
+    <div class="report-options">
+     <label><input type="checkbox" id="inspectionReady" checked> <b>Inspection-Ready Report</b></label>
+     <label><input type="checkbox" id="includeAbsences" checked> Include absences & holidays</label>
+     <label><input type="checkbox" id="includeActivities" checked> Include pedagogical activities</label>
+     <label><input type="checkbox" id="includeObservations" checked> Include observations</label>
+     <label><input type="checkbox" id="includeSignature" checked> Include signature fields</label>
+     <label><input type="checkbox" id="includeSummary" checked> Include overview summary</label>
+    </div>
+    <div class="form-actions"><button class="primary" id="generateReportBtn">Generate Preview</button><button class="dark" id="printReportBtn">Print / Save PDF</button></div>
+    <div class="report-preview" id="reportPreview"><h3>Report preview</h3><p>Choose report type and period, then generate a report.</p></div>
+    <p class="small" style="margin-top:12px">Print using A4 paper and select “Save as PDF” to export a professional inspection-ready report.</p>
    </div>
-   <div class="panel">
+   <div class="panel page-view" id="settingsPanel">
     <div class="panel-head"><div><h2>Journal details</h2><div class="sub">Used on printed reports.</div></div></div>
     <div class="field" style="margin-bottom:12px"><label>School</label><input value="Abane Ramdane Secondary School" id="schoolName"></div>
     <div class="field" style="margin-bottom:12px"><label>Teacher</label><input value="Dr. Hamoudi Benarba" id="teacherName"></div>
     <div class="field"><label>School year</label><input value="2026-2027" id="schoolYear"></div>
     <p class="small">These details are included in reports and saved with the backup file.</p>
+
+   <div class="panel page-view" id="absencePanel">
+    <div class="panel-head"><div><h2>Absences & Holidays</h2><div class="sub">Track leave, holidays and school closures alongside your recurring timetable.</div></div><span class="pill">SCHEDULING</span></div>
+    <div class="absence-summary" id="absenceSummary"></div>
+    <div class="absence-tabs"><button type="button" class="primary" data-absence-tab="absence">＋ Record absence</button><button type="button" class="light" data-absence-tab="holiday">＋ Record holiday / closure</button><button type="button" class="light" data-absence-tab="calendar">Calendar & affected sessions</button></div>
+    <div id="absenceFormWrap">
+     <form id="absenceForm" class="form-grid">
+      <input type="hidden" id="absenceId">
+      <div class="field"><label>Absence category</label><select id="absenceType"><option>Personal Absence</option><option>Sick Leave</option><option>Administrative Leave</option><option>Professional Leave</option><option>Other</option></select></div>
+      <div class="field"><label>Status</label><select id="absenceStatus"><option>Confirmed</option><option>Pending confirmation</option></select></div>
+      <div class="field"><label>Start date *</label><input type="date" id="absenceStart" required></div><div class="field"><label>End date *</label><input type="date" id="absenceEnd" required></div>
+      <div class="field full"><label>Reason / notes (optional)</label><textarea id="absenceNotes"></textarea></div>
+      <div class="field full"><label>Affected classes (optional)</label><select id="absenceClasses" multiple style="min-height:90px"><option>1 S1</option><option>1 S2</option><option>3 LPh 1</option><option>3 LPh 2</option></select><span class="small">Leave all unselected to include every class in the timetable.</span></div>
+      <div class="field full"><button class="primary" type="submit">Save absence</button></div>
+     </form>
+     <form id="holidayForm" class="form-grid hidden">
+      <input type="hidden" id="holidayId">
+      <div class="field"><label>Holiday / closure name *</label><input id="holidayName" required placeholder="e.g. National holiday"></div>
+      <div class="field"><label>Category</label><select id="holidayType"><option>National Holiday</option><option>Religious Holiday</option><option>School Holiday</option><option>Winter Break</option><option>Spring Break</option><option>Summer Break</option><option>School Closure</option><option>Other</option></select></div>
+      <div class="field"><label>Start date *</label><input type="date" id="holidayStart" required></div><div class="field"><label>End date *</label><input type="date" id="holidayEnd" required></div>
+      <div class="field full"><label>Notes (optional)</label><textarea id="holidayNotes"></textarea></div>
+      <div class="field full"><button class="primary" type="submit">Save holiday / closure</button></div>
+     </form>
+    </div>
+    <div id="absenceCalendarWrap" class="hidden">
+     <div class="form-grid"><div class="field"><label>Calendar month</label><input type="month" id="absenceMonth"></div></div>
+     <div id="absenceCalendar" class="absence-calendar"></div>
+     <h3 style="margin-top:18px">Affected timetable sessions</h3><div id="affectedSessions" class="session-list"></div>
+    </div>
+    <div class="section-title">Absence & holiday history</div>
+    <div class="filter-row" style="margin-bottom:12px"><input type="date" id="absenceFilterDate"><select id="absenceFilterType"><option value="">All records</option><option value="absence">Absences</option><option value="holiday">Holidays / closures</option></select><input id="absenceSearch" placeholder="Search notes or names"></div>
+    <div id="absenceHistory" class="session-list"></div>
+   </div>
    </div>
   </aside>
+ </div>
  </div>
 </main>
 <div id="printArea" class="hidden"></div>
@@ -123,8 +349,8 @@ const mins=t=>{if(!t)return 0;let [h,m]=t.split(':').map(Number);return h*60+m};
 function duration(s){let n=mins(s.endTime)-mins(s.startTime);if(n<0)n+=1440;return `${Math.floor(n/60)}h ${String(n%60).padStart(2,'0')}m`}
 function toast(msg){$('toast').textContent=msg;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),2400)}
 const AUTO_BACKUP_KEY=STORE+'_automatic_backups_v1';
-function currentData(){return {app:'Teaching Journal Pro',version:2,sessions,timetable,details:{school:$('schoolName').value,teacher:$('teacherName').value,year:$('schoolYear').value},savedAt:new Date().toISOString()}}
-function restoreData(d){sessions=Array.isArray(d.sessions)?d.sessions:[];timetable=Array.isArray(d.timetable)?d.timetable:[];if(d.details){$('schoolName').value=d.details.school||$('schoolName').value;$('teacherName').value=d.details.teacher||$('teacherName').value;$('schoolYear').value=d.details.year||$('schoolYear').value}}
+function currentData(){return {app:'Teaching Journal Pro',version:5,sessions,timetable,absences:window.__tjAbsences||[],holidays:window.__tjHolidays||[],details:{school:$('schoolName').value,teacher:$('teacherName').value,year:$('schoolYear').value},savedAt:new Date().toISOString()}}
+function restoreData(d){sessions=Array.isArray(d.sessions)?d.sessions:[];timetable=Array.isArray(d.timetable)?d.timetable:[];window.__tjAbsences=Array.isArray(d.absences)?d.absences:[];window.__tjHolidays=Array.isArray(d.holidays)?d.holidays:[];if(d.details){$('schoolName').value=d.details.school||$('schoolName').value;$('teacherName').value=d.details.teacher||$('teacherName').value;$('schoolYear').value=d.details.year||$('schoolYear').value}}
 function load(){let loaded=false;try{const raw=localStorage.getItem(STORE);if(raw){restoreData(JSON.parse(raw));loaded=true}}catch(e){}if(!loaded){try{const backups=JSON.parse(localStorage.getItem(AUTO_BACKUP_KEY)||'[]');if(backups.length){restoreData(backups[0].data);localStorage.setItem(STORE,JSON.stringify(currentData()));console.warn('Recovered journal from automatic local backup.')}}catch(e){sessions=[];timetable=[]}}}
 function persist(){const data=currentData();localStorage.setItem(STORE,JSON.stringify(data));try{let backups=JSON.parse(localStorage.getItem(AUTO_BACKUP_KEY)||'[]');if(!Array.isArray(backups))backups=[];const fingerprint=JSON.stringify({sessions,timetable,details:data.details});if(!backups.length||backups[0].fingerprint!==fingerprint){backups.unshift({savedAt:data.savedAt,fingerprint,data});backups=backups.slice(0,10);localStorage.setItem(AUTO_BACKUP_KEY,JSON.stringify(backups));}}catch(e){console.warn('Automatic backup snapshot could not be written',e)}render();renderTimetable()}
 function addTaskRow(task={phase:'',activity:'',aim:''}){const row=document.createElement('div');row.className='task-row';row.innerHTML=`<input class="task-phase" aria-label="Phase or task" placeholder="e.g. Warm-up" value="${esc(task.phase)}"><textarea aria-label="Activity details" placeholder="What did learners do?">${esc(task.activity)}</textarea><textarea aria-label="Aim of task" placeholder="What was the aim?">${esc(task.aim)}</textarea><button type="button" class="remove-task" title="Remove activity">×</button>`;row.querySelector('button').onclick=()=>{row.remove();if(!$('taskRows').children.length)addTaskRow()};$('taskRows').appendChild(row)}
@@ -143,12 +369,74 @@ $('totalSessions').textContent=sessions.length;const start=weekStart(todayISO())
 function viewSession(id){const s=sessions.find(x=>x.id===id);if(!s)return;const text=`${s.className} — ${fmtDate(s.date)}\n${s.startTime}–${s.endTime}\nTheme: ${s.theme||'—'}\nUnit: ${s.unit||'—'}\nSequence: ${s.sequence||'—'}\nRubric: ${s.rubric||'—'}\n\n${(s.tasks||[]).map((t,i)=>`${i+1}. ${t.phase||'Activity'}\n   Task: ${t.activity||'—'}\n   Aim: ${t.aim||'—'}`).join('\n\n')}\n\nObservations: ${s.observations||'—'}`;alert(text)}
 function addDays(date,n){const d=new Date(date+'T12:00:00');d.setDate(d.getDate()+n);return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`}
 function weekStart(date){const d=new Date(date+'T12:00:00');const day=(d.getDay()+6)%7;d.setDate(d.getDate()-day);return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`}
-function reportSessions(){const ws=$('weekStart').value||weekStart(todayISO()),we=addDays(ws,6),cl=$('reportClass').value;return {ws,we,cl,arr:sessions.filter(s=>s.date>=ws&&s.date<=we&&(!cl||s.className===cl)).sort((a,b)=>(a.date+a.startTime).localeCompare(b.date+b.startTime))}}
-function generateReport(){const {ws,we,cl,arr}=reportSessions();$('reportPreview').innerHTML=`<h3>${esc(cl||'All classes')} · Weekly report</h3><p>${fmtDate(ws)} – ${fmtDate(we)}</p><p><strong>${arr.length}</strong> session${arr.length===1?'':'s'} recorded</p>${arr.length?`<div class="report-list">${arr.map(s=>`<div class="report-item"><strong>${fmtDate(s.date)} · ${esc(s.className)} · ${esc(s.startTime)}–${esc(s.endTime)}</strong><div>${s.theme?'Theme: '+esc(s.theme)+' · ':''}${s.unit?'Unit: '+esc(s.unit)+' · ':''}${s.sequence?'Sequence: '+esc(s.sequence)+' · ':''}${s.rubric?'Rubric: '+esc(s.rubric):''}</div><div>${(s.tasks||[]).map(t=>`<b>${esc(t.phase||'Activity')}:</b> ${esc(t.activity||'')} <i>(Aim: ${esc(t.aim||'—')})</i>`).join('<br>')||'No activities entered'}</div>${s.observations?`<div><b>Observations:</b> ${esc(s.observations)}</div>`:''}</div>`).join('')}</div>`:'<div class="empty">No sessions found for this week and selection.</div>'}`}
-function buildPrintHTML(arr,title,range=''){const school=esc($('schoolName').value),teacher=esc($('teacherName').value),year=esc($('schoolYear').value);return `<div class="print-report"><h1>${school}</h1><div class="schoolline">Teacher: ${teacher} · School year: ${year}</div><h2>${esc(title)}</h2>${range?`<p><b>Period:</b> ${esc(range)}</p>`:''}<p><b>Sessions:</b> ${arr.length}</p>${arr.map((s,i)=>`<div class="report-session"><h2>${i+1}. ${fmtDate(s.date)} · ${esc(s.className)} <span style="font-weight:normal">(${esc(s.startTime)}–${esc(s.endTime)} · ${duration(s)})</span></h2><table><tr><th style="width:18%">Theme</th><td>${esc(s.theme||'—')}</td><th style="width:15%">Unit</th><td>${esc(s.unit||'—')}</td></tr><tr><th>Sequence</th><td>${esc(s.sequence||'—')}</td><th>Rubric</th><td>${esc(s.rubric||'—')}</td></tr></table><h3 style="font-size:13px;margin:10px 0 5px">Pedagogical activities</h3><table><thead><tr><th style="width:20%">Phase / task</th><th>Activity / task details</th><th style="width:30%">Aim of the task</th></tr></thead><tbody>${(s.tasks||[]).length?(s.tasks||[]).map(t=>`<tr><td>${esc(t.phase||'—')}</td><td>${esc(t.activity||'—')}</td><td>${esc(t.aim||'—')}</td></tr>`).join(''):'<tr><td colspan="3">No activities recorded.</td></tr>'}</tbody></table><p><b>Observations:</b> ${esc(s.observations||'—')}</p></div>`).join('')}<div class="signoff"><span>Teacher’s signature: ____________________</span><span>Administration: ____________________</span></div></div>`}
-function printSessions(arr,title,range=''){if(!arr?.length){toast('There are no sessions to print');return}$('printArea').innerHTML=buildPrintHTML(arr,title,range);$('printArea').classList.remove('hidden');window.print();setTimeout(()=>$('printArea').classList.add('hidden'),500)}
+
+function reportRange(){
+ const typ=$('reportType')?.value||'weekly';let start=$('reportStart')?.value||weekStart(todayISO()),end=$('reportEnd')?.value||start;
+ if(typ==='daily')end=start;
+ if(typ==='weekly'){start=$('reportStart').value||weekStart(todayISO());end=addDays(start,6)}
+ if(typ==='monthly'){const d=new Date((start||todayISO())+'T12:00:00');start=`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-01`;end=`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${new Date(d.getFullYear(),d.getMonth()+1,0).getDate()}`}
+ if(typ==='term'||typ==='custom'){start=$('reportStart').value||start;end=$('reportEnd').value||end}
+ if(typ==='year'){start=($('schoolYear').value||'2026-2027').split('-')[0]+'-09-01';end=($('schoolYear').value||'2026-2027').split('-')[1]+'-08-31'}
+ return {typ,start,end,cl:$('reportClass').value}
+}
+function reportData(){
+ const {typ,start,end,cl}=reportRange();const all=sessions.filter(s=>s.date>=start&&s.date<=end&&(!cl||s.className===cl)).sort((a,b)=>(a.date+(a.startTime||'')).localeCompare(b.date+(b.startTime||'')));
+ const groups={};all.forEach(s=>(groups[s.className]??=[]).push(s));
+ const days=new Set(all.map(s=>s.date)).size;
+ return {typ,start,end,cl,arr:all,groups,days}
+}
+function reportTitle(t){return ({daily:'Daily Teaching Report',weekly:'Weekly Teaching Report',monthly:'Monthly Teaching Report',term:'Term Teaching Report',custom:'Custom Date Range Report',class:'Individual Class Teaching Report',year:'Academic Year Teaching Report'})[t]||'Teaching Report'}
+function reportSessionHTML(s,idx){
+ const details=`<div class="rmeta"><b>Date:</b> ${esc(fmtDate(s.date))} &nbsp; <b>Time:</b> ${esc(s.startTime||'—')}–${esc(s.endTime||'—')} &nbsp; <b>Type:</b> ${esc(s.sessionType||'Regular lesson')}</div>`;
+ return `<article class="r-session"><h4>Session ${idx+1} · ${esc(s.theme||s.lessonTitle||'Teaching session')}</h4>${details}
+ <table class="r-fields"><tbody><tr><th>Theme</th><td>${esc(s.theme||'—')}</td><th>Unit</th><td>${esc(s.unit||'—')}</td></tr><tr><th>Sequence</th><td>${esc(s.sequence||'—')}</td><th>Rubric</th><td>${esc(s.rubric||'—')}</td></tr>${s.lessonTitle?`<tr><th>Lesson title</th><td colspan="3">${esc(s.lessonTitle)}</td></tr>`:''}</tbody></table>
+ ${$('includeActivities').checked?`<h5>Teaching phases & pedagogical activities</h5><table class="r-activities"><thead><tr><th>Phase / Task</th><th>Activity / Task details</th><th>Aim</th></tr></thead><tbody>${(s.tasks||[]).length?s.tasks.map(t=>`<tr><td>${esc(t.phase||'—')}</td><td>${esc(t.activity||'—')}</td><td>${esc(t.aim||'—')}</td></tr>`).join(''):'<tr><td colspan="3">No activities recorded.</td></tr>'}</tbody></table>`:''}
+ ${s.resources||s.materials?`<p><b>Resources:</b> ${esc(s.resources||s.materials)}</p>`:''}
+ ${$('includeObservations').checked?`<p class="r-observations"><b>Observations / follow-up:</b> ${esc(s.observations||'—')}</p>`:''}
+ </article>`
+}
+function reportNonTeaching(start,end){
+ const between=(x,y)=>x<=end&&y>=start;
+ const abs=(absences||[]).filter(a=>between(a.start||a.startDate,a.end||a.endDate)).map(a=>({...a,_kind:'Absence'}));
+ const hol=(holidays||[]).filter(a=>between(a.start||a.startDate,a.end||a.endDate)).map(a=>({...a,_kind:'Holiday'}));
+ const affectedSlots=[];
+ const daysBetween=(a,b)=>{const out=[];for(let d=a;d&&d<=b;d=addDays(d,1))out.push(d);return out};
+ const relevant=[...abs.map(a=>({...a,_kind:'Absence'})),...hol.map(h=>({...h,_kind:'Holiday'}))];
+ const seen=new Set();
+ relevant.forEach(rec=>daysBetween(rec.start||rec.startDate,rec.end||rec.endDate).forEach(date=>{
+  if(date<start||date>end)return;
+  (timetable||[]).filter(slot=>slotIsActive(slot,date)&&(!rec.classes?.length||rec.classes.includes(slot.className))).forEach(slot=>{
+   const key=date+'_'+slot.id;if(seen.has(key))return;seen.add(key);
+   affectedSlots.push({...slot,date,impact:rec._kind,absenceId:rec._kind==='Absence'?rec.id:undefined,holidayId:rec._kind==='Holiday'?rec.id:undefined,recordId:rec.id,recordKind:rec._kind});
+  });
+ }));
+ return {abs,hol,affectedSlots}
+}
+function generateReport(){
+ const d=reportData();const title=reportTitle(d.typ),range=`${fmtDate(d.start)} — ${fmtDate(d.end)}`;
+ if(d.start>d.end){toast('The report start date must be before its end date.');return}
+ const non=reportNonTeaching(d.start,d.end);const cancelled=[...(absences||[]),...(holidays||[])].reduce((n,r)=>n+Object.values(r.scheduling||{}).filter(x=>x.status==='Cancelled').length,0);
+ const summary=$('includeSummary').checked?`<section class="r-summary"><h3>Executive Overview</h3><div class="r-stat-grid"><div><b>${d.arr.length}</b><span>Completed teaching sessions</span></div><div><b>${Object.keys(d.groups).length}</b><span>Classes covered</span></div><div><b>${d.days}</b><span>Teaching days</span></div><div><b>${cancelled}</b><span>Cancelled (logged)</span></div><div><b>${non.abs.length}</b><span>Absence records</span></div><div><b>${non.hol.length}</b><span>Holiday / closure records</span></div></div></section>`:'';
+ let content=Object.keys(d.groups).sort((a,b)=>a.localeCompare(b)).map(cls=>`<section class="r-class"><h3>Class: ${esc(cls)}</h3>${d.groups[cls].map((s,i)=>reportSessionHTML(s,i)).join('')}</section>`).join('');
+ if(!content)content='<p>No teaching sessions recorded for this selection.</p>';
+ let attendance='';
+ if($('includeAbsences').checked){
+ const recordRows=(list,type)=>list.map(a=>`<tr><td>${esc(a.name||a.type||a.category||type)}</td><td>${esc(fmtDate(a.start||a.startDate||''))} – ${esc(fmtDate(a.end||a.endDate||''))}</td><td>${esc((a.classes||a.affectedClasses||[]).join(', ')||'All classes')}</td><td>${esc(a.notes||a.reason||'—')}</td></tr>`).join('');
+ attendance=`<section class="r-nonteaching"><h3>Absences, Holidays & Scheduling</h3>${non.abs.length?`<h4>Absences</h4><table class="r-table"><thead><tr><th>Type</th><th>Dates</th><th>Classes</th><th>Notes</th></tr></thead><tbody>${recordRows(non.abs,'Absence')}</tbody></table>`:'<p>No absence records in this period.</p>'}${non.hol.length?`<h4>Holidays & Closures</h4><table class="r-table"><thead><tr><th>Holiday / closure</th><th>Dates</th><th>Classes</th><th>Notes</th></tr></thead><tbody>${recordRows(non.hol,'Holiday')}</tbody></table>`:'<p>No holiday or closure records in this period.</p>'}${non.affectedSlots?.length?`<h4>Affected Scheduled Sessions</h4><table class="r-table"><thead><tr><th>Date</th><th>Class</th><th>Time</th><th>Subject</th><th>Impact</th><th>Status / Reschedule</th></tr></thead><tbody>${non.affectedSlots.map(s=>{const record=(absences||[]).find(a=>a.id===s.absenceId)|| (holidays||[]).find(a=>a.id===s.holidayId);const st=record?.scheduling?.[s.date+'_'+s.id]||{};return `<tr><td>${esc(fmtDate(s.date))}</td><td>${esc(s.className||'—')}</td><td>${esc(s.startTime||'—')}–${esc(s.endTime||'—')}</td><td>${esc(s.subject||'—')}</td><td>${esc(s.impact||'—')}</td><td>${esc(st.status||'Pending confirmation')}${st.newDate?' · New date: '+esc(fmtDate(st.newDate)):''}${st.newTime?' · '+esc(st.newTime):''}</td></tr>`}).join('')}</tbody></table>`:''}</section>`
+ }
+ const finalSummary=`<section class="r-summary"><h3>Final Summary</h3><p>During the selected period, <b>${d.arr.length}</b> teaching session(s) were recorded across <b>${Object.keys(d.groups).length}</b> class(es) on <b>${d.days}</b> teaching day(s). Absences and holidays are listed separately and are not counted as completed teaching sessions.</p></section>`;
+ $('reportPreview').innerHTML=`<div class="report-paper"><div class="r-header"><div class="r-school">${esc($('schoolName').value)}</div><div>Teacher: ${esc($('teacherName').value)} &nbsp; | &nbsp; Academic Year: ${esc($('schoolYear').value)}</div><h2>${title}</h2><div class="r-period">Reporting period: ${range}</div><div class="r-generated">Generated: ${fmtDate(todayISO())}</div></div>${summary}<section class="r-detail"><h3>Detailed Teaching Records</h3>${content}</section>${attendance}${finalSummary}${$('includeSignature').checked?`<div class="r-signatures"><div>Teacher’s Signature: __________________________</div><div>Date: __________________</div><div class="r-remarks">Head of Department / Inspector’s Remarks: __________________________________________________</div></div>`:''}</div>`;
+ window.__reportV5={...d,title,range,non};
+}
+function printReportV5(){
+ if(!window.__reportV5)generateReport();const preview=$('reportPreview').querySelector('.report-paper');if(!preview){toast('Generate a report preview first.');return}
+ const printArea=$('printArea');printArea.innerHTML=preview.outerHTML;printArea.classList.remove('hidden');window.print();setTimeout(()=>printArea.classList.add('hidden'),700)
+}
 $('generateReportBtn').onclick=generateReport;
-$('printReportBtn').onclick=()=>{const {ws,we,cl,arr}=reportSessions();if(!arr.length){toast('No sessions to include in this report');return}printSessions(arr,`Weekly Teaching Journal — ${cl||'All Classes'}`,`${fmtDate(ws)} – ${fmtDate(we)}`)};
+$('printReportBtn').onclick=printReportV5;
+$('reportType').addEventListener('change',()=>{const typ=$('reportType').value;const today=todayISO();if(typ==='weekly')$('reportStart').value=weekStart(today);else if(typ==='daily')$('reportStart').value=today;else if(typ==='monthly')$('reportStart').value=today.slice(0,7)+'-01';else if(typ==='year')$('reportStart').value=($('schoolYear').value||'2026-2027').split('-')[0]+'-09-01';$('reportEnd').value=typ==='weekly'?addDays($('reportStart').value,6):typ==='daily'?'':today});
+$('inspectionReady').addEventListener('change',e=>{if(e.target.checked){['includeAbsences','includeActivities','includeObservations','includeSignature','includeSummary'].forEach(id=>$(id).checked=true)}});
+$('reportStart').value=weekStart(todayISO());$('reportEnd').value=addDays($('reportStart').value,6);
 ['filterClass','searchText','filterDate'].forEach(id=>$(id).addEventListener('input',render));
 
 const DAYS=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
@@ -166,7 +454,7 @@ $('saveSlotBtn').addEventListener('click',saveSlot);$('cancelSlotEditBtn').addEv
 $('exportJsonBtn').onclick=()=>{const blob=new Blob([JSON.stringify(currentData(),null,2)],{type:'application/json'});download(blob,`teaching-journal-backup-${todayISO()}.json`);toast('Backup downloaded')};
 function download(blob,name){const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
 $('importBtn').onclick=()=>$('importFile').click();
-$('importFile').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{const d=JSON.parse(await f.text());if(!Array.isArray(d.sessions))throw Error('This file does not contain journal sessions.');if(!confirm(`Restore ${d.sessions.length} session(s) and ${Array.isArray(d.timetable)?d.timetable.length:0} timetable slot(s)? This replaces the current journal data.`))return;sessions=d.sessions;timetable=Array.isArray(d.timetable)?d.timetable:[];if(d.details){$('schoolName').value=d.details.school||$('schoolName').value;$('teacherName').value=d.details.teacher||$('teacherName').value;$('schoolYear').value=d.details.year||$('schoolYear').value}persist();toast('Backup restored')}catch(err){alert('Could not restore backup: '+err.message)}e.target.value=''};
+$('importFile').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{const d=JSON.parse(await f.text());if(!Array.isArray(d.sessions))throw Error('This file does not contain journal sessions.');if(!confirm(`Restore ${d.sessions.length} session(s) and ${Array.isArray(d.timetable)?d.timetable.length:0} timetable slot(s)? This replaces the current journal data.`))return;sessions=d.sessions;timetable=Array.isArray(d.timetable)?d.timetable:[];if(window.setV5Data)window.setV5Data(d);if(d.details){$('schoolName').value=d.details.school||$('schoolName').value;$('teacherName').value=d.details.teacher||$('teacherName').value;$('schoolYear').value=d.details.year||$('schoolYear').value}persist();toast('Backup restored')}catch(err){alert('Could not restore backup: '+err.message)}e.target.value=''};
 $('exportCsvBtn').onclick=()=>{const rows=[['Date','Class','Start time','End time','Duration','Theme','Unit','Sequence','Rubric','Activities','Observations']];[...sessions].sort((a,b)=>(a.date+a.startTime).localeCompare(b.date+b.startTime)).forEach(s=>rows.push([s.date,s.className,s.startTime,s.endTime,duration(s),s.theme,s.unit,s.sequence,s.rubric,(s.tasks||[]).map(t=>`${t.phase}: ${t.activity} (Aim: ${t.aim})`).join(' | '),s.observations]));const csv=rows.map(r=>r.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(',')).join('\r\n');download(new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8;'}),`teaching-journal-${todayISO()}.csv`);toast('CSV exported')};
 ['schoolName','teacherName','schoolYear'].forEach(id=>$(id).addEventListener('change',()=>persist()));
 window.addEventListener('afterprint',()=>$('printArea').classList.add('hidden'));
@@ -185,12 +473,18 @@ $('date').value=todayISO();$('weekStart').value=weekStart(todayISO());$('schedul
  function grid(){
   const root=$('weeklyGrid'); if(!root)return;
   let out='<div class="grid-cell grid-head">Time</div>'+days.map(d=>`<div class="grid-cell grid-head">${d}</div>`).join('');
-  periods.forEach(p=>{let [st,en]=p.split('|');out+=`<div class="grid-cell grid-time">${st}<br>${en}</div>`;
-   days.forEach(day=>{let slots=(timetable||[]).filter(s=>s.day===day&&s.startTime<en&&s.endTime>st);
+  periods.forEach(p=>{
+   let [st,en]=p.split('|');
+   out+=`<div class="grid-cell grid-time">${st}<br>${en}</div>`;
+   days.forEach(day=>{
+    let slots=(timetable||[]).filter(s=>s.day===day&&s.startTime<en&&s.endTime>st);
     out+=`<div class="grid-cell">${slots.map(s=>`<div class="grid-slot" style="background:${classColors[s.className]||'#eaf8f6'}" title="Click to edit" onclick="editSlot('${s.id}')">${s.className}<br>${s.startTime}–${s.endTime}${s.room?' · '+s.room:''}</div>`).join('')}</div>`;
    });
+   // Insert the lunch row immediately after the 11:00–12:00 morning period.
+   if(st==='11:00'&&en==='12:00'){
+    out+='<div class="grid-cell grid-time">12:00–13:00</div>'+days.map(()=>'<div class="grid-cell lunch-break-cell">Lunch break</div>').join('');
+   }
   });
-  out+='<div class="grid-cell grid-time">12:00–13:00</div>'+days.map(()=>'<div class="grid-cell" style="background:#f7f8fa;color:#8996a5;text-align:center">Lunch break</div>').join('');
   root.innerHTML=out;
  }
  const originalRenderTT=window.renderTimetable;
@@ -200,7 +494,7 @@ $('date').value=todayISO();$('weekStart').value=weekStart(todayISO());$('schedul
  $('sessionType')?.addEventListener('change',toggleRegular);
  // Wrap session submit to save extra metadata after legacy save handler
  const form=$('sessionForm');
- if(form)form.addEventListener('submit',()=>{setTimeout(()=>{let id=$('sessionId').value;let latest=(sessions||[]).find(s=>s.id===id)|| (sessions||[]).slice(-1)[0];if(latest){latest.sessionType=$('sessionType').value;latest.room=$('room').value;try{localStorage.setItem('teachingJournalPro_v1',JSON.stringify({app:'Teaching Journal Pro',version:4,sessions:sessions,timetable:timetable,details:{school:$('schoolName').value,teacher:$('teacherName').value,year:$('schoolYear').value}}))}catch(e){}}},50)});
+ if(form)form.addEventListener('submit',()=>{setTimeout(()=>{let id=$('sessionId').value;let latest=(sessions||[]).find(s=>s.id===id)|| (sessions||[]).slice(-1)[0];if(latest){latest.sessionType=$('sessionType').value;latest.room=$('room').value;try{localStorage.setItem('teachingJournalPro_v1',JSON.stringify({app:'Teaching Journal Pro',version:5,sessions:sessions,timetable:timetable,details:{school:$('schoolName').value,teacher:$('teacherName').value,year:$('schoolYear').value}}))}catch(e){}}},50)});
  // Duplicate an existing record as a new draft; class/date/time can be adjusted.
  const oldRender=window.render;
  if(typeof oldRender==='function')window.render=function(){oldRender();document.querySelectorAll('#sessionList .session-card').forEach(card=>{let buttons=card.querySelector('.card-actions');if(!buttons||buttons.querySelector('.duplicate-btn'))return;let edit=buttons.querySelector('button[onclick^="editSession"]');if(!edit)return;let id=(edit.getAttribute('onclick').match(/'([^']+)'/)||[])[1];let b=document.createElement('button');b.className='light duplicate-btn';b.textContent='Duplicate';b.onclick=()=>duplicate(id);buttons.insertBefore(b,edit)});};
@@ -222,5 +516,116 @@ $('date').value=todayISO();$('weekStart').value=weekStart(todayISO());$('schedul
  setTimeout(grid,250);
 })();
 </script>
+
+<script>
+/* Refined modular dashboard: keeps original data/storage and all legacy workflows. */
+(function(){
+ const $=id=>document.getElementById(id);
+ const pages=[
+  ['editorPanel','Record a Teaching Session'],
+  ['timetablePanel','My Flexible Teaching Timetable'],
+  ['reportsPanel','My Reports'],
+  ['historyPanel','History of Recorded Sessions'],
+  ['settingsPanel','Settings and Details']
+ ];
+ const home=$('dashboardHome'),workspace=$('workspace'),title=$('workspaceTitle');
+ if(!home||!workspace)return;
+ // Add clear, friendly dashboard welcome/CTA and recent activity preview.\n// Automatic localized date in the dashboard heading.
+ const dateEl=$('dashboardDate');
+ function updateDashboardDate(){if(dateEl){dateEl.textContent=new Intl.DateTimeFormat(undefined,{weekday:'long',day:'numeric',month:'long',year:'numeric'}).format(new Date());}}
+ updateDashboardDate();
+
+ const welcome=document.createElement('div');welcome.className='dashboard-welcome';
+ welcome.innerHTML='<div><h2>Welcome to your Teaching Journal</h2><p>Your teaching overview, organized into five focused workspaces.</p></div><button class="primary" id="quickNewSession">＋ Record a Teaching Session</button>';
+ home.insertBefore(welcome,home.querySelector('.dashboard-menu'));
+ const lower=document.createElement('div');lower.className='dashboard-lower';
+ const insight=document.createElement('section');insight.className='dashboard-insights';insight.innerHTML='<h3>💡 Teaching Insights</h3><div id="insightLines"></div><button class="absence-shortcut" type="button" id="absenceShortcut">🗓️ Absences & Holidays →</button>';
+ const recent=document.createElement('section');recent.className='recent-dashboard';recent.innerHTML='<div class="recent-head"><h3>◷ Recent Teaching Activity</h3><button type="button" class="light view-all-sessions">View All Sessions →</button></div><div id="dashboardRecent"></div>';
+ lower.append(insight,recent);home.appendChild(lower);
+ recent.querySelector('.view-all-sessions').onclick=()=>openPage('historyPanel');
+ insight.querySelector('#absenceShortcut').onclick=()=>openPage('absencePanel');
+ // Compact nav for moving between workspaces without returning home.
+ const nav=document.createElement('nav');nav.className='workspace-nav';nav.setAttribute('aria-label','Workspace navigation');
+ nav.innerHTML=pages.map(([id,label],i)=>`<button type="button" data-workspace="${id}">${['✎','▦','▤','◷','⚙'][i]} ${label}</button>`).join('')+'<button type="button" data-home="1">⌂ Dashboard</button>';
+ const heading=workspace.querySelector('.page-heading');heading.insertAdjacentElement('afterend',nav);
+ function openPage(id){
+   home.style.display='none';workspace.classList.add('active');workspace.style.display='block';
+   document.querySelectorAll('#workspace .layout .panel').forEach(p=>p.classList.toggle('workspace-active',p.id===id));
+   title.textContent=(pages.find(p=>p[0]===id)||['','Workspace'])[1];
+   nav.querySelectorAll('button[data-workspace]').forEach(b=>b.classList.toggle('active',b.dataset.workspace===id));
+   if(id==='editorPanel')$('editorPanel').scrollIntoView({behavior:'smooth',block:'start'});
+   else workspace.scrollIntoView({behavior:'smooth',block:'start'});
+ }
+ function goHome(){workspace.classList.remove('active');workspace.style.display='none';home.style.display='block';nav.querySelectorAll('button').forEach(b=>b.classList.remove('active'));window.scrollTo({top:0,behavior:'smooth'});refreshRecent()}
+ document.querySelectorAll('[data-stat-page]').forEach(b=>b.addEventListener('click',()=>openPage(b.dataset.statPage)));
+ document.querySelectorAll('.dash-card[data-page]').forEach(b=>b.addEventListener('click',()=>openPage(b.dataset.page)));
+ nav.querySelectorAll('button[data-workspace]').forEach(b=>b.addEventListener('click',()=>openPage(b.dataset.workspace)));
+ nav.querySelector('[data-home]').addEventListener('click',goHome);
+ $('backDashboard').addEventListener('click',goHome);
+ $('quickNewSession').addEventListener('click',()=>{if(typeof resetForm==='function')resetForm();openPage('editorPanel')});
+ function refreshRecent(){
+   const root=$('dashboardRecent'),ins=$('insightLines');if(!root)return;
+   const list=[...(sessions||[])].sort((a,b)=>(b.date+(b.startTime||'')).localeCompare(a.date+(a.startTime||''))).slice(0,3);
+   root.innerHTML=list.length?`<table class="activity-table"><thead><tr><th>#</th><th>Date</th><th>Class</th><th>Theme</th><th>Unit</th><th>Actions</th></tr></thead><tbody>${list.map((s,i)=>`<tr><td>${i+1}</td><td>${s.date||'—'}</td><td><b>${s.className||'—'}</b></td><td>${s.theme||s.sessionType||'—'}</td><td>${s.unit||'—'}</td><td><div class="activity-actions"><button type="button" class="light" onclick="openJournalWorkspace('historyPanel')">View</button><button type="button" class="light" onclick="openJournalWorkspace('historyPanel')">Edit</button></div></td></tr>`).join('')}</tbody></table>`:'<div class="empty">No sessions recorded yet. Your latest activity will appear here.</div>';
+   if(ins){const total=(sessions||[]).length;const recentCount=list.length;const classes=new Set((sessions||[]).map(s=>s.className).filter(Boolean)).size;
+   ins.innerHTML=[`You have recorded ${total} teaching session${total===1?'':'s'} in this journal.`,`Your recent activity includes ${recentCount} latest session${recentCount===1?'':'s'}.`,`Recorded classes: ${classes}.`].map(t=>`<div class="insight-line"><span class="insight-check">✓</span>${t}</div>`).join('');}
+ }
+ window.openJournalWorkspace=openPage;
+ // Stats stay on top; update home activity after data changes.
+ const oldRender=window.render;
+ if(typeof oldRender==='function')window.render=function(){oldRender();refreshRecent()};
+ refreshRecent();
+ // Keep dashboard as the initial screen, regardless of previously rendered panels.
+ goHome();
+})();
+</script>
+
+<script>
+/* V5: absence/holiday records are additive to V4 data; legacy sessions and timetable remain untouched. */
+(function(){
+ const $=id=>document.getElementById(id);
+ if(!$('absencePanel'))return;
+ let absences=[],holidays=[];
+ try{const saved=JSON.parse(localStorage.getItem('teachingJournalPro_v1')||'{}');absences=Array.isArray(saved.absences)?saved.absences:[];holidays=Array.isArray(saved.holidays)?saved.holidays:[]}catch(e){} window.setV5Data=function(d){absences=Array.isArray(d.absences)?d.absences:[];holidays=Array.isArray(d.holidays)?d.holidays:[];};
+ const oldCurrentData=window.currentData,oldPersist=window.persist,oldRestore=window.restoreData;
+ window.currentData=function(){const d=oldCurrentData();d.version=5;d.absences=absences;d.holidays=holidays;return d};
+ window.persist=function(){oldPersist();try{localStorage.setItem('teachingJournalPro_v1',JSON.stringify(window.currentData()))}catch(e){console.error(e)}};
+ window.restoreData=function(d){oldRestore(d);absences=Array.isArray(d.absences)?d.absences:[];holidays=Array.isArray(d.holidays)?d.holidays:[]};
+ // Add Absences/Holidays to compact workspace navigation.
+ const nav=document.querySelector('.workspace-nav');
+ if(nav&&!nav.querySelector('[data-workspace="absencePanel"]')){
+  const b=document.createElement('button');b.type='button';b.dataset.workspace='absencePanel';b.textContent='🗓 Absences & Holidays';nav.insertBefore(b,nav.querySelector('[data-home]'));
+  b.addEventListener('click',()=>{window.openJournalWorkspace('absencePanel');document.querySelectorAll('.workspace-nav button[data-workspace]').forEach(x=>x.classList.toggle('active',x===b));$('workspaceTitle').textContent='Absences & Holidays'});
+ }
+ const panel=$('absencePanel');
+ panel.querySelectorAll('[data-absence-tab]').forEach(btn=>btn.addEventListener('click',()=>{
+  const tab=btn.dataset.absenceTab;$('absenceFormWrap').classList.toggle('hidden',tab==='calendar');$('absenceCalendarWrap').classList.toggle('hidden',tab!=='calendar');
+  $('absenceForm').classList.toggle('hidden',tab!=='absence');$('holidayForm').classList.toggle('hidden',tab!=='holiday');
+  panel.querySelectorAll('[data-absence-tab]').forEach(b=>b.className=b===btn?'primary':'light');if(tab==='calendar')renderCalendar();
+ }));
+ function id(){return 'rec_'+Date.now()+'_'+Math.random().toString(36).slice(2,7)}
+ function daysBetween(a,b){let out=[];for(let d=a;d&&d<=b;d=addDays(d,1))out.push(d);return out}
+ function recordConflict(date,cls){return absences.some(a=>date>=a.start&&date<=a.end&&(a.classes?.length===0||!a.classes||a.classes.includes(cls)))||holidays.some(h=>date>=h.start&&date<=h.end)}
+ function scheduledForDate(date){const day=dayName(date);return (timetable||[]).filter(s=>slotIsActive(s,date)).map(s=>({...s,date,impact:holidays.find(h=>date>=h.start&&date<=h.end)?'Holiday / closure':(absences.find(a=>date>=a.start&&date<=a.end&&(!a.classes?.length||a.classes.includes(s.className)))?'Absence':'Not affected'),absenceId:absences.find(a=>date>=a.start&&date<=a.end&&(!a.classes?.length||a.classes.includes(s.className)))?.id,holidayId:holidays.find(h=>date>=h.start&&date<=h.end)?.id}));}
+ function affected(){const dates=[...absences.flatMap(a=>daysBetween(a.start,a.end)),...holidays.flatMap(h=>daysBetween(h.start,h.end))];return [...new Set(dates)].flatMap(d=>scheduledForDate(d).filter(s=>s.impact!=='Not affected'))}
+ function inclusiveDays(records){const set=new Set();records.forEach(r=>daysBetween(r.start,r.end).forEach(d=>set.add(d)));return set.size}
+ function renderSummary(){const impacted=affected();$('absenceSummary').innerHTML=`<div class="absence-stat"><strong>${inclusiveDays(absences)}</strong><span>Absence days</span></div><div class="absence-stat"><strong>${inclusiveDays(holidays)}</strong><span>Holiday / closure days</span></div><div class="absence-stat"><strong>${impacted.length}</strong><span>Affected timetable slots</span></div><div class="absence-stat"><strong>${new Set(impacted.map(s=>s.className)).size}</strong><span>Classes affected</span></div>`}
+ function renderHistory(){const dt=$('absenceFilterDate').value,typ=$('absenceFilterType').value,q=$('absenceSearch').value.toLowerCase();let list=[...absences.map(x=>({...x,kind:'absence'})),...holidays.map(x=>({...x,kind:'holiday'}))].filter(r=>(!typ||typ===r.kind)&&(!dt||(dt>=r.start&&dt<=r.end))&&(!q||JSON.stringify(r).toLowerCase().includes(q))).sort((a,b)=>b.start.localeCompare(a.start));$('absenceHistory').innerHTML=list.length?list.map(r=>`<article class="session-card"><div class="session-card-top"><span class="pill">${r.kind==='absence'?'Absence':'Holiday / closure'} · ${esc(r.type||r.category||'')}</span><span class="small">${fmtDate(r.start)}${r.end!==r.start?' – '+fmtDate(r.end):''}</span></div><h3>${esc(r.kind==='absence'?r.type:r.name)}</h3><div class="meta">${r.notes?esc(r.notes)+'<br>':''}${r.kind==='absence'?'Status: '+esc(r.status||'Confirmed')+' · Classes: '+esc(r.classes?.length?r.classes.join(', '):'All timetable classes'):''}</div><div class="card-actions"><button class="light" onclick="v5Edit('${r.kind}','${r.id}')">Edit</button><button class="danger" onclick="v5Delete('${r.kind}','${r.id}')">Delete</button></div></article>`).join(''):'<div class="empty">No absence or holiday records match your filters.</div>'}
+ function renderCalendar(){const month=$('absenceMonth').value||todayISO().slice(0,7);$('absenceMonth').value=month;const [y,m]=month.split('-').map(Number),first=new Date(y,m-1,1),last=new Date(y,m,0).getDate();let out='<div class="absence-calendar-grid">'+['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].map(d=>`<div class="calendar-head">${d}</div>`).join('');for(let i=0;i<first.getDay();i++)out+='<div class="calendar-day muted"></div>';for(let day=1;day<=last;day++){const d=`${y}-${String(m).padStart(2,'0')}-${String(day).padStart(2,'0')}`,a=absences.filter(x=>d>=x.start&&d<=x.end),h=holidays.filter(x=>d>=x.start&&d<=x.end),ss=scheduledForDate(d).filter(s=>s.impact!=='Not affected');out+=`<div class="calendar-day"><strong>${day}</strong>${a.length?'<span class="calendar-tag absence-tag">Absence</span>':''}${h.length?'<span class="calendar-tag holiday-tag">Holiday</span>':''}${ss.length?`<span class="calendar-tag affected-tag">${ss.length} affected slot(s)</span>`:''}</div>`}out+='</div>';$('absenceCalendar').innerHTML=out;
+ const items=affected().filter(s=>s.date.startsWith(month));$('affectedSessions').innerHTML=items.length?items.map(s=>`<article class="session-card"><div class="session-card-top"><span class="pill">${esc(s.className)} · ${fmtDate(s.date)}</span><span class="small">${esc(s.startTime)}–${esc(s.endTime)}</span></div><h3>${esc(s.subject||'Scheduled session')} · ${esc(s.impact)}</h3><div class="card-actions"><select id="status_${s.date}_${s.id}" aria-label="Scheduling status"><option>Pending confirmation</option><option>Cancelled</option><option>Rescheduled</option><option>Not affected</option></select><input type="date" id="resched_${s.date}_${s.id}" aria-label="Rescheduled date"><button class="light" onclick="v5SaveStatus('${s.date}','${s.id}')">Save status</button></div></article>`).join(''):'<div class="empty">No timetable slots are affected during this month.</div>'}
+ window.v5SaveStatus=function(date,slotId){const s=timetable.find(x=>x.id===slotId);if(!s)return;const status=$(`status_${date}_${slotId}`).value,newDate=$(`resched_${date}_${slotId}`).value;let entry=absences.find(a=>a.id===s.absenceId)||holidays.find(h=>h.id===s.holidayId);if(!entry){toast('Could not locate the absence or holiday record');return}entry.scheduling=entry.scheduling||{};entry.scheduling[date+'_'+slotId]={status,newDate:newDate||''};persist();toast('Affected session status saved')};
+ window.v5Edit=function(kind,rid){const r=(kind==='absence'?absences:holidays).find(x=>x.id===rid);if(!r)return;if(kind==='absence'){$('absenceId').value=r.id;$('absenceType').value=r.type;$('absenceStatus').value=r.status||'Confirmed';$('absenceStart').value=r.start;$('absenceEnd').value=r.end;$('absenceNotes').value=r.notes||'';[...$('absenceClasses').options].forEach(o=>o.selected=(r.classes||[]).includes(o.value));$('absenceForm').classList.remove('hidden');$('holidayForm').classList.add('hidden');$('absenceFormWrap').classList.remove('hidden');}else{$('holidayId').value=r.id;$('holidayName').value=r.name;$('holidayType').value=r.category;$('holidayStart').value=r.start;$('holidayEnd').value=r.end;$('holidayNotes').value=r.notes||'';$('holidayForm').classList.remove('hidden');$('absenceForm').classList.add('hidden');$('absenceFormWrap').classList.remove('hidden');}window.openJournalWorkspace('absencePanel');$('workspaceTitle').textContent='Absences & Holidays';}
+ window.v5Delete=function(kind,rid){if(!confirm('Delete this absence / holiday record?'))return;if(kind==='absence')absences=absences.filter(x=>x.id!==rid);else holidays=holidays.filter(x=>x.id!==rid);persist();renderV5();toast('Record deleted')}
+ function renderV5(){renderSummary();renderHistory();if(!$('absenceCalendarWrap').classList.contains('hidden'))renderCalendar()}
+ $('absenceForm').addEventListener('submit',e=>{e.preventDefault();const x={id:$('absenceId').value||id(),type:$('absenceType').value,status:$('absenceStatus').value,start:$('absenceStart').value,end:$('absenceEnd').value,notes:$('absenceNotes').value.trim(),classes:[...$('absenceClasses').selectedOptions].map(o=>o.value),scheduling:{}};if(x.end<x.start){toast('End date must be on or after the start date');return}const idx=absences.findIndex(a=>a.id===x.id);if(idx>=0){x.scheduling=absences[idx].scheduling||{};absences[idx]=x}else absences.push(x);persist();$('absenceForm').reset();$('absenceId').value='';renderV5();toast(idx>=0?'Absence updated':'Absence saved')});
+ $('holidayForm').addEventListener('submit',e=>{e.preventDefault();const x={id:$('holidayId').value||id(),name:$('holidayName').value.trim(),category:$('holidayType').value,start:$('holidayStart').value,end:$('holidayEnd').value,notes:$('holidayNotes').value.trim(),scheduling:{}};if(x.end<x.start){toast('End date must be on or after the start date');return}const idx=holidays.findIndex(h=>h.id===x.id);if(idx>=0){x.scheduling=holidays[idx].scheduling||{};holidays[idx]=x}else holidays.push(x);persist();$('holidayForm').reset();$('holidayId').value='';renderV5();toast(idx>=0?'Holiday updated':'Holiday saved')});
+ ['absenceFilterDate','absenceFilterType','absenceSearch'].forEach(id=>$(id).addEventListener('input',renderHistory));$('absenceMonth').addEventListener('change',renderCalendar);
+ const oldRenderV4=window.render;window.render=function(){oldRenderV4();renderV5()};
+ // V5 report engine renders its own inspection-ready preview and print layout.
+ // Keep the original absence/holiday workspace refresh integrated with history.
+ $('absenceMonth').value=todayISO().slice(0,7);renderV5();
+})();
+</script>
+
 </body>
 </html>
