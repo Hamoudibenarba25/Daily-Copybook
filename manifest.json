@@ -1,9 +1,9 @@
 {
-  "name": "Teaching Journal Pro V5",
+  "name": "Teaching Journal Pro V5.3 — Absences & Holidays",
   "short_name": "Teaching Journal",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#f4f7fa",
   "theme_color": "#10283d",
-  "description": "Offline teaching journal and reports"
+  "description": "Teaching Journal Pro with teaching insights, reports, absences and holidays"
 }
