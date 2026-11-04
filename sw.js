@@ -1,4 +1,4 @@
-const CACHE_NAME='daily-teaching-journal-historical-timetable-v5-20261104-ttmanager-v2';
+const CACHE_NAME='daily-copybook-timetable-manager-v7';
 const APP_SHELL=['./','./index.html','./manifest.json','./icon-192.svg','./icon-512.svg'];
 self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE_NAME).then(c=>c.addAll(APP_SHELL)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE_NAME).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
