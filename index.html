@@ -399,7 +399,7 @@ $('date').value=todayISO();$('weekStart').value=weekStart(todayISO());$('schedul
  if(!home||!workspace)return;
  // Add clear, friendly dashboard welcome/CTA and recent activity preview.\n// Automatic localized date in the dashboard heading.
  const dateEl=$('dashboardDate');
- function updateDashboardDate(){if(dateEl){dateEl.textContent=new Intl.DateTimeFormat(undefined,{weekday:'long',day:'numeric',month:'long',year:'numeric'}).format(new Date());}}
+ function updateDashboardDate(){if(dateEl){dateEl.textContent=new Intl.DateTimeFormat('en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric'}).format(new Date());}}
  updateDashboardDate();
 
  const welcome=document.createElement('div');welcome.className='dashboard-welcome';
