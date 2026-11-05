@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#12243a">
+<meta name="description" content="Offline teaching journal, flexible timetable, and weekly reports for Dr. Hamoudi Benarba.">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.svg">
+<title>Daily Teaching Journal | Abane Ramdane Secondary School</title>
+<style>
+:root{--navy:#12243a;--navy2:#1b3654;--teal:#0f9f91;--gold:#e8b44d;--ink:#233246;--muted:#66768a;--line:#dce5ed;--paper:#fff;--bg:#f2f6fa;--pale:#eaf8f6;--shadow:0 10px 28px rgba(18,36,58,.08)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--ink)}button,input,select,textarea{font:inherit}button{cursor:pointer;border:0;border-radius:10px;padding:10px 14px;font-weight:650;transition:.15s}button:hover{transform:translateY(-1px)}.primary{background:var(--teal);color:white}.dark{background:var(--navy);color:white}.light{background:#edf2f7;color:var(--navy)}.gold{background:var(--gold);color:#31240c}.danger{background:#fff0ef;color:#b42318}.topbar{background:linear-gradient(120deg,var(--navy),var(--navy2));color:white;padding:24px max(20px,calc((100% - 1280px)/2));display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}.brand{display:flex;gap:14px;align-items:center}.logo{width:48px;height:48px;border-radius:14px;background:var(--gold);color:var(--navy);display:grid;place-items:center;font-size:23px;font-weight:900}.brand h1{font-size:22px;margin:0 0 5px}.brand p{margin:0;color:#c5d4e4;font-size:13px}.top-actions{display:flex;gap:8px;flex-wrap:wrap}.top-actions button{font-size:13px}.container{max-width:1280px;margin:24px auto;padding:0 18px}.notice{background:#fff8e6;border:1px solid #f2d48a;color:#6b4d0a;border-radius:12px;padding:12px 15px;font-size:13px;margin-bottom:18px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:20px}.stat,.panel{background:var(--paper);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}.stat{padding:18px}.stat .label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-weight:700}.stat .value{font-size:28px;font-weight:800;color:var(--navy);margin-top:7px}.layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(320px,.85fr);gap:18px;align-items:start}.panel{padding:20px;margin-bottom:18px}.panel-head{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:17px;flex-wrap:wrap}.panel h2{font-size:17px;margin:0;color:var(--navy)}.sub{font-size:12px;color:var(--muted);margin-top:5px}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}.field label{font-size:12px;font-weight:750;color:#526276}.field input,.field select,.field textarea{width:100%;border:1px solid #d4dee8;background:#fbfdff;border-radius:9px;padding:10px 11px;color:var(--ink);outline:none}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--teal);box-shadow:0 0 0 3px #0f9f911c}.field textarea{min-height:76px;resize:vertical}.section-title{font-size:12px;text-transform:uppercase;letter-spacing:.08em;font-weight:800;color:var(--teal);margin:20px 0 10px;padding-bottom:7px;border-bottom:1px solid var(--line)}.task-head,.task-row{display:grid;grid-template-columns:minmax(110px,.7fr) minmax(140px,1.2fr) minmax(140px,1.2fr) 36px;gap:8px;align-items:start}.task-head{font-size:11px;color:var(--muted);font-weight:750;margin-bottom:7px}.task-row{margin-bottom:8px}.task-row input,.task-row textarea{min-width:0;width:100%;border:1px solid #d4dee8;border-radius:8px;padding:9px;background:#fbfdff;font:inherit;font-size:13px}.task-row textarea{resize:vertical;min-height:42px}.remove-task{background:#fff0ef;color:#b42318;padding:8px 0}.form-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}.filter-row{display:flex;gap:8px;flex-wrap:wrap}.filter-row select,.filter-row input{border:1px solid var(--line);background:#fbfdff;border-radius:9px;padding:9px;min-width:120px}.session-list{display:flex;flex-direction:column;gap:10px}.session-card{border:1px solid var(--line);border-radius:12px;padding:13px;background:#fff}.session-card-top{display:flex;justify-content:space-between;gap:10px;align-items:start}.pill{display:inline-block;padding:4px 8px;border-radius:20px;background:var(--pale);color:#087b70;font-size:11px;font-weight:800}.session-card h3{margin:8px 0 5px;font-size:15px;color:var(--navy)}.meta{font-size:12px;color:var(--muted);line-height:1.7}.card-actions{display:flex;gap:5px;flex-wrap:wrap;margin-top:10px}.card-actions button{padding:7px 9px;font-size:11px}.empty{padding:28px 12px;text-align:center;color:var(--muted);border:1px dashed #cbd7e2;border-radius:12px;font-size:13px}.report-controls{display:grid;grid-template-columns:1fr 1fr;gap:10px}.report-controls .field{min-width:0}.report-preview{margin-top:14px;padding:14px;border:1px solid var(--line);border-radius:12px;background:#fbfdff}.report-preview h3{margin:0 0 8px;color:var(--navy)}.report-preview p{font-size:12px;color:var(--muted);margin:4px 0}.report-list{margin-top:12px;display:flex;flex-direction:column;gap:8px}.report-item{border-left:3px solid var(--teal);padding:8px 10px;background:white;border-radius:0 8px 8px 0}.report-item strong{font-size:13px}.report-item div{font-size:12px;line-height:1.55;margin-top:4px}.small{font-size:11px;color:var(--muted)}.footer{text-align:center;color:#8090a2;font-size:11px;padding:8px 20px 28px}.hidden{display:none!important}.toast{position:fixed;right:18px;bottom:18px;background:var(--navy);color:white;padding:12px 16px;border-radius:10px;box-shadow:var(--shadow);z-index:20;opacity:0;transform:translateY(10px);transition:.2s;pointer-events:none}.toast.show{opacity:1;transform:translateY(0)}@media(max-width:900px){.layout{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.topbar{padding:18px}.brand h1{font-size:18px}.container{padding:0 10px;margin-top:14px}.panel{padding:14px}.form-grid,.report-controls{grid-template-columns:1fr}.field.full{grid-column:auto}.task-head{display:none}.task-row{grid-template-columns:1fr 1fr 36px}.task-row .task-phase{grid-column:1/-1}.task-row textarea{min-height:48px}.stats{gap:8px}.stat{padding:13px}.stat .value{font-size:23px}.top-actions button{padding:9px;font-size:12px}}@media print{body{background:white}.topbar,.notice,.stats,.layout,.footer,.no-print{display:none!important}#printArea{display:block!important}.print-report{font-family:Arial,sans-serif;color:#111}.print-report h1{font-size:20px;margin-bottom:4px}.print-report h2{font-size:16px;margin:18px 0 7px}.print-report .schoolline{font-size:12px;color:#444}.print-report .report-session{border:1px solid #aaa;padding:10px;margin:10px 0;break-inside:avoid}.print-report table{width:100%;border-collapse:collapse;font-size:11px}.print-report th,.print-report td{border:1px solid #bbb;padding:6px;text-align:left;vertical-align:top}.print-report .field-label{font-weight:bold}.print-report .signoff{margin-top:28px;display:flex;justify-content:space-between;font-size:12px}}
+
+/* V5.3 Absences & Holidays workspace */
+.absence-summary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:12px 0 16px}.absence-summary-card{background:linear-gradient(145deg,#f8fbfd,#edf4f7);border:1px solid #dce5eb;border-left:3px solid #d5a326;border-radius:11px;padding:12px}.absence-summary-card span{display:block;font-size:11px;color:#65778a;font-weight:700}.absence-summary-card strong{display:block;color:#12243a;font-size:24px;margin-top:4px}.absence-timetable-preview{border:1px solid #dce5eb;border-radius:9px;background:#f8fbfd;padding:10px;font-size:12px;line-height:1.7;max-height:180px;overflow:auto;color:#34495e}.inline-check{display:flex;align-items:center;gap:8px;margin-top:9px;font-size:12px;color:#43576a}.absence-filters{margin-bottom:10px}.absence-filters input,.absence-filters select{min-width:0;flex:1}.absence-class-options{grid-template-columns:repeat(2,minmax(0,1fr))}.absence-class-options label{cursor:pointer}.absence-slot-choices{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px}.absence-slot-choice{display:flex;align-items:flex-start;gap:7px;padding:8px;border:1px solid #dbe5ed;border-radius:8px;background:#fff;font-size:11px}.absence-slot-choice input{margin-top:3px}@media(max-width:560px){.absence-slot-choices{grid-template-columns:1fr}}@media(max-width:850px){.absence-summary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:560px){.absence-summary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.absence-filters{display:grid;grid-template-columns:1fr 1fr}.absence-filters input,.absence-filters select{width:100%;min-width:0}.absence-class-options{grid-template-columns:1fr}}
+body.journal-storage-booting .container,body.journal-storage-booting .topbar,body.journal-storage-booting .footer{opacity:.35;pointer-events:none}body.journal-storage-booting:after{content:'Checking and safely migrating journal storage… Please keep this page open.';position:fixed;z-index:9999;left:50%;top:50%;transform:translate(-50%,-50%);width:min(90vw,520px);padding:22px;background:#12243a;color:#fff;border-radius:14px;text-align:center;box-shadow:0 10px 40px #0004;font-weight:700}
+</style>
+<style>
+/* Inspection journal print: compact consecutive session entries, no app/report cover or controls. */
+@media print {
+ @page { size: A4; margin: 10mm 11mm; }
+ body { background:#fff!important; }
+ #printArea { display:block!important; }
+ #printArea .print-report { font-family:Arial,Helvetica,sans-serif; color:#14283b; font-size:9.5pt; }
+ #printArea .print-report .report-session { border:0; border-left:3px solid #246b4c; border-radius:0; padding:4px 0 5px 8px; margin:0 0 8px; break-inside:avoid; page-break-inside:avoid; }
+ #printArea .print-report .report-session h2 { background:#eef3f6; border-left:3px solid #d5a326; color:#12243a; font-size:10.5pt; padding:4px 6px; margin:0 0 4px; }
+ #printArea .print-report p { margin:3px 0; }
+ #printArea .print-report table { width:100%; border-collapse:collapse; font-size:8.5pt; margin:3px 0 5px; }
+ #printArea .print-report th,#printArea .print-report td { border:1px solid #bfcbd4; padding:3px 5px; vertical-align:top; }
+ #printArea .print-report th { background:#f0f4f6!important; color:#12243a; print-color-adjust:exact; -webkit-print-color-adjust:exact; }
+ #printArea .print-report h3 { margin:4px 0 3px!important; font-size:9pt!important; }
+ #printArea .print-report .print-only-header { margin:0 0 8px; padding:0 0 4px; border-bottom:2px solid #d5a326; font-size:8.5pt; color:#536578; }
+ #printArea .print-report .report-banner,#printArea .print-report .report-meta,#printArea .print-report .report-footer,#printArea .print-report .signoff { display:none!important; }
+}
+</style>
+<style>
+.weekly-grid{display:grid;grid-template-columns:90px repeat(5,minmax(100px,1fr));border:1px solid #d9e2ec;border-radius:12px;overflow:auto;margin:12px 0;background:#fff}
+.weekly-grid .grid-cell{padding:9px 7px;border-right:1px solid #e4ebf2;border-bottom:1px solid #e4ebf2;min-height:62px;font-size:11px}
+.weekly-grid .grid-head{background:#12243a;color:#fff;font-weight:800;text-align:center;position:sticky;top:0}
+.weekly-grid .grid-time{background:#eef4f8;font-weight:800;color:#526276}.weekly-grid .lunch-break-cell{background:#f7f8fa;color:#8996a5;text-align:center;display:flex;align-items:center;justify-content:center;font-style:italic}
+.weekly-grid .grid-slot{border-radius:7px;padding:6px;margin:2px;font-weight:700;cursor:pointer;line-height:1.4}
+.session-type-badge{display:inline-block;background:#fff3d5;color:#805900;border-radius:5px;padding:3px 6px;font-size:10px;font-weight:800}
+@media(max-width:700px){.weekly-grid{grid-template-columns:70px repeat(5,120px)}}
+
+.dashboard-menu{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;margin:22px 0 24px}
+.dash-card{background:linear-gradient(145deg,#fff,#f4f8fb);border:1px solid #dce5ee;border-radius:16px;padding:20px 16px;min-height:125px;text-align:left;box-shadow:var(--shadow);color:var(--navy);transition:.18s}
+.dash-card:hover{transform:translateY(-3px);border-color:#0f9f91;box-shadow:0 10px 24px #102a4315}
+.dash-card .num{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:#e4f5f2;color:#087b70;font-weight:900;margin-bottom:12px}
+.dash-card strong{display:block;font-size:15px;margin-bottom:5px}.dash-card span{font-size:12px;color:var(--muted);line-height:1.4}
+.page-view{display:none}.page-view.active{display:block}.page-heading{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:0 0 16px}.page-heading h2{margin:0;color:var(--navy)}
+@media(max-width:900px){.dashboard-menu{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.dashboard-menu{grid-template-columns:1fr}.dash-card{min-height:90px}}
+
+/* Dashboard refinement: clean, focused single-workspace navigation */
+#dashboardHome{display:block}
+#workspace{display:none!important}
+#workspace.active{display:block!important}
+#workspace .layout{display:block!important;max-width:1100px;margin:0 auto}
+#workspace .layout>section,#workspace .layout>aside{display:contents}
+#workspace .layout .panel{display:none;margin-top:0}
+#workspace .layout .panel.workspace-active{display:block}
+#workspace .page-heading{padding:16px 18px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);margin-bottom:14px}
+.workspace-nav{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 16px;padding:10px;background:#e8eef4;border-radius:13px}
+.workspace-nav button{background:transparent;color:#42566c;padding:9px 12px;font-size:12px}
+.workspace-nav button.active{background:var(--navy);color:#fff;box-shadow:0 4px 12px #12243a22}
+.dashboard-menu{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:16px}
+.dash-card{position:relative;min-height:145px;padding:22px}
+.dash-card .num{width:40px;height:40px;font-size:16px}
+.dashboard-welcome{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;background:linear-gradient(120deg,#eaf8f6,#f6f9fc);border:1px solid #cfe9e4;border-radius:16px;padding:20px;margin:18px 0}
+.dashboard-welcome h2{margin:0 0 6px;color:var(--navy);font-size:22px}
+.dashboard-welcome p{margin:0;color:var(--muted);font-size:13px}
+.recent-dashboard{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;margin:18px 0;box-shadow:var(--shadow)}
+.recent-dashboard h3{margin:0 0 12px;color:var(--navy);font-size:16px}
+.recent-items{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.recent-item{padding:12px;border:1px solid var(--line);border-radius:11px;background:#fbfdff;cursor:pointer}
+.recent-item strong{display:block;color:var(--navy);font-size:13px;margin-bottom:5px}
+.recent-item span{font-size:11px;color:var(--muted);line-height:1.5}
+@media(max-width:800px){.dashboard-menu{grid-template-columns:repeat(2,minmax(0,1fr))}.recent-items{grid-template-columns:1fr}.workspace-nav{display:grid;grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.dashboard-menu{grid-template-columns:1fr}.dashboard-welcome{padding:15px}.workspace-nav{grid-template-columns:1fr 1fr}.workspace-nav button{padding:9px 6px}}
+</style>
+<style>
+/* Dashboard finishing touches */
+.dashboard-menu{grid-template-columns:repeat(6,minmax(0,1fr))!important;gap:16px}
+.dashboard-menu .dash-card{grid-column:span 2;display:flex;flex-direction:column;align-items:flex-start;text-align:left;position:relative;min-height:170px;border:1px solid #dbe5ee;border-radius:16px;background:linear-gradient(145deg,#fff,#f6fafc);padding:20px;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;cursor:pointer}
+.dashboard-menu .dash-card:nth-child(4){grid-column:2/span 2}
+.dashboard-menu .dash-card:nth-child(5){grid-column:4/span 2}
+.dashboard-menu .dash-card:hover,.dashboard-menu .dash-card:focus-visible{transform:translateY(-4px);border-color:#56b9ad;box-shadow:0 12px 28px #12243a18;outline:none}
+.dash-icon{display:grid;place-items:center;width:48px;height:48px;border-radius:13px;background:#e5f6f3;font-size:25px;margin-bottom:15px}
+.dash-card:nth-child(2) .dash-icon{background:#e9efff}.dash-card:nth-child(3) .dash-icon{background:#fff1db}.dash-card:nth-child(4) .dash-icon{background:#f3eaff}.dash-card:nth-child(5) .dash-icon{background:#e9f2f8}
+.dash-arrow{position:absolute;right:17px;top:17px;color:#15988c;font-size:20px;font-weight:800;transition:transform .18s}
+.dash-card:hover .dash-arrow{transform:translate(3px,-3px)}
+.dash-card strong{font-size:15px;color:#12243a;margin-bottom:7px}
+.dash-card>span:last-child{font-size:12px;color:#637489;line-height:1.5}
+.dashboard-date{display:inline-block;font-size:12px;font-weight:600;color:#64778b;background:#edf3f7;border-radius:8px;padding:6px 9px;margin-left:8px;vertical-align:middle}
+.backup-notice,.backup-warning,.notice,.warning{padding:8px 12px!important;margin:8px 0!important;border-radius:9px!important;font-size:12px!important;line-height:1.45}
+.recent-items{grid-template-columns:repeat(3,minmax(0,1fr))}
+.recent-item{display:flex;flex-direction:column;gap:5px;cursor:default}
+.recent-item .recent-actions{display:flex;justify-content:flex-end;margin-top:auto;padding-top:8px}
+.recent-item .recent-actions button{padding:6px 10px;font-size:11px}
+@media(max-width:900px){.dashboard-menu{grid-template-columns:repeat(2,minmax(0,1fr))!important}.dashboard-menu .dash-card,.dashboard-menu .dash-card:nth-child(4),.dashboard-menu .dash-card:nth-child(5){grid-column:auto}}
+@media(max-width:560px){.dashboard-menu{grid-template-columns:1fr!important}.dashboard-menu .dash-card{grid-column:auto!important;min-height:125px}.dashboard-date{display:block;margin:7px 0 0;width:max-content}.recent-items{grid-template-columns:1fr}}
+</style>
+
+<style>
+/* V5 visual harmonisation */
+:root{--navy:#10283d;--navy2:#173b53;--gold:#d5a326;--green:#236b4b;--teal:#218f86}
+.topbar{background:linear-gradient(120deg,#0d2438,#173b53)}
+.stat{border-bottom:4px solid var(--green)}
+.stat:nth-child(2){border-bottom-color:#236b4b}.stat:nth-child(3){border-bottom-color:var(--gold)}.stat:nth-child(4){border-bottom-color:#7d858b}
+.dash-card{border-bottom:5px solid var(--green)!important}.dash-card:nth-child(even){border-bottom-color:var(--gold)!important}
+.dashboard-welcome{background:linear-gradient(115deg,#10283d,#173b53 70%,#236b4b);color:white;border-radius:16px;padding:22px;margin:18px 0;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.dashboard-welcome h2{color:white!important;font-size:24px;margin:0 0 6px}.dashboard-welcome p{margin:0;color:#dce7ef}
+#absencePanel{display:none}#absencePanel.workspace-active{display:block!important}
+.absence-class-options{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.absence-class-options label{border:1px solid #d8e2ea;background:#f7fafc;padding:10px;border-radius:9px;display:flex;gap:8px;align-items:center}
+.report-controls .field label{font-weight:750}
+.print-report{max-width:1000px;margin:auto;color:#14283c}
+.print-report .report-banner{background:#10283d;color:#fff;padding:18px 20px;border-radius:8px 8px 0 0;border-bottom:5px solid #d5a326}
+.print-report .report-banner h1{color:#fff;font-size:22px;margin:0 0 6px}
+.print-report .report-banner .schoolline{color:#e2ebf2}
+.print-report .report-meta{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.print-report .report-meta span{background:#f0f5f8;border-left:3px solid #d5a326;padding:8px 10px;font-size:11px}
+.print-report .report-session{border:1px solid #d5dee6;border-radius:7px;padding:12px;margin:12px 0;break-inside:avoid}
+.print-report .report-session h2{background:#eaf1f5;border-left:4px solid #236b4b;padding:8px 10px;color:#10283d}
+.print-report .report-session table th{background:#f1f5f7;color:#10283d}
+.print-report .report-footer{border-top:2px solid #d5a326;margin-top:24px;padding-top:8px;font-size:10px;color:#536578;display:flex;justify-content:space-between}
+@media(max-width:600px){.absence-class-options{grid-template-columns:repeat(2,1fr)}.dashboard-welcome{flex-direction:column;align-items:flex-start}}
+@media print{.print-report .report-banner{print-color-adjust:exact;-webkit-print-color-adjust:exact}.print-report .report-session{break-inside:avoid}}
+</style>
+<style>
+.dashboard-menu{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:16px!important}.dashboard-menu .dash-card{min-height:145px!important;border-radius:15px!important;padding:18px!important;box-shadow:0 7px 20px #10283d12!important}.dashboard-menu .dash-card:hover{transform:translateY(-3px)!important;box-shadow:0 12px 26px #10283d20!important}.dashboard-menu .dash-card .dash-icon{width:48px;height:48px;border-radius:12px;background:#eaf2f5;display:grid;place-items:center;font-size:25px}.dashboard-menu .dash-card:nth-child(3n+2) .dash-icon{background:#fff3d5}.dashboard-menu .dash-card:nth-child(3n) .dash-icon{background:#e6f3eb}.dashboard-menu .dash-card strong{font-size:16px!important;color:#10283d}.dashboard-menu .dash-card>span:last-child{font-size:13px!important}
+.teaching-insights{margin:18px 0;background:#fff;border:1px solid #dbe3e9;border-radius:15px;overflow:hidden;box-shadow:0 5px 18px #10283d12}.teaching-insights-head{background:linear-gradient(110deg,#10283d,#173b53 78%,#236b4b);color:white;padding:13px 18px;font-size:18px;font-weight:800;display:flex;gap:10px;align-items:center}.teaching-insights-body{padding:12px 18px}.teaching-insight-row{display:flex;gap:10px;align-items:flex-start;padding:9px 2px;border-bottom:1px solid #e2e8ed;font-size:13px;line-height:1.5}.teaching-insight-row:last-child{border-bottom:0}.teaching-insight-check{color:#236b4b;font-weight:900;background:#e8f3eb;border-radius:50%;width:22px;height:22px;display:inline-grid;place-items:center;flex:none}
+@media(max-width:900px){.dashboard-menu{grid-template-columns:repeat(2,minmax(0,1fr))!important}}@media(max-width:560px){.dashboard-menu{grid-template-columns:1fr!important}.dashboard-menu .dash-card{min-height:120px!important}}
+@media print{@page{size:auto;margin:10mm}body{background:#fff!important}body *{visibility:hidden!important}#printArea,#printArea *{visibility:visible!important}#printArea{display:block!important;position:absolute!important;left:0!important;top:0!important;width:100%!important;margin:0!important;padding:0!important;background:#fff!important}#printArea .print-report{max-width:none!important;margin:0!important;padding:0!important;font-family:Arial,Helvetica,sans-serif!important;color:#14283d!important;font-size:9pt!important}#printArea .report-session{border:0!important;border-left:3px solid #236b4b!important;border-radius:0!important;padding:3px 0 4px 7px!important;margin:0 0 7px!important;break-inside:avoid!important;page-break-inside:avoid!important}#printArea .report-session h2{font-size:10pt!important;margin:0 0 4px!important;padding:4px 6px!important;background:#edf2f5!important;border-left:3px solid #d5a326!important;color:#10283d!important;print-color-adjust:exact!important;-webkit-print-color-adjust:exact!important}#printArea .report-session p{margin:3px 0!important}#printArea table{width:100%!important;border-collapse:collapse!important;font-size:8pt!important;margin:3px 0 4px!important}#printArea th,#printArea td{border:1px solid #c6d0d8!important;padding:3px 4px!important;vertical-align:top!important}#printArea th{background:#f0f4f6!important;print-color-adjust:exact!important;-webkit-print-color-adjust:exact!important}#printArea h3{font-size:8.5pt!important;margin:4px 0 3px!important}}
+</style><style id="multi-timetable-manager-style">
+.multi-timetable-manager{border:2px solid #2b8f83;background:linear-gradient(135deg,#f0fbf8,#fff);border-radius:14px;padding:16px;margin:0 0 18px;box-shadow:0 4px 16px rgba(20,60,70,.06)}.mtm-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin-bottom:12px}.mtm-head h3{margin:0;color:#10283d;font-size:18px}.mtm-head p{margin:5px 0 0;color:#617180;font-size:12px}.mtm-grid{margin-bottom:12px}.mtm-overview-wrap{margin-top:12px;border-top:1px solid #d9e8e5;padding-top:12px}.mtm-overview-title{display:flex;justify-content:space-between;gap:8px;align-items:center;color:#18344a;font-size:13px;margin-bottom:8px}.mtm-overview-title span{font-size:11px;color:#657583}.mtm-overview{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:8px}.mtm-group{margin:0 0 14px}.mtm-group:last-child{margin-bottom:0}.mtm-group-title{font-size:11px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:#526979;margin:0 0 7px;display:flex;align-items:center;gap:7px}.mtm-group-title .group-count{font-size:10px;background:#eaf0f4;border-radius:999px;padding:2px 7px;color:#526979}.mtm-expired-group{border-top:1px solid #dce4e9;padding-top:12px}.mtm-expired-group .mtm-overview-card{background:#f7f8fa;border-color:#cbd4dc}.mtm-expired-group .mtm-overview-card.selected{background:#e9f8f4;border-color:#16877c}.mtm-overview-card{border:1px solid #d7e2e8;border-radius:10px;background:#fff;padding:10px;text-align:left;cursor:pointer;color:#18344a;transition:.15s}.mtm-overview-card:hover{border-color:#2b8f83;box-shadow:0 2px 8px #16394b18}.mtm-overview-card.selected{border:2px solid #16877c;background:#e9f8f4;box-shadow:0 0 0 2px #16877c18}.mtm-add-card{border:2px dashed #c5a45d;background:#fffaf0;color:#785c20;display:flex;flex-direction:column;justify-content:center;min-height:100px}.mtm-add-card:hover{border-color:#b28b36;background:#fff5dc}.mtm-overview-card .mtm-card-top{display:flex;justify-content:space-between;align-items:center;gap:8px}.mtm-overview-card strong{font-size:13px}.mtm-overview-card .mtm-period{font-size:11px;color:#586b79;margin:6px 0}.mtm-overview-card .mtm-card-meta{font-size:11px;color:#2c6d61;display:flex;justify-content:space-between;gap:8px}.mtm-status-badge{font-size:9px;font-weight:800;letter-spacing:.04em;padding:3px 6px;border-radius:999px;background:#e7f5ed;color:#216b46}.mtm-status-badge.upcoming{background:#fff4d9;color:#8a5a00}.mtm-status-badge.expired{background:#eef1f4;color:#56616d}.mtm-status{margin-top:8px;color:#236b4b;font-weight:600}.multi-timetable-manager .danger{background:#fff0ef;color:#a12c28;border:1px solid #f0c8c5}@media(max-width:600px){.mtm-head{display:block}.mtm-head .pill{display:inline-block;margin-top:8px}.multi-timetable-manager{padding:12px}}
+.timetable-overview-heading{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin:6px 0 12px}.timetable-overview-heading h3{margin:0;color:var(--navy);font-size:17px}.timetable-overview-heading p{margin:5px 0 0;color:var(--muted);font-size:12px}.manager-toggle{font-weight:750}.multi-timetable-manager{margin:12px 0 16px;padding:16px;border:1px solid var(--line);border-radius:13px;background:#f8fbfd}.multi-timetable-manager[hidden]{display:none!important}.mtm-overview-wrap{margin-bottom:16px}.mtm-overview-title{display:none}
+.historical-session-note{padding:10px 12px;border:1px solid #d8e5ef;border-radius:10px;background:#f3f8fc;color:#38566d;font-size:12px;line-height:1.5}
+</style></head>
+<body>
+<header class="topbar">
+ <div class="brand"><div class="logo">TJ</div><div><h1>Daily Teaching Journal</h1><p>Daily Copybook · 2026–2027 · Abane Ramdane Secondary School</p></div></div>
+ <div class="top-actions"><button class="gold" id="exportJsonBtn">Backup data</button><button class="light" id="importBtn">Restore backup</button><button class="light" id="exportCsvBtn">Export CSV</button><input type="file" id="importFile" accept=".json,application/json" class="hidden"></div>
+</header>
+<main class="container">
+ <div class="notice"><strong>Your journal is stored on this device.</strong> Entries remain in this browser. Use <em>Backup data</em> regularly to keep a copy, especially before clearing browser data or changing devices.</div>
+ <section class="stats">
+  <div class="stat"><div class="label">Sessions recorded</div><div class="value" id="totalSessions">0</div></div>
+  <div class="stat"><div class="label">This week</div><div class="value" id="weekSessions">0</div></div>
+  <div class="stat"><div class="label">Classes covered</div><div class="value" id="classesCovered">0 / 4</div></div>
+  <div class="stat"><div class="label">Latest entry</div><div class="value" id="latestEntry" style="font-size:18px">—</div></div>
+ </section>
+ <section id="dashboardHome">
+  <div class="panel-head" style="margin:8px 0 0"><div><h2>Dashboard <span id="dashboardDate" class="dashboard-date"></span></h2><div class="sub">Choose a workspace to continue. Your overview stays here.</div></div><span class="pill">HOME</span></div>
+  <nav class="dashboard-menu" aria-label="Main dashboard">
+   <button type="button" class="dash-card" data-page="editorPanel"><span class="dash-icon">📝</span><span class="dash-arrow">↗</span><strong>Record a Session</strong><span>Enter lesson details, activities and observations.</span></button>
+   <button type="button" class="dash-card" data-page="timetablePanel"><span class="dash-icon">📅</span><span class="dash-arrow">↗</span><strong>My Timetable</strong><span>View and manage your weekly schedule.</span></button>
+   <button type="button" class="dash-card" data-page="reportsPanel"><span class="dash-icon">📊</span><span class="dash-arrow">↗</span><strong>Journaling Reports</strong><span>Generate and print reports.</span></button>
+   <button type="button" class="dash-card" data-page="historyPanel"><span class="dash-icon">📚</span><span class="dash-arrow">↗</span><strong>History</strong><span>Search, review, edit and delete entries.</span></button>
+   <button type="button" class="dash-card" data-page="settingsPanel"><span class="dash-icon">⚙️</span><span class="dash-arrow">↗</span><strong>Settings &amp; Details</strong><span>Update school, teacher and academic year.</span></button><button type="button" class="dash-card" data-page="absencePanel"><span class="dash-icon">🗓️</span><span class="dash-arrow">↗</span><strong>Absences &amp; Holidays</strong><span>Record absences, holidays, school events and affected classes.</span></button>
+  </nav>
+ </section>
+ <div id="workspace" class="page-view">
+  <div class="page-heading"><h2 id="workspaceTitle">Workspace</h2><button class="light" id="backDashboard">🏠 Home</button></div>
+  <div class="layout"><section>
+   <div class="panel" id="editorPanel">
+    <div class="panel-head"><div><h2 id="formTitle">Record a teaching session</h2><div class="sub">Capture the lesson, timing, classroom tasks, aims and observations.</div></div><span class="pill">SESSION EDITOR</span></div>
+    <form id="sessionForm">
+     <input type="hidden" id="sessionId">
+     <div class="form-grid">
+      <div class="field"><label for="sessionType">Session category</label><select id="sessionType"><option value="Regular lesson">Regular lesson</option><option>Test / Exam</option><option>Test / Exam correction</option><option>Remediation / Consolidation</option><option>Project presentation</option><option>Other</option></select></div><div class="field"><label for="room">Room (optional)</label><input id="room" placeholder="e.g. Room 12"></div><div class="field"><label for="date">Date *</label><input id="date" type="date" required></div>
+      <div class="field"><label for="className">Class *</label><select id="className" required><option>1 S1</option><option>1 S2</option><option>3 LPh 1</option><option>3 LPh 2</option></select></div>
+      <div class="field"><label for="startTime">Start time *</label><input id="startTime" type="time" required></div>
+      <div class="field"><label for="endTime">End time *</label><input id="endTime" type="time" required></div><div class="field full"><div class="small historical-session-note">📅 You can record or edit sessions for past dates, including sessions from an expired timetable. Choose the actual lesson date; timetable selection does not restrict journal dates.</div></div>
+      <div class="field"><label for="theme">Theme</label><input id="theme" placeholder="e.g. Intercultural Exchange"></div>
+      <div class="field"><label for="unit">Unit</label><input id="unit" placeholder="e.g. Getting Through"></div>
+      <div class="field"><label for="sequence">Sequence</label><input id="sequence" placeholder="e.g. Reading and Writing"></div>
+      <div class="field"><label for="rubric">Rubric</label><input id="rubric" placeholder="e.g. Grammar Focus"></div>
+     </div>
+     <div class="section-title">Pedagogical activities</div>
+     <div class="task-head"><span>Phase / task</span><span>Activity / task details</span><span>Aim of the task</span><span></span></div>
+     <div id="taskRows"></div>
+     <button type="button" class="light" id="addTaskBtn">＋ Add activity / task</button>
+     <div class="section-title">Observations and follow-up</div>
+     <div class="field"><label for="observations">Observations</label><textarea id="observations" placeholder="Learners' response, difficulties, progress, homework, or what to revisit next session…"></textarea></div>
+     <div class="form-actions"><button type="submit" class="primary" id="saveBtn">Save session</button><button type="button" class="light" id="resetBtn">Clear form</button><button type="button" class="dark" id="savePrintBtn">Save & print session</button></div>
+    </form>
+   </div>
+   <div class="panel" id="timetablePanel">
+    <div class="panel-head"><div><h2>Flexible teaching timetable</h2><div class="sub">Edit your recurring weekly schedule whenever school timetables change.</div></div><span class="pill">TIMETABLE</span></div>
+    <div class="timetable-overview-heading"><div><h3>Timetable Overview</h3><p>Choose a timetable to display its weekly schedule.</p></div><button type="button" class="light manager-toggle" id="toggleTimetableManager" aria-expanded="false" aria-controls="multiTimetableManager">⚙ Timetable Manager</button></div>
+    <div class="mtm-overview-wrap"><div id="timetableOverview" class="mtm-overview" aria-label="Timetable overview"></div></div>
+    <section id="multiTimetableManager" class="multi-timetable-manager manager-collapsed" aria-label="Timetable manager" hidden>
+      <div class="mtm-head"><div><h3>⚙ Timetable Manager</h3><p>Select a timetable button above to edit its details, or create a new timetable.</p></div></div>
+      <div class="form-grid mtm-grid">
+       <div class="field"><label for="editTimetableName">Rename</label><input id="editTimetableName" type="text" placeholder="Timetable name"></div>
+       <div class="field"><label for="editTimetableStart">Edit Start Date</label><input id="editTimetableStart" type="date"></div>
+       <div class="field"><label for="editTimetableEnd">Edit End Date</label><input id="editTimetableEnd" type="date"></div>
+      </div>
+      <div class="form-actions"><button type="button" class="gold" id="saveTimetableDetailsBtn">Update and Save</button><button type="button" class="danger" id="deleteTimetableBtn">Delete selected timetable</button></div>
+      <div id="timetableManagerStatus" class="small mtm-status" role="status" aria-live="polite"></div>
+      <div class="mtm-add-wrap" style="border-top:1px solid #d9e8e5;margin-top:14px;padding-top:14px">
+       <button type="button" class="primary" id="showAddTimetableBtn">＋ Add New Timetable</button>
+       <div id="addTimetableForm" hidden style="margin-top:12px">
+        <div class="form-grid"><div class="field"><label for="newTimetableName">Name</label><input id="newTimetableName" type="text" placeholder="e.g. Timetable 3"></div><div class="field"><label for="newTimetableStart">Start Date</label><input id="newTimetableStart" type="date"></div><div class="field"><label for="newTimetableEnd">End Date</label><input id="newTimetableEnd" type="date"></div></div>
+        <div class="form-actions"><button type="button" class="primary" id="addTimetableBtn">Create and Save</button><button type="button" class="light" id="cancelAddTimetableBtn">Cancel</button></div>
+       </div>
+      </div>
+    </section>
+    <div class="section-title">Weekly visual timetable (Sunday–Thursday)</div><div id="weeklyGrid" class="weekly-grid"></div>
+    <div class="form-grid">
+     <div class="field"><label for="ttDay">Day *</label><select id="ttDay"><option>Sunday</option><option>Monday</option><option>Tuesday</option><option>Wednesday</option><option>Thursday</option><option>Friday</option><option>Saturday</option></select></div>
+     <div class="field"><label for="ttClass">Class *</label><select id="ttClass"><option>1 S1</option><option>1 S2</option><option>3 LPh 1</option><option>3 LPh 2</option></select></div>
+     <div class="field"><label for="ttStart">Start time *</label><input id="ttStart" type="time" required></div>
+     <div class="field"><label for="ttEnd">End time *</label><input id="ttEnd" type="time" required></div>
+     <div class="field"><label for="ttSubject">Subject / lesson label</label><input id="ttSubject" placeholder="e.g. English"></div>
+     <div class="field"><label for="ttRoom">Room (optional)</label><input id="ttRoom" placeholder="e.g. Room 12"></div>
+     <div class="field"><label for="ttFrom">Effective from *</label><input id="ttFrom" type="date" required></div>
+     <div class="field"><label for="ttUntil">Effective until (optional)</label><input id="ttUntil" type="date"></div>
+     <div class="field full"><label for="ttNotes">Timetable notes (optional)</label><input id="ttNotes" placeholder="e.g. temporary change, alternating week, room change"></div>
+    </div>
+    <div class="form-actions"><button type="button" class="primary" id="saveSlotBtn">Add timetable slot</button><button type="button" class="light" id="cancelSlotEditBtn">Clear slot form</button></div>
+    <div class="section-title">Saved timetable slots</div>
+    <div class="filter-row" style="margin-bottom:12px"><select id="ttFilterDay"><option value="">All days</option><option>Sunday</option><option>Monday</option><option>Tuesday</option><option>Wednesday</option><option>Thursday</option><option>Friday</option><option>Saturday</option></select><select id="ttFilterClass"><option value="">All classes</option><option>1 S1</option><option>1 S2</option><option>3 LPh 1</option><option>3 LPh 2</option></select></div>
+    <div id="timetableList" class="session-list"></div>
+    <p class="small" style="margin-top:12px">Each slot can have an effective date range. When a timetable changes, end the old slot and add the new one. Past lesson records are not changed.</p>
+   </div>
+   <div class="panel page-view" id="historyPanel">
+    <div class="panel-head"><div><h2>Session history</h2><div class="sub">Search, review, edit, or delete saved entries.</div></div><span class="pill" id="historyCount">0 ENTRIES</span></div>
+    <div class="filter-row" style="margin-bottom:13px"><select id="filterClass"><option value="">All classes</option><option>1 S1</option><option>1 S2</option><option>3 LPh 1</option><option>3 LPh 2</option></select><input id="searchText" placeholder="Search theme, unit, task…" style="flex:1"><input id="filterDate" type="date" aria-label="Filter by date"></div>
+    <div id="sessionList" class="session-list"></div>
+   </div>
+  </section>
+  <aside>
+   <div class="panel page-view" id="reportsPanel">
+    <div class="panel-head"><div><h2>Weekly report</h2><div class="sub">Generate a detailed report for any week and class.</div></div><span class="pill">REPORTS</span></div>
+    <div class="report-controls">
+     <div class="field"><label for="weekStart">Week starting (Monday)</label><input type="date" id="weekStart"></div>
+     <div class="field"><label for="reportClass">Class</label><select id="reportClass"><option value="">All classes</option><option>1 S1</option><option>1 S2</option><option>3 LPh 1</option><option>3 LPh 2</option></select></div>
+    </div>
+    <div class="form-actions"><button type="button" class="light" onclick="openJournalWorkspace('absencePanel')">🗓 Manage Absences &amp; Holidays</button><button class="primary" id="generateReportBtn">Generate report</button><button class="dark" id="printReportBtn">Print / Save PDF</button></div>
+    <div class="report-preview" id="reportPreview"><h3>Report preview</h3><p>Choose a week and class, then select Generate report.</p></div>
+    <p class="small" style="margin-top:12px">Tip: In the print dialog, choose <strong>Save as PDF</strong> to create a printable weekly copybook report.</p>
+   </div>
+   <div class="panel page-view" id="settingsPanel">
+    <div class="panel-head"><div><h2>Journal details</h2><div class="sub">Used on printed reports.</div></div></div>
+    <div class="field" style="margin-bottom:12px"><label>School</label><input value="Abane Ramdane Secondary School" id="schoolName"></div>
+    <div class="field" style="margin-bottom:12px"><label>Teacher</label><input value="Dr. Hamoudi Benarba" id="teacherName"></div>
+    <div class="field"><label>School year</label><input value="2026-2027" id="schoolYear"></div>
+    <p class="small">These details are included in reports and saved with the backup file.</p>
+    <div class="section-title">Class Manager</div>
+    <p class="small">Add, rename or remove classes. Renaming updates saved sessions, timetable slots and linked absence/holiday records.</p>
+    <form id="classManagerForm" class="form-grid" style="margin-bottom:14px">
+      <input type="hidden" id="classEditOriginal">
+      <div class="field"><label for="classNameManager">Class name</label><input id="classNameManager" placeholder="e.g. 2 S3" required maxlength="80"></div>
+      <div class="field" style="justify-content:end"><label>&nbsp;</label><div class="form-actions" style="margin:0"><button class="primary" type="submit" id="classManagerSave">Add class</button><button class="light" type="button" id="classManagerCancel" style="display:none">Cancel edit</button></div></div>
+    </form>
+    <div id="classManagerList" class="session-list"></div>
+   </div>
+   <div class="panel page-view" id="absencePanel">
+    <div class="panel-head"><div><h2>Absences &amp; Holidays</h2><div class="sub">Manage leave, holidays, school closures and affected timetable sessions.</div></div><span class="pill">CALENDAR &amp; LEAVE</span></div>
+    <div class="absence-summary-grid" id="absenceSummary"></div>
+    <div class="form-actions" style="margin:0 0 14px"><button type="button" class="light" onclick="openJournalWorkspace('absencePanel')">🗓 Calendar records</button><button type="button" class="light" onclick="openJournalWorkspace('timetablePanel')">📅 Open flexible timetable</button></div>
+    <form id="absenceForm">
+     <input type="hidden" id="absenceId">
+     <div class="form-grid">
+      <div class="field"><label for="absenceRecordKind">Record category *</label><select id="absenceRecordKind" required><option value="absence">Teacher absence / leave</option><option value="holiday">Holiday / closure / event</option></select></div>
+      <div class="field"><label for="absenceType">Type / category *</label><select id="absenceType" required><option>Personal Absence</option><option>Sick Leave</option><option>Administrative Leave</option><option>Professional Leave</option><option>Other</option></select></div>
+      <div class="field" id="holidayNameWrap" style="display:none"><label for="holidayName">Holiday / event name *</label><input id="holidayName" placeholder="e.g. Independence Day"></div>
+      <div class="field"><label>Date mode</label><select id="absenceDateMode"><option value="single">Single date</option><option value="range">Date range</option></select></div>
+      <div class="field"><label for="absenceStart">Start date *</label><input type="date" id="absenceStart" required></div>
+      <div class="field" id="absenceEndWrap" style="display:none"><label for="absenceEnd">End date *</label><input type="date" id="absenceEnd"></div>
+      <div class="field full"><label for="absenceReason">Reason / description <span class="small">(optional)</span></label><textarea id="absenceReason" placeholder="Optional explanation or description"></textarea></div>
+      <div class="field full"><label>Classes affected *</label><div class="absence-class-options" id="absenceClasses"></div></div>
+      <div class="field full"><label>Affected timetable sessions</label><div id="affectedTimetablePreview" class="absence-timetable-preview">Choose dates and classes to preview matching timetable slots.</div><label class="inline-check"><input type="checkbox" id="absenceAllDay" checked> Treat as full-day absence/closure (include all affected class sessions)</label><div id="affectedSlotChoices" class="absence-slot-choices"></div></div>
+      <div class="field full"><label for="absenceStatus">Status (optional)</label><select id="absenceStatus"><option value="">Not specified</option><option>Planned</option><option>Confirmed</option><option>Cancelled</option><option>Completed</option></select></div>
+      <div class="field full"><label for="absenceNotes">Optional notes</label><textarea id="absenceNotes" placeholder="Additional information, arrangements or follow-up"></textarea></div>
+     </div>
+     <div class="form-actions"><button class="primary" type="submit">Save record and update class journals</button><button class="light" type="button" id="clearAbsence">Clear form</button></div>
+    </form>
+    <div class="section-title">Absence &amp; holiday history</div>
+    <div class="filter-row absence-filters"><input id="absenceSearch" placeholder="Search name, reason, notes…"><input type="month" id="absenceMonth"><select id="absenceClassFilter"><option value="">All classes</option></select><select id="absenceKindFilter"><option value="">All record types</option><option value="absence">Absences / leave</option><option value="holiday">Holidays / closures / events</option></select></div>
+    <div id="absenceRecords" class="session-list" style="margin-top:12px"></div>
+   </div>
+   </div>
+  </aside>
+ </div>
+ </div>
+</main>
+<div id="printArea" class="hidden"></div>
+<div class="footer">Teaching Journal Pro · Designed for Dr. Hamoudi Benarba · Academic year 2026–2027<br><span id="pwaStatus">Automatic local snapshots enabled</span></div>
+<div class="toast" id="toast"></div>
+<script>
+let CLASSES=['1 S1','1 S2','3 LPh 1','3 LPh 2'];
+const STORE='teachingJournalPro_v1';
+let sessions=[], timetable=[], editingSlotId='';
+let timetableSets=[], activeTimetableId='';
+const $=id=>document.getElementById(id);
+const todayISO=()=>{const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`};
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmtDate=s=>s?new Date(s+'T12:00:00').toLocaleDateString(undefined,{day:'2-digit',month:'short',year:'numeric'}):'—';
+const mins=t=>{if(!t)return 0;let [h,m]=t.split(':').map(Number);return h*60+m};
+function duration(s){let n=mins(s.endTime)-mins(s.startTime);if(n<0)n+=1440;return `${Math.floor(n/60)}h ${String(n%60).padStart(2,'0')}m`}
+function toast(msg){$('toast').textContent=msg;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),2400)}
+const AUTO_BACKUP_KEY=STORE+'_automatic_backups_v1';
+const IDB_NAME='TeachingJournalProDB', IDB_STORE='journal', IDB_KEY='main';
+let calendarRecordsCache=[];let idbReady=false;let idbLastError=null;
+function openJournalDB(){return new Promise((resolve,reject)=>{if(!('indexedDB' in window)){reject(new Error('IndexedDB is unavailable in this browser'));return}const req=indexedDB.open(IDB_NAME,1);req.onupgradeneeded=()=>{const db=req.result;if(!db.objectStoreNames.contains(IDB_STORE))db.createObjectStore(IDB_STORE)};req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error||new Error('Could not open IndexedDB'));})}
+async function idbGet(){const db=await openJournalDB();return new Promise((resolve,reject)=>{const tx=db.transaction(IDB_STORE,'readonly'),req=tx.objectStore(IDB_STORE).get(IDB_KEY);req.onsuccess=()=>resolve(req.result||null);req.onerror=()=>reject(req.error);tx.oncomplete=()=>db.close();tx.onerror=()=>{db.close();reject(tx.error)}})}
+async function idbPut(data){const db=await openJournalDB();return new Promise((resolve,reject)=>{const tx=db.transaction(IDB_STORE,'readwrite');tx.objectStore(IDB_STORE).put(data,IDB_KEY);tx.oncomplete=()=>{db.close();resolve(true)};tx.onerror=()=>{const e=tx.error;db.close();reject(e||new Error('IndexedDB write failed'))};tx.onabort=()=>{const e=tx.error;db.close();reject(e||new Error('IndexedDB write aborted'))}})}
+function writeCalendarMeta(){try{localStorage.setItem(STORE,JSON.stringify({app:'Teaching Journal Pro',version:7,calendarRecords:calendarRecordsCache}))}catch(e){console.warn('Small calendar metadata could not be saved',e)}}
+function currentData(){return {app:'Teaching Journal Pro',version:7,classes:CLASSES,sessions,timetable,timetableSets,activeTimetableId,calendarRecords:calendarRecordsCache,details:{school:$('schoolName').value,teacher:$('teacherName').value,year:$('schoolYear').value},savedAt:new Date().toISOString()}}
+function restoreData(d,saveMeta=true){if(Array.isArray(d.classes)&&d.classes.length)CLASSES=[...new Set(d.classes.map(x=>String(x).trim()).filter(Boolean))];sessions=Array.isArray(d.sessions)?d.sessions:[];timetable=Array.isArray(d.timetable)?d.timetable:[];timetableSets=Array.isArray(d.timetableSets)?d.timetableSets:[];activeTimetableId=d.activeTimetableId||'';calendarRecordsCache=Array.isArray(d.calendarRecords)?d.calendarRecords:[];if(saveMeta)writeCalendarMeta();if(d.details){$('schoolName').value=d.details.school||$('schoolName').value;$('teacherName').value=d.details.teacher||$('teacherName').value;$('schoolYear').value=d.details.year||$('schoolYear').value}}
+function load(){document.body.classList.add('journal-storage-booting');let legacy=null;try{legacy=JSON.parse(localStorage.getItem(STORE)||'null')}catch(e){}if(legacy&&Array.isArray(legacy.sessions)){restoreData(legacy,false)}else{let recovered=false;try{const backups=JSON.parse(localStorage.getItem(AUTO_BACKUP_KEY)||'[]');if(backups.length&&backups[0].data){restoreData(backups[0].data,false);recovered=true}}catch(e){}if(!recovered){try{const old=JSON.parse(localStorage.getItem('teachingJournalPro_v1')||'null');if(old&&Array.isArray(old.sessions)){restoreData(old,false);recovered=true}}catch(e){}}if(!recovered){sessions=[];timetable=[]}}
+ // Asynchronously load the durable database. First-run migration copies legacy localStorage data,
+ // verifies the IndexedDB write, and only then removes the large legacy entry/snapshots.
+ window.journalStorageReady=(async()=>{try{const stored=await idbGet();if(stored&&Array.isArray(stored.sessions)){restoreData(stored);if(typeof window.setCalendarRecordsForStorageRestore==='function')window.setCalendarRecordsForStorageRestore(calendarRecordsCache);idbReady=true;}else{const initial=currentData();await idbPut(initial);const verify=await idbGet();if(!verify||!Array.isArray(verify.sessions))throw new Error('Migration verification failed');idbReady=true;try{localStorage.removeItem(STORE);localStorage.removeItem(AUTO_BACKUP_KEY);localStorage.removeItem('teachingJournalPro_v1')}catch(e){}writeCalendarMeta();}try{if(navigator.storage&&navigator.storage.persist)await navigator.storage.persist()}catch(e){}const badge=$('pwaStatus');if(badge)badge.textContent='Journal saved in IndexedDB · automatic local storage';render();renderTimetable();if(typeof window.updateTeachingInsights==='function')window.updateTeachingInsights();if(typeof renderAbsenceRecords==='function')renderAbsenceRecords();document.body.classList.remove('journal-storage-booting');return true}catch(e){idbLastError=e;console.error('IndexedDB migration/storage error',e);const badge=$('pwaStatus');if(badge)badge.textContent='Storage migration failed — please export Backup data and do not clear browser data';alert('Journal storage migration could not complete. Your existing records have been left in place. Please use Backup data and do not clear browser/site data. Error: '+(e.message||e));document.body.classList.remove('journal-storage-booting');return false}})();}
+async function persist(){const data=currentData();try{await idbPut(data);const check=await idbGet();if(!check||!Array.isArray(check.sessions)||!Array.isArray(check.timetable)||!Array.isArray(check.timetableSets))throw new Error('IndexedDB save could not be verified.');idbReady=true;idbLastError=null;writeCalendarMeta();}catch(e){idbLastError=e;console.error('Journal data could not be saved to IndexedDB:',e);alert('⚠️ The application could not save your changes to IndexedDB. Your data remains in memory for now. Please use Backup data immediately and do not close or refresh this page.');return false}render();renderTimetable();if(typeof window.updateTeachingInsights==='function')window.updateTeachingInsights();return true}
+function addTaskRow(task={phase:'',activity:'',aim:''}){const row=document.createElement('div');row.className='task-row';row.innerHTML=`<input class="task-phase" aria-label="Phase or task" placeholder="e.g. Warm-up" value="${esc(task.phase)}"><textarea aria-label="Activity details" placeholder="What did learners do?">${esc(task.activity)}</textarea><textarea aria-label="Aim of task" placeholder="What was the aim?">${esc(task.aim)}</textarea><button type="button" class="remove-task" title="Remove activity">×</button>`;row.querySelector('button').onclick=()=>{row.remove();if(!$('taskRows').children.length)addTaskRow()};$('taskRows').appendChild(row)}
+function getTasks(){return [...$('taskRows').querySelectorAll('.task-row')].map(r=>({phase:r.querySelector('.task-phase').value.trim(),activity:r.querySelectorAll('textarea')[0].value.trim(),aim:r.querySelectorAll('textarea')[1].value.trim()})).filter(t=>t.phase||t.activity||t.aim)}
+function resetForm(){ $('sessionForm').reset();$('sessionId').value='';$('date').value=todayISO();$('formTitle').textContent='Record a teaching session';$('saveBtn').textContent='Save session';$('taskRows').innerHTML='';addTaskRow();addTaskRow();window.scrollTo({top:0,behavior:'smooth'})}
+function formData(){return {id:$('sessionId').value||String(Date.now()),date:$('date').value,className:$('className').value,startTime:$('startTime').value,endTime:$('endTime').value,theme:$('theme').value.trim(),unit:$('unit').value.trim(),sequence:$('sequence').value.trim(),rubric:$('rubric').value.trim(),sessionType:$('sessionType').value||'Regular lesson',room:$('room').value.trim(),tasks:getTasks(),observations:$('observations').value.trim(),updatedAt:new Date().toISOString()}}
+$('sessionForm').addEventListener('submit',async e=>{e.preventDefault();const x=formData();if(x.endTime===x.startTime){if(!confirm('Start and end times are the same. Save anyway?'))return}const i=sessions.findIndex(s=>s.id===x.id);if(i>=0)sessions[i]=x;else sessions.push(x);if(!await persist())return;resetForm();toast(i>=0?'Session updated':'Session saved successfully')});
+$('addTaskBtn').onclick=()=>addTaskRow();
+$('resetBtn').onclick=()=>resetForm();
+$('savePrintBtn').onclick=()=>{const priorId=$('sessionId').value;const submitted=formData();$('sessionForm').requestSubmit();setTimeout(()=>{const x=sessions.find(y=>y.id===submitted.id)||sessions.find(y=>y.id===priorId);if(x)printSessions([x],'Teaching Session')},150)};
+function editSession(id){const s=sessions.find(x=>x.id===id);if(!s)return;$('sessionId').value=s.id;for(const k of ['date','className','startTime','endTime','theme','unit','sequence','rubric','observations'])$(k).value=s[k]||'';$('taskRows').innerHTML='';(s.tasks?.length?s.tasks:[{},{},]).forEach(addTaskRow);$('formTitle').textContent='Edit teaching session';$('saveBtn').textContent='Update session';window.scrollTo({top:0,behavior:'smooth'})}
+function deleteSession(id){const s=sessions.find(x=>x.id===id);if(s&&confirm(`Delete the session for ${s.className} on ${fmtDate(s.date)}? This cannot be undone unless you have a backup.`)){sessions=sessions.filter(x=>x.id!==id);persist();toast('Session deleted')}}
+function searchable(s){return [s.theme,s.unit,s.sequence,s.rubric,s.className,s.observations,...(s.tasks||[]).flatMap(t=>[t.phase,t.activity,t.aim])].join(' ').toLowerCase()}
+function render(){const q=$('searchText').value.toLowerCase().trim(),cl=$('filterClass').value,dt=$('filterDate').value;let arr=[...sessions].filter(s=>(!cl||s.className===cl)&&(!dt||s.date===dt)&&(!q||searchable(s).includes(q))).sort((a,b)=>(b.date+b.startTime).localeCompare(a.date+a.startTime));$('historyCount').textContent=`${arr.length} ${arr.length===1?'ENTRY':'ENTRIES'}`;$('sessionList').innerHTML=arr.length?arr.map(s=>`<article class="session-card"><div class="session-card-top"><span class="pill">${esc(s.className)}</span><span class="small">${fmtDate(s.date)}</span></div><h3>${esc(s.theme||'Lesson session')}${s.unit?' · '+esc(s.unit):''}</h3><div class="meta">${esc(s.startTime||'—')}–${esc(s.endTime||'—')} · ${duration(s)}<br>${esc(s.sequence||'No sequence')} ${s.rubric?'· '+esc(s.rubric):''}<br>${(s.tasks||[]).length} pedagogical activities</div><div class="card-actions"><button class="light" onclick="viewSession('${s.id}')">View</button><button class="light" onclick="editSession('${s.id}')">Edit</button><button class="light" class="light duplicate-btn duplicate-v5" onclick="duplicate('${s.id}')">Duplicate</button><button class="light" onclick="printSessions([sessions.find(x=>x.id==='${s.id}')],'Teaching Session')">Print</button><button class="danger" onclick="deleteSession('${s.id}')">Delete</button></div></article>`).join(''):'<div class="empty">No sessions match these filters. Add a session or change your search.</div>';
+$('totalSessions').textContent=sessions.length;const start=weekStart(todayISO()),end=addDays(start,6);$('weekSessions').textContent=sessions.filter(s=>s.date>=start&&s.date<=end).length;$('classesCovered').textContent=CLASSES.filter(c=>sessions.some(s=>s.className===c)).length+' / 4';const latest=[...sessions].sort((a,b)=>(b.date+b.startTime).localeCompare(a.date+a.startTime))[0];$('latestEntry').textContent=latest?fmtDate(latest.date):'—';}
+function viewSession(id){const s=sessions.find(x=>x.id===id);if(!s)return;const text=`${s.className} — ${fmtDate(s.date)}\n${s.startTime}–${s.endTime}\nTheme: ${s.theme||'—'}\nUnit: ${s.unit||'—'}\nSequence: ${s.sequence||'—'}\nRubric: ${s.rubric||'—'}\n\n${(s.tasks||[]).map((t,i)=>`${i+1}. ${t.phase||'Activity'}\n   Task: ${t.activity||'—'}\n   Aim: ${t.aim||'—'}`).join('\n\n')}\n\nObservations: ${s.observations||'—'}`;alert(text)}
+function addDays(date,n){const d=new Date(date+'T12:00:00');d.setDate(d.getDate()+n);return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`}
+function weekStart(date){const d=new Date(date+'T12:00:00');const day=(d.getDay()+6)%7;d.setDate(d.getDate()-day);return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`}
+function reportSessions(){const ws=$('weekStart').value||weekStart(todayISO()),we=addDays(ws,6),cl=$('reportClass').value;return {ws,we,cl,arr:sessions.filter(s=>s.date>=ws&&s.date<=we&&(!cl||s.className===cl)).sort((a,b)=>(a.date+a.startTime).localeCompare(b.date+b.startTime))}}
+function generateReport(){const {ws,we,cl,arr}=reportSessions();$('reportPreview').innerHTML=`<h3>${esc(cl||'All classes')} · Weekly report</h3><p>${fmtDate(ws)} – ${fmtDate(we)}</p><p><strong>${arr.length}</strong> session${arr.length===1?'':'s'} recorded</p>${arr.length?`<div class="report-list">${arr.map(s=>`<div class="report-item"><strong>${fmtDate(s.date)} · ${esc(s.className)} · ${esc(s.startTime)}–${esc(s.endTime)}</strong><div>${s.theme?'Theme: '+esc(s.theme)+' · ':''}${s.unit?'Unit: '+esc(s.unit)+' · ':''}${s.sequence?'Sequence: '+esc(s.sequence)+' · ':''}${s.rubric?'Rubric: '+esc(s.rubric):''}</div><div>${(s.tasks||[]).map(t=>`<b>${esc(t.phase||'Activity')}:</b> ${esc(t.activity||'')} <i>(Aim: ${esc(t.aim||'—')})</i>`).join('<br>')||'No activities entered'}</div>${s.observations?`<div><b>Observations:</b> ${esc(s.observations)}</div>`:''}</div>`).join('')}</div>`:'<div class="empty">No sessions found for this week and selection.</div>'}`}
+function buildPrintHTML(arr,title,range=''){const school=esc($('schoolName').value),teacher=esc($('teacherName').value),year=esc($('schoolYear').value);return `<div class="print-report"><h1>${school}</h1><div class="schoolline">Teacher: ${teacher} · School year: ${year}</div><h2>${esc(title)}</h2>${range?`<p><b>Period:</b> ${esc(range)}</p>`:''}<p><b>Sessions:</b> ${arr.length}</p>${arr.map((s,i)=>`<div class="report-session"><h2>${i+1}. ${fmtDate(s.date)} · ${esc(s.className)} <span style="font-weight:normal">(${esc(s.startTime)}–${esc(s.endTime)} · ${duration(s)})</span></h2><table><tr><th style="width:18%">Theme</th><td>${esc(s.theme||'—')}</td><th style="width:15%">Unit</th><td>${esc(s.unit||'—')}</td></tr><tr><th>Sequence</th><td>${esc(s.sequence||'—')}</td><th>Rubric</th><td>${esc(s.rubric||'—')}</td></tr></table><h3 style="font-size:13px;margin:10px 0 5px">Pedagogical activities</h3><table><thead><tr><th style="width:20%">Phase / task</th><th>Activity / task details</th><th style="width:30%">Aim of the task</th></tr></thead><tbody>${(s.tasks||[]).length?(s.tasks||[]).map(t=>`<tr><td>${esc(t.phase||'—')}</td><td>${esc(t.activity||'—')}</td><td>${esc(t.aim||'—')}</td></tr>`).join(''):'<tr><td colspan="3">No activities recorded.</td></tr>'}</tbody></table><p><b>Observations:</b> ${esc(s.observations||'—')}</p></div>`).join('')}<div class="signoff"><span>Teacher’s signature: ____________________</span><span>Administration: ____________________</span></div></div>`}
+function printSessions(arr,title,range=''){if(!arr?.length){toast('There are no sessions to print');return}$('printArea').innerHTML=buildPrintHTML(arr,title,range);$('printArea').classList.remove('hidden');window.print();setTimeout(()=>$('printArea').classList.add('hidden'),500)}
+$('generateReportBtn').onclick=generateReport;
+$('printReportBtn').onclick=()=>{const {ws,we,cl,arr}=reportSessions();if(!arr.length){toast('No sessions to include in this report');return}printSessions(arr,`Weekly Teaching Journal — ${cl||'All Classes'}`,`${fmtDate(ws)} – ${fmtDate(we)}`)};
+['filterClass','searchText','filterDate'].forEach(id=>$(id).addEventListener('input',render));
+
+const DAYS=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+function dayName(date){return DAYS[new Date(date+'T12:00:00').getDay()]}
+function slotIsActive(slot,date){return slot.day===dayName(date)&&date>=slot.effectiveFrom&&(!slot.effectiveUntil||date<=slot.effectiveUntil)}
+function clearSlotForm(){editingSlotId='';$('ttDay').value='Sunday';$('ttClass').value='1 S1';$('ttStart').value='';$('ttEnd').value='';$('ttSubject').value='English';$('ttRoom').value='';$('ttFrom').value=todayISO();$('ttUntil').value='';$('ttNotes').value='';$('saveSlotBtn').textContent='Add timetable slot'}
+async function saveSlot(){const active=window.getActiveTimetableRecord?window.getActiveTimetableRecord():null;const s={id:editingSlotId||('slot_'+Date.now()+'_'+Math.random().toString(36).slice(2,6)),timetableId:active?active.id:'',day:$('ttDay').value,className:$('ttClass').value,startTime:$('ttStart').value,endTime:$('ttEnd').value,subject:$('ttSubject').value.trim(),room:$('ttRoom').value.trim(),effectiveFrom:$('ttFrom').value,effectiveUntil:$('ttUntil').value,notes:$('ttNotes').value.trim()};if(active)s.timetableId=active.id;if(!s.startTime||!s.endTime||!s.effectiveFrom){toast('Please complete the start time, end time and effective-from date.');return}if(s.startTime>=s.endTime){toast('End time must be later than start time.');return}if(s.effectiveUntil&&s.effectiveUntil<s.effectiveFrom){toast('The end date must be on or after the start date.');return}if(active){if(s.effectiveFrom<active.startDate||(active.endDate&&s.effectiveFrom>active.endDate)){alert(`⚠️ Timetable period conflict\n\nThe slot start date must fall within ${active.name}: ${fmtDate(active.startDate)} – ${active.endDate?fmtDate(active.endDate):'No end date'}.`);return}if(active.endDate&&s.effectiveUntil&&s.effectiveUntil>active.endDate){alert('The slot ends after the selected timetable period.');return}/* A blank slot end date means it continues through the selected timetable period. */if(active.endDate&&!s.effectiveUntil)s.effectiveUntil=active.endDate;}const idx=timetable.findIndex(x=>x.id===s.id);const conflicts=timetable.filter(x=>x.id!==s.id&&x.timetableId===s.timetableId&&x.day===s.day&&x.startTime<s.endTime&&x.endTime>s.startTime&&rangesOverlapDates(x.effectiveFrom,x.effectiveUntil,s.effectiveFrom,s.effectiveUntil));const classConflict=conflicts.find(x=>x.className===s.className);if(classConflict){alert(`⚠️ Timetable conflict detected\n\nClass ${s.className} already has ${classConflict.subject||'a lesson'} on ${s.day} from ${classConflict.startTime} to ${classConflict.endTime}.\n\nThis slot cannot be saved until the overlap is resolved.`);return}const teacherConflict=conflicts.find(x=>x.className!==s.className);if(teacherConflict){alert(`⚠️ Teacher timetable conflict detected\n\nYou already have ${teacherConflict.subject||'a lesson'} with Class ${teacherConflict.className} on ${s.day}, ${teacherConflict.startTime}–${teacherConflict.endTime}.\n\nAs the teacher, you cannot teach both classes simultaneously.`);return}if(idx>=0)timetable[idx]=s;else timetable.push(s);if(!await persist())return;clearSlotForm();toast(idx>=0?'Timetable slot updated and saved':'Timetable slot added and saved')}
+function rangesOverlapDates(aStart,aEnd,bStart,bEnd){const ae=aEnd||'9999-12-31',be=bEnd||'9999-12-31';return (aStart||'0001-01-01')<=be&&(bStart||'0001-01-01')<=ae}
+function editSlot(id){const s=timetable.find(x=>x.id===id);if(!s)return;if(s.timetableId&&window.selectTimetableById)window.selectTimetableById(s.timetableId);editingSlotId=id;for(const [a,b] of [['ttDay','day'],['ttClass','className'],['ttStart','startTime'],['ttEnd','endTime'],['ttSubject','subject'],['ttRoom','room'],['ttFrom','effectiveFrom'],['ttUntil','effectiveUntil'],['ttNotes','notes']])$(a).value=s[b]||'';$('saveSlotBtn').textContent='Update timetable slot';$('timetablePanel').scrollIntoView({behavior:'smooth',block:'start'})}
+function deleteSlot(id){const s=timetable.find(x=>x.id===id);if(s&&confirm(`Delete the ${s.day} ${s.startTime}–${s.endTime} slot for ${s.className}? Existing teaching journal entries will remain unchanged.`)){timetable=timetable.filter(x=>x.id!==id);persist();if(editingSlotId===id)clearSlotForm();toast('Timetable slot deleted')}}
+function renderTimetable(){if(!$('timetableList'))return;const fd=$('ttFilterDay').value,fc=$('ttFilterClass').value;const activeId=window.getActiveTimetableRecord?window.getActiveTimetableRecord()?.id:'';const slots=[...timetable].filter(s=>(!activeId||s.timetableId===activeId)&&(!fd||s.day===fd)&&(!fc||s.className===fc)).sort((a,b)=>DAYS.indexOf(a.day)-DAYS.indexOf(b.day)||a.startTime.localeCompare(b.startTime));$('timetableList').innerHTML=slots.length?slots.map(s=>`<article class="session-card"><div class="session-card-top"><span class="pill">${esc(s.day)} · ${esc(s.className)}</span><span class="small">${esc(s.startTime)}–${esc(s.endTime)}</span></div><h3>${esc(s.subject||'Scheduled lesson')}${s.room?' · '+esc(s.room):''}</h3><div class="meta">Active: ${fmtDate(s.effectiveFrom)} – ${s.effectiveUntil?fmtDate(s.effectiveUntil):'No end date'}${s.notes?'<br>Notes: '+esc(s.notes):''}</div><div class="card-actions"><button class="light" onclick="editSlot('${s.id}')">Edit</button><button class="danger" onclick="deleteSlot('${s.id}')">Delete</button></div></article>`).join(''):'<div class="empty">No timetable slots yet. Add your weekly teaching times above.</div>';}
+$('saveSlotBtn').addEventListener('click',saveSlot);$('cancelSlotEditBtn').addEventListener('click',clearSlotForm);$('ttFilterDay').addEventListener('change',renderTimetable);$('ttFilterClass').addEventListener('change',renderTimetable);
+
+$('exportJsonBtn').onclick=()=>{const blob=new Blob([JSON.stringify(currentData(),null,2)],{type:'application/json'});download(blob,`teaching-journal-backup-${todayISO()}.json`);toast('Backup downloaded')};
+function download(blob,name){const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
+$('importBtn').onclick=()=>$('importFile').click();
+$('importFile').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{const d=JSON.parse(await f.text());if(!Array.isArray(d.sessions))throw Error('This file does not contain journal sessions.');if(!confirm(`Restore ${d.sessions.length} session(s) and ${Array.isArray(d.timetable)?d.timetable.length:0} timetable slot(s)? This replaces the current journal data.`))return;sessions=d.sessions;timetable=Array.isArray(d.timetable)?d.timetable:[];timetableSets=Array.isArray(d.timetableSets)?d.timetableSets:[];activeTimetableId=d.activeTimetableId||'';calendarRecordsCache=Array.isArray(d.calendarRecords)?d.calendarRecords:[];writeCalendarMeta();if(typeof window.setCalendarRecordsForStorageRestore==='function')window.setCalendarRecordsForStorageRestore(calendarRecordsCache);if(Array.isArray(d.classes)&&d.classes.length)CLASSES=[...new Set(d.classes)];if(d.details){$('schoolName').value=d.details.school||$('schoolName').value;$('teacherName').value=d.details.teacher||$('teacherName').value;$('schoolYear').value=d.details.year||$('schoolYear').value}persist();toast('Backup restored')}catch(err){alert('Could not restore backup: '+err.message)}e.target.value=''};
+$('exportCsvBtn').onclick=()=>{const rows=[['Date','Class','Start time','End time','Duration','Theme','Unit','Sequence','Rubric','Activities','Observations']];[...sessions].sort((a,b)=>(a.date+a.startTime).localeCompare(b.date+b.startTime)).forEach(s=>rows.push([s.date,s.className,s.startTime,s.endTime,duration(s),s.theme,s.unit,s.sequence,s.rubric,(s.tasks||[]).map(t=>`${t.phase}: ${t.activity} (Aim: ${t.aim})`).join(' | '),s.observations]));const csv=rows.map(r=>r.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(',')).join('\r\n');download(new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8;'}),`teaching-journal-${todayISO()}.csv`);toast('CSV exported')};
+['schoolName','teacherName','schoolYear'].forEach(id=>$(id).addEventListener('change',()=>persist()));
+window.addEventListener('afterprint',()=>$('printArea').classList.add('hidden'));
+load();
+if('serviceWorker' in navigator && (location.protocol==='https:' || location.hostname==='localhost' || location.hostname==='127.0.0.1')){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').then(()=>{$('pwaStatus').textContent='Offline-ready · automatic local snapshots enabled'}).catch(()=>{$('pwaStatus').textContent='Automatic local snapshots enabled'}));}
+$('date').value=todayISO();$('weekStart').value=weekStart(todayISO());$('ttFrom').value=todayISO();$('ttSubject').value='English';$('taskRows').innerHTML='';addTaskRow({phase:'Warm-up'});addTaskRow({phase:'Main activity'});render();renderTimetable();generateReport();
+</script>
+
+<script>
+/* V4 enhancement layer: preserves the original local storage key and records. */
+(function(){
+ const $=id=>document.getElementById(id);
+ const days=['Sunday','Monday','Tuesday','Wednesday','Thursday'];
+ const periods=['08:00|09:00','09:00|10:00','10:00|11:00','11:00|12:00','13:00|14:00','14:00|15:00','15:00|16:00'];
+ const classColors={'1 S1':'#d9f4ef','1 S2':'#e4e8ff','3 LPh 1':'#fff0d7','3 LPh 2':'#fce1ec'};
+ function grid(){
+  const root=$('weeklyGrid'); if(!root)return;
+  let out='<div class="grid-cell grid-head">Time</div>'+days.map(d=>`<div class="grid-cell grid-head">${d}</div>`).join('');
+  periods.forEach(p=>{
+   let [st,en]=p.split('|');
+   out+=`<div class="grid-cell grid-time">${st}<br>${en}</div>`;
+   days.forEach(day=>{
+    const activeTimetableId=window.getActiveTimetableRecord?window.getActiveTimetableRecord()?.id:'';
+    let slots=(timetable||[]).filter(s=>(!activeTimetableId||s.timetableId===activeTimetableId)&&s.day===day&&s.startTime<en&&s.endTime>st);
+    out+=`<div class="grid-cell">${slots.map(s=>`<div class="grid-slot" style="background:${classColors[s.className]||'#eaf8f6'}" title="Click to edit" onclick="editSlot('${s.id}')">${s.className}<br>${s.startTime}–${s.endTime}${s.room?' · '+s.room:''}</div>`).join('')}</div>`;
+   });
+   // Insert the lunch row immediately after the 11:00–12:00 morning period.
+   if(st==='11:00'&&en==='12:00'){
+    out+='<div class="grid-cell grid-time">12:00–13:00</div>'+days.map(()=>'<div class="grid-cell lunch-break-cell">Lunch break</div>').join('');
+   }
+  });
+  root.innerHTML=out;
+ }
+ const originalRenderTT=window.renderTimetable;
+ if(typeof originalRenderTT==='function')window.renderTimetable=function(){originalRenderTT();grid()};
+ // Special category toggles regular lesson fields
+ function toggleRegular(){let special=$('sessionType')?.value!=='Regular lesson';['theme','unit','sequence','rubric'].forEach(id=>{let el=$(id);if(el){el.closest('.field').style.opacity=special?'.55':'1';el.disabled=false}});if($('taskRows'))$('taskRows').style.opacity=special?'.55':'1'}
+ $('sessionType')?.addEventListener('change',toggleRegular);
+ // Wrap session submit to save extra metadata after legacy save handler
+ const form=$('sessionForm');
+ if(form)form.addEventListener('submit',()=>{setTimeout(()=>{let id=$('sessionId').value;let latest=(sessions||[]).find(s=>s.id===id)|| (sessions||[]).slice(-1)[0];if(latest){latest.sessionType=$('sessionType').value;latest.room=$('room').value;persist();}},50)});
+  window.duplicate=function(id){const s=(sessions||[]).find(x=>String(x.id)===String(id));if(!s){toast('Session not found');return;} $('sessionForm').reset();$('sessionId').value='';$('date').value=s.date||todayISO();$('className').value=s.className||CLASSES[0];$('startTime').value=s.startTime||'';$('endTime').value=s.endTime||'';$('sessionType').value=s.sessionType||'Regular lesson';$('room').value=s.room||'';['theme','unit','sequence','rubric','observations'].forEach(k=>$(k).value=s[k]||'');$('taskRows').innerHTML='';(s.tasks||[]).forEach(t=>window.addTaskRow({...t}));if(!(s.tasks||[]).length){window.addTaskRow();window.addTaskRow();}if(typeof categoryFields==='function')categoryFields();$('formTitle').textContent='Duplicate session — edit before saving';$('saveBtn').textContent='Save duplicated session';$('editorPanel').scrollIntoView({behavior:'smooth',block:'start'});toast('Copied session into a new draft. The original remains unchanged.');};;
+ // Add category/room information to cards when present
+ const priorView=window.viewSession;
+ if(typeof priorView==='function')window.viewSession=function(id){let s=(sessions||[]).find(x=>x.id===id);if(s){alert('Category: '+(s.sessionType||'Regular lesson')+'\nRoom: '+(s.room||'—'));}priorView(id)};
+ // Period report selector adds a quick date-range mode
+ const reportControls=document.querySelector('.report-controls');
+ if(reportControls&&!$('reportPeriod')){let div=document.createElement('div');div.className='field';div.innerHTML='<label for="reportPeriod">Report period</label><select id="reportPeriod"><option value="week">Weekly</option><option value="day">Daily</option><option value="month">Monthly</option><option value="term">Term (custom dates)</option></select>';reportControls.appendChild(div);}
+ if(reportControls&&!$('reportEnd')){let div=document.createElement('div');div.className='field';div.innerHTML='<label for="reportEnd">Term end date (optional)</label><input type="date" id="reportEnd">';reportControls.appendChild(div);}
+ const oldReport=window.generateReport;
+ if(typeof oldReport==='function')window.generateReport=function(){let period=$('reportPeriod')?.value||'week';if(period==='week'){oldReport();return;}let base=$('weekStart').value||new Date().toISOString().slice(0,10),start=base,end=base;
+ if(period==='month'){start=base.slice(0,7)+'-01';end=base.slice(0,7)+'-'+new Date(+base.slice(0,4),+base.slice(5,7),0).getDate().toString().padStart(2,'0')}
+ if(period==='term'){end=$('reportEnd').value||base;if(end<start){alert('End date must be on or after the start date.');return}}
+ let cl=$('reportClass').value,arr=(sessions||[]).filter(s=>s.date>=start&&s.date<=end&&(!cl||s.className===cl)).sort((a,b)=>(a.date+a.startTime).localeCompare(b.date+b.startTime));
+ $('reportPreview').innerHTML=`<h3>✨ ${cl||'All classes'} · ${period==='day'?'Daily':period==='month'?'Monthly':'Term'} report</h3><p>${start} — ${end}</p><p><b>${arr.length}</b> recorded sessions</p>`+arr.map(s=>`<div class="report-item"><strong>${s.date} · ${s.className} · ${s.startTime}–${s.endTime}</strong><div><span class="session-type-badge">${s.sessionType||'Regular lesson'}</span> ${s.room?'Room: '+s.room+' · ':''}${s.theme||''} ${s.unit?'· Unit '+s.unit:''}</div><div>${(s.tasks||[]).map(t=>`${t.phase||''}: ${t.activity||''} (Aim: ${t.aim||'—'})`).join('<br>')}</div><div>${s.observations||''}</div></div>`).join('')||'<p>No sessions found in this period.</p>'};
+ // Initial display
+ setTimeout(grid,250);
+})();
+</script>
+
+<script>
+/* Refined modular dashboard: keeps original data/storage and all legacy workflows. */
+(function(){
+ const $=id=>document.getElementById(id);
+ const pages=[
+  ['editorPanel','Record a Teaching Session'],
+  ['timetablePanel','My Flexible Teaching Timetable'],
+  ['reportsPanel','My Reports'],
+  ['historyPanel','History of Recorded Sessions'],
+  ['settingsPanel','Settings and Details']
+ ];
+ const home=$('dashboardHome'),workspace=$('workspace'),title=$('workspaceTitle');
+ if(!home||!workspace)return;
+ // Add clear, friendly dashboard welcome/CTA and recent activity preview.\n// Automatic localized date in the dashboard heading.
+ const dateEl=$('dashboardDate');
+ function updateDashboardDate(){if(dateEl){dateEl.textContent=new Intl.DateTimeFormat('en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric'}).format(new Date());}}
+ updateDashboardDate();
+
+ const welcome=document.createElement('div');welcome.className='dashboard-welcome';
+ welcome.innerHTML='<div><h2>Welcome to your Teaching Journal</h2><p>Your teaching overview, organized into six focused workspaces.</p></div><button class="primary" id="quickNewSession">＋ Record a Teaching Session</button>';
+ home.insertBefore(welcome,home.querySelector('.dashboard-menu'));
+ const recent=document.createElement('div');recent.className='recent-dashboard';recent.innerHTML='<h3>Recent Teaching Activity</h3><div class="recent-items" id="dashboardRecent"></div>';
+ home.appendChild(recent);
+ // Compact nav for moving between workspaces without returning home.
+ const nav=document.createElement('nav');nav.className='workspace-nav';nav.setAttribute('aria-label','Workspace navigation');
+ nav.innerHTML=pages.map(([id,label],i)=>`<button type="button" data-workspace="${id}">${['✎','▦','▤','◷','⚙'][i]} ${label}</button>`).join('')+'<button type="button" data-home="1">⌂ Dashboard</button>';
+ const heading=workspace.querySelector('.page-heading');heading.insertAdjacentElement('afterend',nav);
+ function openPage(id){
+   home.style.display='none';workspace.classList.add('active');workspace.style.display='block';
+   document.querySelectorAll('#workspace .layout .panel').forEach(p=>p.classList.toggle('workspace-active',p.id===id));
+   title.textContent=(pages.find(p=>p[0]===id)||['','Workspace'])[1];
+   nav.querySelectorAll('button[data-workspace]').forEach(b=>b.classList.toggle('active',b.dataset.workspace===id));
+   if(id==='editorPanel')$('editorPanel').scrollIntoView({behavior:'smooth',block:'start'});
+   else workspace.scrollIntoView({behavior:'smooth',block:'start'});
+ }
+ function goHome(){workspace.classList.remove('active');workspace.style.display='none';home.style.display='block';nav.querySelectorAll('button').forEach(b=>b.classList.remove('active'));window.scrollTo({top:0,behavior:'smooth'});refreshRecent()}
+ document.querySelectorAll('.dash-card[data-page]').forEach(b=>b.addEventListener('click',()=>openPage(b.dataset.page)));
+ nav.querySelectorAll('button[data-workspace]').forEach(b=>b.addEventListener('click',()=>openPage(b.dataset.workspace)));
+ nav.querySelector('[data-home]').addEventListener('click',goHome);
+ $('backDashboard').addEventListener('click',goHome);
+ $('quickNewSession').addEventListener('click',()=>{if(typeof resetForm==='function')resetForm();openPage('editorPanel')});
+ function refreshRecent(){const root=$('dashboardRecent');if(!root)return;const list=[...(sessions||[])].sort((a,b)=>(b.date+(b.startTime||'')).localeCompare(a.date+(a.startTime||''))).slice(0,3);root.innerHTML=list.length?list.map(s=>`<div class="recent-item"><strong>${s.className||'Class'}</strong><span><b>Date:</b> ${s.date||'—'} · ${s.startTime||''}${s.endTime?'–'+s.endTime:''}<br><b>Theme:</b> ${s.theme||s.sessionType||'—'}<br><b>Unit:</b> ${s.unit||'—'}</span><div class="recent-actions"><button type="button" class="light" onclick="openJournalWorkspace('historyPanel')">View / Edit</button></div></div>`).join(''):'<div class="empty" style="grid-column:1/-1">Your recent teaching sessions will appear here after you record your first entry.</div>';if(!root.parentElement.querySelector('.view-all-sessions')){const b=document.createElement('div');b.className='view-all-sessions';b.style='display:flex;justify-content:flex-end;margin-top:12px';b.innerHTML='<button type="button" class="light">View All Sessions →</button>';b.querySelector('button').onclick=()=>openPage('historyPanel');root.parentElement.appendChild(b)}}
+ window.openJournalWorkspace=openPage;
+ // Stats stay on top; update home activity after data changes.
+ const oldRender=window.render;
+ if(typeof oldRender==='function')window.render=function(){oldRender();refreshRecent()};
+ refreshRecent();
+ // Keep dashboard as the initial screen, regardless of previously rendered panels.
+ goHome();
+})();
+</script>
+
+<script>
+/* V5 enhancements: keep STORE and all pre-existing records compatible. */
+(function(){
+ const $=id=>document.getElementById(id);
+ const classes=CLASSES;
+ const oldPersist=window.persist;
+ const oldFormData=window.formData;
+ window.formData=function(){
+   const d=oldFormData();d.sessionType=$('sessionType').value;d.room=$('room').value;
+   if(d.sessionType!=='Regular lesson'){d.theme='';d.unit='';d.sequence='';d.rubric='';}
+   return d;
+ };
+ // Expand session types and use conditional fields for non-regular session types.
+ const type=$('sessionType');
+ ['Test Session','Test/Exam Correction Session','Homework Correction Session','Remediation and Consolidation Session','Project Presentation Session'].forEach(v=>{
+   if(![...type.options].some(o=>o.value===v||o.text===v)){let o=document.createElement('option');o.textContent=v;o.value=v;type.appendChild(o)}
+ });
+ function categoryFields(){const normal=['Regular lesson'];const hide=!normal.includes(type.value);['theme','unit','sequence','rubric'].forEach(id=>{let f=$(id).closest('.field');f.style.display=hide?'none':'';$(id).required=false;});}
+ type.addEventListener('change',categoryFields);categoryFields();
+ // Fix editing: load category and room, and preserve them on save.
+ window.editSession=function(id){
+  const s=(sessions||[]).find(x=>String(x.id)===String(id)); if(!s){toast('Session not found');return;}
+  $('sessionId').value=s.id;
+  for(const k of ['date','className','startTime','endTime','theme','unit','sequence','rubric','observations']) $(k).value=s[k]||'';
+  $('sessionType').value=s.sessionType||'Regular lesson';
+  $('room').value=s.room||'';
+  $('taskRows').innerHTML='';
+  (s.tasks&&s.tasks.length?s.tasks:[{},{}]).forEach(t=>window.addTaskRow({...t}));
+  categoryFields();
+  $('formTitle').textContent='Edit teaching session';
+  $('saveBtn').textContent='Update session';
+  openJournalWorkspace('editorPanel');
+  $('editorPanel').scrollIntoView({behavior:'smooth',block:'start'});
+  toast('Session loaded for editing');
+ };
+ // Render saved sessions and absence records. Guard against legacy/enhancement scripts
+ // appending duplicate History action buttons after a render (especially after edit/save).
+ function dedupeHistoryActions(){
+   const root=$('sessionList'); if(!root)return;
+   root.querySelectorAll('.session-card').forEach(card=>{
+     const actions=card.querySelector('.card-actions'); if(!actions)return;
+     const seen=new Set();
+     [...actions.querySelectorAll('button')].forEach(btn=>{
+       const label=(btn.textContent||'').trim().toLowerCase().replace(/\s+/g,' ');
+       if(['view','edit','duplicate','print','delete'].includes(label)){
+         if(seen.has(label))btn.remove(); else seen.add(label);
+       }
+     });
+   });
+ }
+ const baseRender=window.render;
+ window.render=function(){baseRender();renderAbsenceRecords();dedupeHistoryActions();};
+ // Some older app layers add action buttons asynchronously; normalize after those changes too.
+ const historyRoot=$('sessionList');
+ if(historyRoot&&window.MutationObserver){
+   let dedupeQueued=false;
+   const historyObserver=new MutationObserver(()=>{
+     if(dedupeQueued)return; dedupeQueued=true;
+     requestAnimationFrame(()=>{dedupeQueued=false;dedupeHistoryActions();});
+   });
+   historyObserver.observe(historyRoot,{childList:true,subtree:true});
+ }
+ // Absences, leave, holidays and school closures — upgraded workspace
+ const checks=$('absenceClasses');checks.innerHTML=classes.map((c,i)=>`<label><input type="checkbox" value="${c}" id="absenceClass${i}"> ${c}</label>`).join('');
+ const kindSel=$('absenceRecordKind'), typeSel=$('absenceType');
+ const absenceTypes=['Personal Absence','Sick Leave','Administrative Leave','Professional Leave','Other'];
+ const holidayTypes=['National Holiday','Religious Holiday','School Event','Autumn Break','Winter Break','Spring Break','Summer Break','School Closure','Other'];
+ function refreshAbsenceTypes(preserve=true){const val=preserve?typeSel.value:'';const opts=kindSel.value==='absence'?absenceTypes:holidayTypes;typeSel.innerHTML=opts.map(v=>`<option>${v}</option>`).join('');if(opts.includes(val))typeSel.value=val;}
+ kindSel.addEventListener('change',()=>{refreshAbsenceTypes(false);$('holidayNameWrap').style.display=kindSel.value==='holiday'?'':'none';$('holidayName').required=kindSel.value==='holiday';$('absenceAllDay').checked=kindSel.value==='holiday';updateAffectedSlotsPreview()});
+ let calendarRecords=calendarRecordsCache;window.setCalendarRecordsForStorageRestore=function(records){calendarRecords=Array.isArray(records)?records:[];calendarRecordsCache=calendarRecords;renderAbsenceRecords();};
+ function persistCalendar(){calendarRecordsCache=calendarRecords;writeCalendarMeta();if(typeof window.updateTeachingInsights==='function')window.updateTeachingInsights();}
+ $('absenceDateMode').onchange=()=>{$('absenceEndWrap').style.display=$('absenceDateMode').value==='range'?'':'none';$('absenceEnd').required=$('absenceDateMode').value==='range';updateAffectedSlotsPreview()};
+ function resetAbsence(){ $('absenceForm').reset();$('absenceId').value='';$('absenceRecordKind').value='absence';refreshAbsenceTypes(false);$('holidayNameWrap').style.display='none';$('holidayName').required=false;$('holidayName').value='';$('absenceStart').value=todayISO();$('absenceEnd').value='';$('absenceEndWrap').style.display='none';$('absenceEnd').required=false;$('absenceAllDay').checked=true;checks.querySelectorAll('input').forEach(c=>c.checked=false);updateAffectedSlotsPreview();}
+ function datesBetween(start,end){let a=[];for(let d=start;d<=end;d=addDays(d,1))a.push(d);return a;}
+ function classSelections(){return [...checks.querySelectorAll('input:checked')].map(x=>x.value)}
+ function slotsForDate(date,cls){return timetable.filter(t=>t.className===cls&&slotIsActive(t,date)).sort((a,b)=>a.startTime.localeCompare(b.startTime));}
+ function selectedDates(){const start=$('absenceStart').value||todayISO(),end=$('absenceDateMode').value==='range'?($('absenceEnd').value||start):start;return start<=end?datesBetween(start,end):[]}
+ function updateAffectedSlotsPreview(){const root=$('affectedTimetablePreview'),choices=$('affectedSlotChoices');if(!root)return;const ds=selectedDates(),cs=classSelections();if(!ds.length||!cs.length){root.textContent='Choose a valid date range and at least one class to preview matching timetable slots.';choices.innerHTML='';return}const found=[];ds.forEach(d=>cs.forEach(c=>slotsForDate(d,c).forEach(t=>found.push({date:d,cls:c,slot:t}))));root.innerHTML=found.length?`${found.length} timetable slot(s) match the selected date(s) and class(es).`:'No matching timetable slots found. This record will be entered as a full-day class journal record.';choices.innerHTML=found.length&&!$('absenceAllDay').checked?'<div class="small" style="margin:8px 0">Select the timetable sessions affected:</div>'+found.map((x,i)=>`<label class="absence-slot-choice"><input type="checkbox" checked data-slot-date="${x.date}" data-slot-class="${x.cls}" data-slot-id="${x.slot.id}"><span><b>${esc(x.cls)}</b> · ${fmtDate(x.date)} · ${esc(x.slot.startTime)}–${esc(x.slot.endTime)} · ${esc(x.slot.subject||'Lesson')}</span></label>`).join(''):''}
+ checks.addEventListener('change',updateAffectedSlotsPreview);['absenceStart','absenceEnd','absenceDateMode','absenceAllDay'].forEach(id=>$(id).addEventListener('change',updateAffectedSlotsPreview));
+ // month/class filter options
+ $('absenceClassFilter').innerHTML='<option value="">All classes</option>'+classes.map(c=>`<option>${c}</option>`).join('');
+ function recordDays(records,kind){const set=new Set();records.filter(r=>r.recordKind===kind||(!r.recordKind&&(kind==='absence'?['Teacher Absence','Personal Absence','Sick Leave','Administrative Leave','Professional Leave'].includes(r.type):['Holiday','Day Off','School Event'].includes(r.type)))).forEach(r=>datesBetween(r.start,r.end||r.start).forEach(d=>set.add(d)));return set.size}
+ function affectedSessionCount(){return new Set(sessions.filter(s=>s.calendarRecordId).map(s=>[s.date,s.className,s.startTime,s.endTime].join('|'))).size}
+ function renderAbsenceSummary(){const root=$('absenceSummary');if(!root)return;const absDays=recordDays(calendarRecords,'absence'),holDays=recordDays(calendarRecords,'holiday'),affectedClasses=new Set(calendarRecords.flatMap(r=>r.classes||[])).size;const impacted=affectedSessionCount();root.innerHTML=[['Absence days',absDays],['Holiday / closure days',holDays],['Affected journal sessions',impacted],['Affected classes',affectedClasses]].map(([label,val])=>`<div class="absence-summary-card"><span>${label}</span><strong>${val}</strong></div>`).join('')}
+ function renderAbsenceRecords(){const root=$('absenceRecords');if(!root)return;const q=($('absenceSearch')?.value||'').toLowerCase().trim(),month=$('absenceMonth')?.value||'',cl=$('absenceClassFilter')?.value||'',kind=$('absenceKindFilter')?.value||'';let arr=[...calendarRecords].filter(r=>(!kind||(r.recordKind||(['Holiday','Day Off','School Event'].includes(r.type)?'holiday':'absence'))===kind)&&(!month||((r.start||'').slice(0,7)<=month&&(r.end||r.start||'').slice(0,7)>=month))&&(!cl||(r.classes||[]).includes(cl))&&(!q||[r.type,r.holidayName,r.reason,r.notes,(r.classes||[]).join(' '),r.status].join(' ').toLowerCase().includes(q))).sort((a,b)=>(b.start||'').localeCompare(a.start||''));root.innerHTML=arr.length?arr.map(r=>`<article class="session-card"><div class="session-card-top"><span class="pill">${esc(r.recordKind==='holiday'?'Holiday / Closure':r.recordKind==='absence'?'Absence / Leave':r.type)}</span><span class="small">${fmtDate(r.start)}${r.end&&r.end!==r.start?' – '+fmtDate(r.end):''}</span></div><h3>${esc(r.type||'Other')}${r.holidayName&&r.holidayName!==r.type?' · '+esc(r.holidayName):''}</h3><div class="meta">Classes: ${esc((r.classes||[]).join(', ')||'—')}${r.reason?'<br>Reason: '+esc(r.reason):''}${r.status?'<br>Status: '+esc(r.status):''}${r.notes?'<br>Notes: '+esc(r.notes):''}<br>Affected timetable slots: ${(r.affectedSlots||[]).length}</div><div class="card-actions"><button class="light" onclick="editCalendarRecord('${r.id}')">Edit</button><button class="danger" onclick="deleteCalendarRecord('${r.id}')">Delete</button></div></article>`).join(''):'<div class="empty">No matching absence, holiday or closure records.</div>';renderAbsenceSummary()}
+ window.editCalendarRecord=function(id){const r=calendarRecords.find(x=>x.id===id);if(!r)return;$('absenceId').value=r.id;$('absenceRecordKind').value=r.recordKind||(['Holiday','Day Off','School Event'].includes(r.type)?'holiday':'absence');refreshAbsenceTypes(false);$('absenceType').value=r.type;$('absenceStart').value=r.start;$('absenceDateMode').value=r.end&&r.end!==r.start?'range':'single';$('absenceDateMode').dispatchEvent(new Event('change'));$('absenceEnd').value=r.end||'';$('absenceReason').value=r.reason||'';$('absenceNotes').value=r.notes||'';$('absenceStatus').value=r.status||'';$('absenceAllDay').checked=r.allDay!==false;$('holidayName').value=r.holidayName||'';$('holidayNameWrap').style.display=r.recordKind==='holiday'?'':'none';$('holidayName').required=r.recordKind==='holiday';checks.querySelectorAll('input').forEach(c=>c.checked=(r.classes||[]).includes(c.value));updateAffectedSlotsPreview();if(r.allDay===false&&Array.isArray(r.selectedSlotRefs)){const inputs=[...$('affectedSlotChoices').querySelectorAll('input')];inputs.forEach(x=>x.checked=r.selectedSlotRefs.some(y=>y.date===x.dataset.slotDate&&y.className===x.dataset.slotClass&&y.slotId===x.dataset.slotId));} $('absencePanel').scrollIntoView({behavior:'smooth'});}
+ window.deleteCalendarRecord=function(id){if(!confirm('Delete this absence/holiday record and its generated class journal entries?'))return;calendarRecords=calendarRecords.filter(r=>r.id!==id);sessions=sessions.filter(s=>s.calendarRecordId!==id);persistCalendar();persist();renderAbsenceRecords();toast('Calendar record deleted')}
+ $('absenceForm').addEventListener('submit',e=>{e.preventDefault();const selected=classSelections();if(!selected.length){alert('Select at least one affected class.');return}const start=$('absenceStart').value,end=$('absenceDateMode').value==='range'?$('absenceEnd').value:start;if(!start||!end||end<start){alert('Please enter a valid date range.');return}
+ const id=$('absenceId').value||'cal_'+Date.now(),recordKind=$('absenceRecordKind').value,type=$('absenceType').value,holidayName=$('holidayName').value.trim(),reason=$('absenceReason').value.trim(),notes=$('absenceNotes').value.trim(),status=$('absenceStatus').value,allDay=$('absenceAllDay').checked;const dates=datesBetween(start,end),affectedSlots=[];dates.forEach(d=>selected.forEach(cl=>slotsForDate(d,cl).forEach(slot=>affectedSlots.push({date:d,className:cl,slotId:slot.id,startTime:slot.startTime,endTime:slot.endTime,subject:slot.subject||'',room:slot.room||''}))));
+ const chosenSlots=[...$('affectedSlotChoices').querySelectorAll('input:checked')].map(x=>({date:x.dataset.slotDate,className:x.dataset.slotClass,slotId:x.dataset.slotId}));const r={id,recordKind,type,holidayName:recordKind==='holiday'?(holidayName||type):'',start,end,reason,classes:selected,notes,status,allDay,affectedSlots,selectedSlotRefs:chosenSlots};calendarRecords=calendarRecords.filter(x=>x.id!==id);calendarRecords.push(r);sessions=sessions.filter(s=>s.calendarRecordId!==id);
+ dates.forEach(d=>selected.forEach(cl=>{const slots=slotsForDate(d,cl);const selectedSlotIds=chosenSlots.filter(x=>x.date===d&&x.className===cl).map(x=>x.slotId);const relevant=(!allDay&&slots.length)?slots.filter(slot=>selectedSlotIds.includes(slot.id)):[{startTime:'08:00',endTime:'16:00',subject:recordKind==='holiday'?(holidayName||type):'Absence / Leave',room:''}];if(!allDay&&slots.length&&!relevant.length)return;relevant.forEach((slot,ix)=>{const slotId=slot.id||`full_${d}_${cl}`;const journalType=recordKind==='absence'?'Teacher Absence':type;sessions.push({id:`cal_session_${id}_${cl.replace(/[^a-z0-9]/gi,'')}_${d}_${ix}`,date:d,className:cl,startTime:slot.startTime||'08:00',endTime:slot.endTime||'16:00',sessionType:journalType,theme:'',unit:'',sequence:'',rubric:'',tasks:[],observations:[reason,notes,status?`Status: ${status}`:'',`Record category: ${type}`,recordKind==='holiday'?`Holiday / event: ${holidayName||type}`:'',slot.subject?`Timetable subject: ${slot.subject}`:''].filter(Boolean).join('\n'),room:slot.room||'',calendarRecordId:id,calendarReason:reason,calendarNotes:notes,calendarPeriodStart:start,calendarPeriodEnd:end,calendarRecordKind:recordKind,calendarType:type,updatedAt:new Date().toISOString()})})}));
+ persistCalendar();persist();resetAbsence();renderAbsenceRecords();toast('Saved and added to affected class journal(s)');});
+ ['absenceSearch','absenceMonth','absenceClassFilter','absenceKindFilter'].forEach(id=>$(id).addEventListener(id==='absenceSearch'?'input':'change',renderAbsenceRecords));$('clearAbsence').onclick=resetAbsence;resetAbsence();renderAbsenceRecords();
+ // Ensure absence workspace is accessible in main workspace navigation and dashboard card.
+ const nav=document.querySelector('.workspace-nav');if(nav&&!nav.querySelector('[data-workspace="absencePanel"]')){const b=document.createElement('button');b.type='button';b.dataset.workspace='absencePanel';b.textContent='🗓 Absences & Holidays';b.onclick=()=>openJournalWorkspace('absencePanel');nav.insertBefore(b,nav.querySelector('[data-home]'));}
+ // Reports: strict class choice and complete selectable period logic.
+ const classSel=$('reportClass');if(classSel){classSel.innerHTML='<option value="">Select a class…</option>'+classes.map(c=>`<option>${c}</option>`).join('');}
+ const controls=document.querySelector('.report-controls');
+ if(controls){let period=$('reportPeriod');if(!period){const f=document.createElement('div');f.className='field';f.innerHTML='<label for="reportPeriod">Report period</label><select id="reportPeriod"><option value="day">Daily</option><option value="week">Weekly</option><option value="month">Monthly</option><option value="term">Term / custom range</option></select>';controls.appendChild(f);}
+ let end=$('reportEnd');if(!end){const f=document.createElement('div');f.className='field';f.innerHTML='<label for="reportEnd">End date (for term/custom range)</label><input type="date" id="reportEnd">';controls.appendChild(f);}
+ const first=controls.querySelector('label[for="weekStart"]');if(first)first.textContent='Date / period starts';}
+ $('reportPeriod').addEventListener('change',()=>{const term=$('reportPeriod').value==='term';$('reportEnd').closest('.field').style.display=term?'':'none';});$('reportEnd').closest('.field').style.display=$('reportPeriod').value==='term'?'':'none';
+ function getReportRange(){let period=$('reportPeriod').value,start=$('weekStart').value||todayISO(),end=start;
+ if(period==='week'){const d=new Date(start+'T12:00:00');d.setDate(d.getDate()+6);end=d.toISOString().slice(0,10)}
+ if(period==='month'){start=start.slice(0,7)+'-01';end=start.slice(0,7)+'-'+new Date(+start.slice(0,4),+start.slice(5,7),0).getDate().toString().padStart(2,'0')}
+ if(period==='term'){end=$('reportEnd').value||start;if(end<start)throw Error('End date must be on or after the start date.')}
+ return {period,start,end};}
+ function reportArr(){const cl=$('reportClass').value;if(!cl){alert('Please select a class. Reports are generated one class at a time.');return null}const {period,start,end}=getReportRange();return {cl,period,start,end,arr:sessions.filter(s=>s.className===cl&&s.date>=start&&s.date<=end).sort((a,b)=>(a.date+(a.startTime||'')).localeCompare(b.date+(b.startTime||'')))}}
+ function reportItem(s){let special=(s.sessionType||'Regular lesson')!=='Regular lesson';return `<div class="report-item"><strong>${fmtDate(s.date)} · ${esc(s.className)} · ${esc(s.startTime||'—')}–${esc(s.endTime||'—')}</strong><div><span class="session-type-badge">${esc(s.sessionType||'Regular lesson')}</span>${s.room?' · '+esc(s.room):''}</div>${special?`<div><b>Reason / details:</b> ${esc(s.calendarReason||s.observations||s.theme||'—')}</div>${s.calendarNotes?`<div><b>Notes:</b> ${esc(s.calendarNotes)}</div>`:''}`:`<div>${s.theme?'Theme: '+esc(s.theme)+' · ':''}${s.unit?'Unit: '+esc(s.unit)+' · ':''}${s.sequence?'Sequence: '+esc(s.sequence)+' · ':''}${s.rubric?'Rubric: '+esc(s.rubric):''}</div><div>${(s.tasks||[]).map(t=>`<b>${esc(t.phase||'Activity')}:</b> ${esc(t.activity||'')} (Aim: ${esc(t.aim||'—')})`).join('<br>')||'No activities recorded'}</div>`}${s.observations?`<div><b>Observations:</b> ${esc(s.observations)}</div>`:''}</div>`}
+ window.generateReport=function(){try{const r=reportArr();if(!r)return;$('reportPreview').innerHTML=`<h3>${esc(r.cl)} · ${r.period==='day'?'Daily':r.period==='week'?'Weekly':r.period==='month'?'Monthly':'Term'} Teaching Journal</h3><p>${fmtDate(r.start)} – ${fmtDate(r.end)}</p><p><b>${r.arr.length}</b> journal records</p>${r.arr.map(reportItem).join('')||'<div class="empty">No journal records found for this class and period.</div>'}`;window._v5Report=r}catch(err){alert(err.message)}};
+ $('generateReportBtn').onclick=window.generateReport;
+ $('printReportBtn').onclick=()=>{try{const r=reportArr();if(!r)return;if(!r.arr.length){toast('No journal records to print');return}printSessions(r.arr,`${r.cl} · ${r.period==='day'?'Daily':r.period==='week'?'Weekly':r.period==='month'?'Monthly':'Term'} Teaching Journal`,`${fmtDate(r.start)} – ${fmtDate(r.end)}`)}catch(err){alert(err.message)}};
+ // Polished inspection print template. No app/workspace UI is included.
+ window.buildPrintHTML=function(arr,title,range=''){
+   // Print only the journal entries themselves. No report cover, control UI, report metadata or wasted title page.
+   return `<div class="print-report">${arr.map((s,i)=>{const special=(s.sessionType||'Regular lesson')!=='Regular lesson';const type=esc(s.sessionType||'Regular lesson');const time=`${esc(s.startTime||'—')}–${esc(s.endTime||'—')}`;
+     return `<div class="report-session"><h2>${i+1}. ${fmtDate(s.date)} · ${esc(s.className)} <span style="font-weight:normal">(${time})</span></h2><p><b>Session type:</b> ${type}</p>
+     ${special?`<p><b>Reason / details:</b> ${esc(s.calendarReason||s.observations||s.theme||'—')}</p>${s.calendarNotes?`<p><b>Notes:</b> ${esc(s.calendarNotes)}</p>`:''}`:
+     `<table><tr><th style="width:15%">Theme</th><td>${esc(s.theme||'—')}</td><th style="width:12%">Unit</th><td>${esc(s.unit||'—')}</td></tr><tr><th>Sequence</th><td>${esc(s.sequence||'—')}</td><th>Rubric</th><td>${esc(s.rubric||'—')}</td></tr></table>
+     ${(s.tasks||[]).length?`<h3>Pedagogical activities</h3><table><thead><tr><th style="width:18%">Phase / task</th><th>Activity / task details</th><th style="width:28%">Aim of the task</th></tr></thead><tbody>${s.tasks.map(t=>`<tr><td>${esc(t.phase||'—')}</td><td>${esc(t.activity||'—')}</td><td>${esc(t.aim||'—')}</td></tr>`).join('')}</tbody></table>`:''}`}
+     ${s.observations?`<p><b>Observations:</b> ${esc(s.observations)}</p>`:''}</div>`}).join('')}</div>`;
+ };
+ // Dashboard card now links to calendar workspace as well.
+ document.querySelectorAll('.dash-card[data-page="absencePanel"]').forEach(b=>b.addEventListener('click',()=>openJournalWorkspace('absencePanel')));
+})();
+</script>
+<script>
+(function(){
+ const $=id=>document.getElementById(id);const menu=document.querySelector('.dashboard-menu');
+ if(menu){const abs=menu.querySelector('[data-page="absencePanel"]'),settings=menu.querySelector('[data-page="settingsPanel"]');if(abs&&settings)menu.insertBefore(abs,settings)}
+ const nav=document.querySelector('.workspace-nav');if(nav){const order=['editorPanel','timetablePanel','reportsPanel','historyPanel','absencePanel','settingsPanel'];const labels={'editorPanel':'✎ Record a Teaching Session','timetablePanel':'▦ My Flexible Teaching Timetable','reportsPanel':'▤ My Reports','historyPanel':'◷ History of Recorded Sessions','absencePanel':'🗓 Absences & Holidays','settingsPanel':'⚙ Settings and Details'};order.forEach(id=>{let b=nav.querySelector('[data-workspace="'+id+'"]');if(!b){b=document.createElement('button');b.type='button';b.dataset.workspace=id;b.onclick=()=>openJournalWorkspace(id)}b.textContent=labels[id];nav.insertBefore(b,nav.querySelector('[data-home]'))})}
+ const home=$('dashboardHome');if(home&&!$('teachingInsights')){const p=document.createElement('section');p.id='teachingInsights';p.className='teaching-insights';p.innerHTML='<div class="teaching-insights-head">💡 Teaching Insights</div><div class="teaching-insights-body" id="teachingInsightsBody"></div>';const recent=home.querySelector('.recent-dashboard');if(recent)home.insertBefore(p,recent);else home.appendChild(p)}
+ function updateInsights(){
+  const body=$('teachingInsightsBody');if(!body)return;
+  const arr=Array.isArray(sessions)?sessions:[],events=Array.isArray(calendarRecordsCache)?calendarRecordsCache:[];
+  const classes=CLASSES;
+  const counts=classes.map(c=>({name:c,count:arr.filter(s=>s.className===c).length})),covered=counts.filter(x=>x.count>0),missing=counts.filter(x=>!x.count).map(x=>x.name);
+  const sorted=[...arr].sort((a,b)=>(b.date||'').localeCompare(a.date||'')||(b.startTime||'').localeCompare(a.startTime||'')),latest=sorted[0];
+  const monday=new Date();monday.setHours(0,0,0,0);monday.setDate(monday.getDate()-((monday.getDay()+6)%7));const nextMonday=new Date(monday);nextMonday.setDate(nextMonday.getDate()+7);
+  const weekly=arr.filter(s=>s.date&&new Date(s.date+'T12:00:00')>=monday&&new Date(s.date+'T12:00:00')<nextMonday).length;
+  const tasks=arr.reduce((n,s)=>n+(Array.isArray(s.tasks)?s.tasks.filter(t=>t.phase||t.activity||t.aim).length:0),0);
+  const types={};arr.forEach(s=>{const t=s.sessionType||'Regular Lesson';types[t]=(types[t]||0)+1});const topType=Object.entries(types).sort((a,b)=>b[1]-a[1])[0];
+  const today=new Date().toISOString().slice(0,10),upcoming=events.filter(e=>e.start&&e.start>=today).sort((a,b)=>a.start.localeCompare(b.start))[0];
+  const lines=[];
+  lines.push(arr.length?`Recorded ${arr.length} teaching session${arr.length===1?'':'s'} across ${covered.length}/${classes.length} classes.`:'No teaching sessions recorded yet. Add a session to begin generating insights.');
+  lines.push(weekly?`${weekly} session${weekly===1?'':'s'} recorded this week.`:'No sessions recorded this week so far.');
+  if(covered.length){const top=covered.slice().sort((a,b)=>b.count-a.count)[0];lines.push(`${top.name} has the most journal entries (${top.count}).`)}
+  lines.push(missing.length?`Classes without entries: ${missing.join(', ')}.`:`All ${classes.length} classes have journal entries.`);
+  if(latest)lines.push(`Latest entry: ${latest.className||'Class not specified'} · ${latest.date||'Date not specified'}${latest.startTime?' · '+latest.startTime:''}${latest.sessionType?' · '+latest.sessionType:''}.`);
+  if(tasks)lines.push(`${tasks} pedagogical activities recorded across the journal.`);
+  if(topType)lines.push(`Most frequent session type: ${topType[0]} (${topType[1]}).`);
+  lines.push(events.length?`${events.length} calendar/absence/holiday record${events.length===1?'':'s'} saved${upcoming?`; next: ${upcoming.type||'event'} on ${upcoming.start}`:''}.`:'No absence, holiday, or school-event records saved.');
+  body.innerHTML=lines.map(t=>`<div class="teaching-insight-row"><span class="teaching-insight-check">✓</span><span>${t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}</span></div>`).join('');
+ }
+ window.updateTeachingInsights=updateInsights;updateInsights();
+ const reportClass=$('reportClass');if(reportClass)reportClass.required=true;
+})();
+</script>
+<style id="v5-dashboard-responsive-layout-fix">
+/* V5.1 dashboard grid alignment fix — layout only */
+.dashboard-menu{
+ display:grid!important;
+ grid-template-columns:repeat(3,minmax(0,1fr))!important;
+ grid-auto-rows:1fr!important;
+ gap:16px!important;
+ align-items:stretch!important;
+ justify-items:stretch!important;
+ width:100%!important;
+ box-sizing:border-box!important;
+ margin:20px 0 24px!important;
+}
+.dashboard-menu .dash-card,
+.dashboard-menu .dash-card:nth-child(4),
+.dashboard-menu .dash-card:nth-child(5),
+.dashboard-menu .dash-card:nth-child(n){
+ grid-column:auto!important;
+ width:100%!important;
+ min-width:0!important;
+ max-width:none!important;
+ height:100%!important;
+ min-height:150px!important;
+ box-sizing:border-box!important;
+ margin:0!important;
+ justify-self:stretch!important;
+ align-self:stretch!important;
+}
+.dashboard-menu .dash-card{
+ display:flex!important;
+ flex-direction:column!important;
+ align-items:flex-start!important;
+ text-align:left!important;
+}
+.dashboard-menu .dash-card>span:last-child{overflow-wrap:anywhere}
+.stats{
+ display:grid!important;
+ grid-template-columns:repeat(4,minmax(0,1fr))!important;
+ gap:14px!important;
+ width:100%!important;
+ box-sizing:border-box!important;
+}
+.dashboard-welcome{width:100%;box-sizing:border-box}
+.teaching-insights,.recent-dashboard{width:100%;box-sizing:border-box}
+.recent-items{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+#backDashboard{display:inline-flex;align-items:center;justify-content:center;gap:7px;white-space:nowrap}
+@media (max-width:900px){
+ .dashboard-menu{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:14px!important}
+ .stats{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ .recent-items{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:600px){
+ .dashboard-menu{grid-template-columns:minmax(0,1fr)!important;gap:12px!important}
+ .dashboard-menu .dash-card,.dashboard-menu .dash-card:nth-child(n){min-height:112px!important;padding:16px!important}
+ .stats{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}
+ .stats .stat{min-width:0!important;padding:12px!important}
+ .dashboard-welcome{padding:15px!important;gap:12px!important}
+ .dashboard-welcome h2{font-size:20px!important}
+ .dashboard-welcome button{max-width:100%;white-space:normal}
+ .recent-items{grid-template-columns:minmax(0,1fr)!important}
+ .panel-head{flex-wrap:wrap}
+ .dashboard-date{display:inline-block;margin:6px 0 0}
+ .container{width:100%;max-width:100%;padding-left:12px!important;padding-right:12px!important;box-sizing:border-box}
+}
+@media (max-width:360px){
+ .stats{grid-template-columns:minmax(0,1fr)!important}
+ .dash-card strong{font-size:14px!important}
+}
+</style>
+
+
+<script>
+/* V5.4 Class Manager: keeps class names synchronized across the app and backups. */
+(function(){
+ const $=id=>document.getElementById(id);
+ function syncClassDropdowns(){
+  const ids=['className','ttClass','scheduleClass','ttFilterClass','filterClass','reportClass'];
+  ids.forEach(id=>{const el=$(id);if(!el)return;const old=el.value;const isFilter=['scheduleClass','ttFilterClass','filterClass'].includes(id);const isReport=id==='reportClass';el.innerHTML=(isFilter?'<option value="">All classes</option>':isReport?'<option value="">Select a class…</option>':'')+CLASSES.map(c=>`<option value="${esc(c)}">${esc(c)}</option>`).join('');if(CLASSES.includes(old))el.value=old;else if(!isFilter&&!isReport&&CLASSES.length)el.value=CLASSES[0];});
+ }
+ function renderClassManager(){
+  const root=$('classManagerList');if(!root)return;
+  root.innerHTML=CLASSES.length?CLASSES.map(c=>`<article class="session-card"><div class="session-card-top"><span class="pill">${esc(c)}</span><span class="small">${sessions.filter(s=>s.className===c).length} journal entries · ${timetable.filter(s=>s.className===c).length} timetable slots</span></div><div class="card-actions"><button type="button" class="light" onclick="editManagedClass(${JSON.stringify(c).replace(/"/g,'&quot;')})">Rename / Edit</button><button type="button" class="danger" onclick="deleteManagedClass(${JSON.stringify(c).replace(/"/g,'&quot;')})">Remove</button></div></article>`).join(''):'<div class="empty">No classes defined. Add a class above to get started.</div>';
+ }
+ function resetClassForm(){ $('classEditOriginal').value='';$('classNameManager').value='';$('classManagerSave').textContent='Add class';$('classManagerCancel').style.display='none';}
+ window.editManagedClass=function(old){$('classEditOriginal').value=old;$('classNameManager').value=old;$('classManagerSave').textContent='Save class name';$('classManagerCancel').style.display='';$('classNameManager').focus()};
+ window.deleteManagedClass=function(name){
+  const linkedSessions=sessions.filter(s=>s.className===name).length, linkedSlots=timetable.filter(s=>s.className===name).length, linkedCalendar=calendarRecordsCache.filter(r=>(r.classes||[]).includes(name)).length;
+  if(!confirm(`Remove "${name}" from the class list?\\n\\n${linkedSessions} journal entries, ${linkedSlots} timetable slots and ${linkedCalendar} calendar records are linked to it. These linked records will be removed/updated. This cannot be undone. Export a backup first if needed.`))return;
+  CLASSES=CLASSES.filter(c=>c!==name);sessions=sessions.filter(s=>s.className!==name);timetable=timetable.filter(s=>s.className!==name);
+  calendarRecordsCache=calendarRecordsCache.map(r=>({...r,classes:(r.classes||[]).filter(c=>c!==name)})).filter(r=>(r.classes||[]).length);writeCalendarMeta();
+  persist();syncClassDropdowns();renderClassManager();toast('Class removed');
+ };
+ $('classManagerForm').addEventListener('submit',e=>{
+  e.preventDefault();const name=$('classNameManager').value.trim(),old=$('classEditOriginal').value;
+  if(!name){alert('Enter a class name.');return}
+  if(CLASSES.some(c=>c.toLowerCase()===name.toLowerCase()&&c!==old)){alert('A class with this name already exists.');return}
+  if(old){const i=CLASSES.indexOf(old);if(i<0)return;CLASSES[i]=name;sessions.forEach(s=>{if(s.className===old)s.className=name});timetable.forEach(s=>{if(s.className===old)s.className=name});calendarRecordsCache=calendarRecordsCache.map(r=>({...r,classes:(r.classes||[]).map(c=>c===old?name:c)}));writeCalendarMeta();}
+  else CLASSES.push(name);
+  resetClassForm();syncClassDropdowns();persist();renderClassManager();toast(old?'Class renamed and linked records updated':'Class added');
+ });
+ $('classManagerCancel').addEventListener('click',resetClassForm);
+ // After app startup, hydrate the manager from the saved class list.
+ syncClassDropdowns();renderClassManager();
+ const insights=document.getElementById('teachingInsightsBody');
+ if(insights&&typeof window.updateTeachingInsights==='function')window.updateTeachingInsights();
+})();
+</script>
+
+<script id="multi-timetable-manager-logic">
+(function(){
+ const $=id=>document.getElementById(id);const uid=()=>`tt_${Date.now()}_${Math.random().toString(36).slice(2,7)}`;
+ const isoToday=()=>{const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`};
+ const chronological=()=>timetableSets.slice().sort((a,b)=>(a.startDate||'').localeCompare(b.startDate||'')||(a.createdAt||'').localeCompare(b.createdAt||''));
+ function active(){return timetableSets.find(x=>x.id===activeTimetableId)||timetableSets[0]||null}
+ window.getActiveTimetableRecord=active;
+ function persistManager(){persist();renderManager()}
+ function rangesOverlap(a,b){const aEnd=a.endDate||'9999-12-31',bEnd=b.endDate||'9999-12-31';return a.startDate<=bEnd&&b.startDate<=aEnd}
+ function statusFor(t){const today=isoToday();return t.startDate>today?'Upcoming':(t.endDate&&t.endDate<today?'Expired':'Active')}
+ function panelManagerOpen(){return !$('multiTimetableManager').hasAttribute('hidden')}
+ function toggleManagerOpen(){const toggle=$('toggleTimetableManager'),panel=$('multiTimetableManager');panel.removeAttribute('hidden');toggle.setAttribute('aria-expanded','true');toggle.textContent='✕ Close Timetable Manager'}
+ function renderManager(){
+  const t=active(),overview=$('timetableOverview');
+  if(overview){const ordered=chronological(),current=ordered.filter(item=>statusFor(item)!=='Expired'),expired=ordered.filter(item=>statusFor(item)==='Expired');const card=(item,i)=>{const status=statusFor(item),count=timetable.filter(s=>s.timetableId===item.id).length,selected=item.id===activeTimetableId;return `<button type="button" class="mtm-overview-card ${selected?'selected':''}" data-timetable-id="${item.id}" aria-pressed="${selected}"><div class="mtm-card-top"><strong>${esc(item.name||`Timetable ${i+1}`)}</strong><span class="mtm-status-badge ${status.toLowerCase()}">${status}</span></div><div class="mtm-period">${esc(fmtDate(item.startDate))} – ${esc(item.endDate?fmtDate(item.endDate):'No end date')}</div><div class="mtm-card-meta"><span>${count} saved slot(s)</span><span>${selected?'✓ Selected':status==='Expired'?'Open expired timetable':'Switch timetable'}</span></div></button>`};overview.innerHTML=`<div class="mtm-group"><div class="mtm-group-title">Current / Upcoming Timetables <span class="group-count">${current.length}</span></div><div class="mtm-overview">${current.map((item,i)=>card(item,i)).join('')||'<div class="small">No current or upcoming timetable.</div>'}<button type="button" class="mtm-overview-card mtm-add-card" id="overviewAddTimetable"><div class="mtm-card-top"><strong>＋ Add New Timetable</strong></div><div class="mtm-period">Create a new date period</div><div class="mtm-card-meta"><span>Set name and dates</span></div></button></div></div>${expired.length?`<div class="mtm-group mtm-expired-group"><div class="mtm-group-title">Expired Timetables <span class="group-count">${expired.length}</span></div><div class="mtm-overview">${expired.map((item,i)=>card(item,i)).join('')}</div></div>`:''}`;overview.querySelectorAll('[data-timetable-id]').forEach(btn=>btn.addEventListener('click',()=>window.selectTimetableById(btn.dataset.timetableId)));$('overviewAddTimetable').addEventListener('click',()=>{if(!panelManagerOpen())toggleManagerOpen();$('addTimetableForm').hidden=false;$('newTimetableName').focus();});}
+  if(t){$('editTimetableName').value=t.name||'';$('editTimetableStart').value=t.startDate||'';$('editTimetableEnd').value=t.endDate||'';const count=timetable.filter(s=>s.timetableId===t.id).length;$('timetableManagerStatus').innerHTML=`<strong>${esc(t.name)}</strong> · ${statusFor(t).toUpperCase()} · ${count} slot(s).`;$('deleteTimetableBtn').disabled=timetableSets.length===1;}else{$('timetableManagerStatus').textContent='Create a timetable to begin.';$('deleteTimetableBtn').disabled=true;}
+ }
+ window.selectTimetableById=id=>{if(!timetableSets.some(t=>t.id===id))return;activeTimetableId=id;const t=active();editingSlotId='';$('saveSlotBtn').textContent='Add timetable slot';$('ttFrom').value=t.startDate||isoToday();$('ttUntil').value=t.endDate||'';renderManager();renderTimetable();persist();};
+ function init(){
+  if(!Array.isArray(timetableSets)||!timetableSets.length){const starts=timetable.map(s=>s.effectiveFrom).filter(Boolean).sort(),ends=timetable.map(s=>s.effectiveUntil).filter(Boolean).sort();const first={id:uid(),name:'Timetable 1',startDate:starts[0]||isoToday(),endDate:ends.length?ends[ends.length-1]:'',createdAt:new Date().toISOString()};timetableSets=[first];activeTimetableId=first.id;timetable.forEach(s=>s.timetableId=first.id);}
+  // Assign consistent names to legacy unnamed/duplicate default timetable labels, without changing IDs or dates.
+  chronological().forEach((t,i)=>{if(!t.name||/^schedule(\s*\d*)?$/i.test(t.name)||/^default timetable$/i.test(t.name))t.name=`Timetable ${i+1}`;});
+  if(!activeTimetableId||!timetableSets.some(t=>t.id===activeTimetableId))activeTimetableId=chronological()[0].id;
+  timetable.forEach(s=>{const date=s.effectiveFrom||'',owner=chronological().find(t=>date&&date>=t.startDate&&(!t.endDate||date<=t.endDate)),current=timetableSets.find(t=>t.id===s.timetableId),valid=current&&date&&date>=current.startDate&&(!current.endDate||date<=current.endDate);if(owner&&(!s.timetableId||!valid))s.timetableId=owner.id;else if(!s.timetableId)s.timetableId=(current||timetableSets[0]).id;});
+  renderManager();
+  $('addTimetableBtn').addEventListener('click',()=>{const name=$('newTimetableName').value.trim(),start=$('newTimetableStart').value,end=$('newTimetableEnd').value;if(!name||!start){alert('Enter a timetable name and start date.');return}if(end&&end<start){alert('End date must be on or after start date.');return}const record={id:uid(),name,startDate:start,endDate:end,createdAt:new Date().toISOString()};if(timetableSets.some(t=>rangesOverlap(t,record))){alert('This period overlaps an existing timetable. Please choose a non-overlapping date range.');return}timetableSets.push(record);activeTimetableId=record.id;$('addTimetableForm').hidden=true;$('newTimetableName').value='';persist();renderManager();$('ttFrom').value=start;$('ttUntil').value=end;renderTimetable();toast('New timetable created.');});
+  $('showAddTimetableBtn').addEventListener('click',()=>{const f=$('addTimetableForm');f.hidden=!f.hidden;if(!f.hidden){$('newTimetableName').value='';$('newTimetableStart').value='';$('newTimetableEnd').value='';$('newTimetableName').focus();}});
+  $('cancelAddTimetableBtn').addEventListener('click',()=>{$('addTimetableForm').hidden=true;});
+  $('saveTimetableDetailsBtn').addEventListener('click',()=>{const t=active();if(!t)return;const name=$('editTimetableName').value.trim(),start=$('editTimetableStart').value,end=$('editTimetableEnd').value;if(!name||!start||(end&&end<start)){alert('Enter a name and a valid start/end date range.');return}const proposal={...t,name,startDate:start,endDate:end};if(timetableSets.some(x=>x.id!==t.id&&rangesOverlap(x,proposal))){alert('This period overlaps another timetable. Choose a non-overlapping date range.');return}t.name=name;t.startDate=start;t.endDate=end;timetable.filter(s=>s.timetableId===t.id).forEach(s=>{if(s.effectiveFrom<start)s.effectiveFrom=start;if(end&&(!s.effectiveUntil||s.effectiveUntil>end))s.effectiveUntil=end;});persist();renderManager();renderTimetable();toast('Timetable updated and saved.');});
+  $('deleteTimetableBtn').addEventListener('click',()=>{const t=active();if(!t||timetableSets.length<2){alert('At least one timetable must remain.');return}const count=timetable.filter(s=>s.timetableId===t.id).length;if(!confirm(`Delete “${t.name}” and its ${count} timetable slot(s)? Teaching journal session records will not be deleted.`))return;timetable=timetable.filter(s=>s.timetableId!==t.id);timetableSets=timetableSets.filter(x=>x.id!==t.id);activeTimetableId=chronological()[0].id;const next=active();$('ttFrom').value=next.startDate||isoToday();$('ttUntil').value=next.endDate||'';editingSlotId='';$('saveSlotBtn').textContent='Add timetable slot';persist();renderManager();renderTimetable();toast('Timetable deleted.');});
+  const oldClear=window.clearSlotForm;window.clearSlotForm=function(){oldClear();const t=active();if(t){$('ttFrom').value=t.startDate||isoToday();$('ttUntil').value=t.endDate||''}};
+  renderTimetable();persist();
+ }
+ const toggle=$('toggleTimetableManager'),panel=$('multiTimetableManager');if(toggle&&panel)toggle.addEventListener('click',()=>{const open=panel.hasAttribute('hidden');if(open){panel.removeAttribute('hidden');toggle.setAttribute('aria-expanded','true');toggle.textContent='✕ Close Timetable Manager';}else{panel.setAttribute('hidden','');toggle.setAttribute('aria-expanded','false');toggle.textContent='⚙ Timetable Manager';}});
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
+</body>
+</html>
